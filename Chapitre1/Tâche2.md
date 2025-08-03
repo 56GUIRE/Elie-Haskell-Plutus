@@ -1,4 +1,4 @@
-Voici le code en Haskell pour calculer l'aire d'un cercle à partir de son rayon, avec une fonction pure et un `main` pour tester :
+HC1T2 - Tâche 2 : Exemple de fonction pure :
 
 ```haskell
 -- Fonction pure pour calculer l'aire d'un cercle

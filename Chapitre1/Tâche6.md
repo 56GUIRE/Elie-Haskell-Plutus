@@ -1,4 +1,4 @@
-Voici le code Haskell pour une fonction `addNumbers` qui prend deux entiers et retourne leur somme, avec un `main` pour tester :
+HC1T6 - Tâche 6 : Utilisation de signatures de type:
 
 ```haskell
 module Main where

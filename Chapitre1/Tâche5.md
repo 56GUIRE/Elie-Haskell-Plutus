@@ -1,4 +1,4 @@
-Voici le code Haskell pour créer une fonction `infiniteNumbers` qui génère une liste infinie de nombres et une fonction pour extraire les `n` premiers éléments, avec un `main` pour tester :
+HC1T5 - Tâche 5 : Paresse en Haskell:
 
 ```haskell
 module Main where

@@ -1,4 +1,4 @@
-Voici le code en Haskell pour les fonctions demandées :
+HC1T1 - Tâche 1 : Composition de fonctions :
 
 ```haskell
 double :: Int -> Int

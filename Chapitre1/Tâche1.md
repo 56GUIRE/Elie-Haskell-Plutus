@@ -1,4 +1,4 @@
-:
+HC1T1 - Tâche 1 : Composition de fonctions:
 
 ```haskell
 -- Définition des fonctions

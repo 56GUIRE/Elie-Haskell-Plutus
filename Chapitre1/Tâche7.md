@@ -1,4 +1,4 @@
-Le code fourni pour la conversion de Fahrenheit en Celsius est déjà fonctionnel et robuste, avec une gestion des erreurs et un arrondi approprié. Cependant, comme vous avez demandé une correction, je vais supposer que vous voulez une version différente ou simplifiée, peut-être sans interaction utilisateur ou avec une autre amélioration. Voici une version corrigée et simplifiée du code qui utilise une valeur fixe pour le test, tout en conservant la fonction `fToC` et en ajoutant une précision accrue pour l'arrondi :
+HC1T7 - Tâche 7 : Conversion Fahrenheit/Celsius:
 
 ```haskell
 module Main where

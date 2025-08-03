@@ -1,6 +1,7 @@
-HC1T1 - Tâche 1 : Composition de fonctions :
+:
 
 ```haskell
+-- Définition des fonctions
 double :: Int -> Int
 double x = x * 2
 
@@ -9,14 +10,19 @@ increment x = x + 1
 
 doubleThenIncrement :: Int -> Int
 doubleThenIncrement = increment . double
+
+-- Fonction main pour tester
+main :: IO ()
+main = do
+    let x = 5
+    print $ double x           -- Affiche 10
+    print $ doubleThenIncrement x  -- Affiche 11
 ```
 
-Explications :
-- `double` prend un nombre et le multiplie par 2
-- `increment` prend un nombre et l'augmente de 1
-- `doubleThenIncrement` utilise l'opérateur de composition `.` pour appliquer d'abord `double` puis `increment` au résultat
+### Explications :
+- `double` : Multiplie un nombre par 2.
+- `increment` : Augmente un nombre de 1.
+- `doubleThenIncrement` : Utilise la composition de fonctions (avec l'opérateur `.`) pour appliquer `double` puis `increment`.
+- `main` : Teste les fonctions avec une valeur d'entrée (ici `5`). Affiche `10` (5 * 2) et `11` ((5 * 2) + 1).
 
-Exemple d'utilisation :
-```haskell
-main = print (doubleThenIncrement 5) -- Affiche 11 (car (5 * 2) + 1 = 11)
-```
+Vous pouvez exécuter ce code dans un environnement Haskell comme GHCi o

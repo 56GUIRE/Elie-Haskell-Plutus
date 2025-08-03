@@ -1,4 +1,4 @@
-Voici le code en Haskell pour une fonction `greaterThan18` qui vérifie si un nombre est supérieur à 18, avec un `main` pour tester :
+HC1T3 - Tâche 3 : Vérifier si un nombre est supérieur à 18 :
 
 ```haskell
 -- Fonction pure pour vérifier si un nombre est supérieur à 18

@@ -1,4 +1,4 @@
-Voici le code Haskell pour la fonction `applyTwice` avec un programme principal :
+HC1T8 - Tâche 8 : Fonctions d'ordre supérieur:
 
 ```haskell
 module Main where

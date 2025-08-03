@@ -1,4 +1,4 @@
-Je vais corriger le code Haskell pour qu'il soit plus idiomatique et utilise les fonctions standard de la bibliothèque `Data.List`. Voici la version corrigée avec les explications des modifications :
+HC1T4 - Tâche 4 : Composer une fonction pour traiter des données de joueurs:
 
 ```haskell
 module Main where

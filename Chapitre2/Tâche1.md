@@ -1,4 +1,4 @@
-Voici le programme en Haskell qui vérifie les types des expressions demandées, avec un `main` exécutable. En Haskell, GHCi est utilisé pour vérifier les types interactivement avec la commande `:t`. Cependant, pour créer un programme exécutable, nous allons afficher les expressions et leurs types dans le `main`, tout en indiquant les types attendus comme demandé.
+HC2T1 - Tâche 1 : Vérification des types dans GHCi
 
 ### Types attendus (avant vérification dans GHCi) :
 1. `42` : Entier, type attendu : `Int` ou `Integer` (en général, GHCi choisit `Integer` pour les littéraux entiers sans contrainte spécifique).

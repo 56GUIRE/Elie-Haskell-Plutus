@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `checkNumber` utilisant une instruction if-then-else et un `main` pour tester les cas spécifiés :
+HC3T1 - Tâche 1 : Vérifier si un nombre est positif, négatif ou nul:
 
 ```haskell
 checkNumber :: Int -> String

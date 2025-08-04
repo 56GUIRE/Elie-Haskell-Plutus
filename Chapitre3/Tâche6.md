@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `isLeapYear` utilisant `if-then-else` pour déterminer si une année est bissextile, et un `main` pour tester le cas spécifié :
+HC3T6 - Tâche avancée 6 : Vérifier une année bissextile avec if-then-else:
 
 ```haskell
 isLeapYear :: Int -> Bool

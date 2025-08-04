@@ -1,17 +1,4 @@
-Je comprends que vous demandez un programme Haskell qui :
-1. Inclut une fonction `main`.
-2. Démontre des expressions booléennes utilisant :
-   - `&&` pour produire `True`.
-   - `||` pour produire `False`.
-   - `not` pour produire `True`.
-   - Une comparaison qui retourne `False`.
-
-### Analyse des Exigences
-- Les expressions doivent utiliser les opérateurs booléens spécifiés (`&&`, `||`, `not`) et une comparaison.
-- Chaque expression doit produire le résultat booléen indiqué (`True` ou `False`).
-- Le programme doit afficher les résultats dans `main` pour montrer les valeurs des expressions.
-- Les expressions doivent être simples et claires pour répondre directement à la demande.
-
+HC2T7 - Tâche 7 : Expressions booléennes
 ### Code Haskell
 ```haskell
 -- Fonction principale pour démontrer les expressions booléennes

@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `grade` utilisant des gardes et un `main` pour tester les cas spécifiés :
+HC3T2 - Tâche 2 : Déterminer la note à partir d'un score avec des gardes:
 
 ```haskell
 grade :: Int -> String

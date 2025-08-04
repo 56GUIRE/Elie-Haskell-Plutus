@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `bmiCategory` utilisant `where` pour calculer l'IMC et des gardes pour le classifier, ainsi qu'un `main` pour tester les cas spécifiés :
+HC3T8 - Tâche avancée 8 : Calculer l'IMC et retourner la catégorie avec où:
 
 ```haskell
 bmiCategory :: Float -> Float -> String

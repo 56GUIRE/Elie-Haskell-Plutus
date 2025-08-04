@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `rgbToHex` utilisant des `let` pour formater les composants RVB en hexadécimal et un `main` pour tester les cas spécifiés :
+HC3T3 - Tâche 3 : Convertir une couleur RGB en chaîne hexadécimale avec let:
 
 ```haskell
 rgbToHex :: (Int, Int, Int) -> String

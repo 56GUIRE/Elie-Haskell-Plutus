@@ -1,4 +1,4 @@
-Voici le code Haskell qui répond à votre demande, en utilisant la notation préfixe pour les expressions données et la notation infixe pour les fonctions spécifiées, avec une fonction `main` pour afficher les résultats :
+HC2T4 - Tâche 4 : Notation préfixe et infixe:
 
 ```haskell
 -- Fonction principale

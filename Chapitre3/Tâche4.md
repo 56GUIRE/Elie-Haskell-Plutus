@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `triangleArea` utilisant `let` pour calculer le demi-périmètre et la formule de Héron, ainsi qu'un `main` pour tester les cas spécifiés :
+HC3T4 - Tâche 4 : Calculer l'aire d'un triangle avec la formule de Héron:
 
 ```haskell
 triangleArea :: Float -> Float -> Float -> Float

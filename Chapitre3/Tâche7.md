@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `season` utilisant des gardes pour déterminer la saison en fonction du mois, et un `main` pour tester les cas spécifiés :
+HC3T7 - Tâche avancée 7 : Déterminer la saison en fonction du mois avec des gardes:
 
 ```haskell
 season :: Int -> String

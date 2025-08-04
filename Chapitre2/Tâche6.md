@@ -1,10 +1,4 @@
-Je comprends que vous demandez un programme Haskell qui :
-1. Définit une variable immuable `smallNumber` de type `Int` avec la valeur `2^62`.
-2. Définit une variable immuable `bigNumber` de type `Integer` avec la valeur `2^127`.
-3. Évalue l'expression `2^64 :: Int` dans GHCi et note le résultat.
-
-Je vais fournir le code Haskell correspondant, puis expliquer le résultat de l'évaluation de `2^64 :: Int` dans GHCi, en tenant compte des limites des types `Int` et `Integer` en Haskell.
-
+HC2T6 - Tâche 6 : Comprendre Int vs Integer
 ### Code Haskell
 ```haskell
 -- Définir les variables immuables

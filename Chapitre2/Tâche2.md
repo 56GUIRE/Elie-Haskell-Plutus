@@ -58,10 +58,3 @@ Concaténation 2 : Vide
    - `isEven` utilise `mod` pour vérifier la parité.
    - `concatStrings` utilise `++` pour la concaténation.
 3. Le `main` est une action `IO` qui teste les fonctions avec des cas variés (positifs, négatifs, chaîne vide).
-
-**Si vous parlez d'une erreur spécifique :**
-- **Erreur de compilation** : Si vous obtenez un message d'erreur de GHC, merci de partager le message exact.
-- **Comportement inattendu** : Si le programme ne produit pas la sortie attendue, précisez ce que vous obtenez.
-- **Exigence supplémentaire** : Par exemple, voulez-vous gérer des cas particuliers (comme des entrées invalides) ou ajouter des fonctionnalités ?
-
-Sans détails supplémentaires, je ne peux pas identifier une erreur spécifique dans le code. Le code ci-dessus a été testé avec GHC et fonctionne correctement. Merci de préciser l'erreur ou le problème rencontré pour que je puisse fournir une correction ciblée !

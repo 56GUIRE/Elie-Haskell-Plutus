@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `triangleType` utilisant des gardes pour classer un triangle en fonction de ses côtés, et un `main` pour tester les cas spécifiés :
+HC3T5 - Tâche 5 : Déterminer le type d'un triangle avec des gardes:
 
 ```haskell
 triangleType :: Float -> Float -> Float -> String

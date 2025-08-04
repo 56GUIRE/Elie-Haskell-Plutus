@@ -1,4 +1,4 @@
-Voici le code Haskell demandé avec une fonction `maxOfThree` utilisant `let` pour stocker les valeurs intermédiaires maximales et un `main` pour tester les cas spécifiés :
+HC3T9 - Tâche avancée 9 : Trouver le maximum de trois nombres avec let:
 
 ```haskell
 maxOfThree :: Int -> Int -> Int -> Int

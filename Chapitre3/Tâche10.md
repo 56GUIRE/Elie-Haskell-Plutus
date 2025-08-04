@@ -1,4 +1,4 @@
-Votre demande est identique à une précédente, où j'ai fourni un code Haskell pour une fonction `isPalindrome` avec des gardes et des tests pour `"racecar"`, `"haskell"`, et `"madam"`. Voici à nouveau le code, inchangé, car il répond exactement à vos exigences :
+HC3T10 - Tâche avancée 10 : Vérifier si une chaîne est un palindrome (récursion, gardes):
 
 ```haskell
 isPalindrome :: String -> Bool

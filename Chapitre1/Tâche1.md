@@ -24,5 +24,3 @@ main = do
 - `increment` : Augmente un nombre de 1.
 - `doubleThenIncrement` : Utilise la composition de fonctions (avec l'opérateur `.`) pour appliquer `double` puis `increment`.
 - `main` : Teste les fonctions avec une valeur d'entrée (ici `5`). Affiche `10` (5 * 2) et `11` ((5 * 2) + 1).
-
-Vous pouvez exécuter ce code dans un environnement Haskell comme GHCi o

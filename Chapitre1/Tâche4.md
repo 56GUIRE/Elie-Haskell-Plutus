@@ -52,10 +52,3 @@ Pour la liste `players = [("Alice", 100), ("Bob", 85), ("Charlie", 95), ("David"
 ```haskell
 ["Alice","Charlie","Eve"]
 ```
-
-### Pourquoi cette version est meilleure :
-- Elle utilise les fonctions standard de la bibliothèque Haskell, ce qui améliore la lisibilité et la performance.
-- Elle évite de réinventer des algorithmes comme le tri (quicksort manuel).
-- Elle est plus concise et respecte les conventions idiomatiques de Haskell.
-
-Si vous avez des questions ou souhaitez d'autres ajustements, faites-le-moi savoir !

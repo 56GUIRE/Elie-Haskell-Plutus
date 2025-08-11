@@ -41,5 +41,3 @@ Pour `n = 5`, la sortie sera :
 - La liste infinie est gérée efficacement grâce à l'évaluation paresseuse de Haskell, qui ne calcule que les éléments nécessaires.
 - Vous pouvez modifier la valeur de `n` dans le `main` pour extraire un nombre différent d'éléments.
 - Si vous voulez une liste infinie commençant à un autre nombre ou avec un pas différent, vous pouvez ajuster `infiniteNumbers`, par exemple `[0,2..]` pour les nombres pairs.
-
-Si vous avez besoin d'une modification ou d'un autre exemple, dites-le-moi !

@@ -46,8 +46,4 @@ Température : 98.6°F = 37.0°C
 - Elle conserve la robustesse de la conversion et un affichage clair.
 - Si votre demande de correction visait une erreur spécifique ou une fonctionnalité manquante (par exemple, gérer des températures négatives, ajouter une validation, ou modifier l'arrondi), merci de préciser pour que je puisse ajuster en conséquence.
 
-### Remarques :
-- Si vous préférez réintroduire l'interaction utilisateur ou ajouter une gestion d'erreurs (comme dans la version précédente), je peux le faire.
-- Si vous avez une erreur spécifique en tête ou une exigence particulière (par exemple, un format de sortie différent ou un autre type de données), indiquez-le.
 
-Faites-moi savoir si cela répond à vos attentes ou si vous avez d'autres modifications à suggérer !

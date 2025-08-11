@@ -34,5 +34,3 @@ Pour `a = 5` et `b = 3`, la sortie sera :
 - La fonction est simple et type-sûre grâce au système de types de Haskell.
 - Vous pouvez modifier les valeurs de `a` et `b` dans le `main` pour tester d'autres cas.
 - Si vous voulez que la fonction accepte d'autres types numériques (comme `Double`), vous pouvez utiliser une classe de types comme `Num`: `addNumbers :: Num a => a -> a -> a`.
-
-Si vous avez besoin d'ajustements ou d'autres exemples, faites-le-moi savoir !

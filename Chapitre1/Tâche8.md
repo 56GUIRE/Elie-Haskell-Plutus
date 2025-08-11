@@ -30,10 +30,3 @@ Explications :
   1. Ajoute 3 deux fois à 5 (résultat : 11)
   2. Multiplie par 2 deux fois 4 (résultat : 16)
   3. Applique une fonction lambda qui incrémente de 1 deux fois à 10 (résultat : 12)
-
-Pour exécuter ce programme, vous pouvez le compiler avec GHC ou l'exécuter dans GHCi. La sortie sera :
-```
-applyTwice (+3) 5 = 11
-applyTwice (*2) 4 = 16
-applyTwice (\x -> x + 1) 10 = 12
-```

@@ -61,5 +61,3 @@ Valeur : 'Z'
 Expression True && False : type attendu = Bool
 Valeur : False
 ```
-
-Ce programme respecte la demande en affichant les types attendus et les valeurs des expressions, tout en permettant une vérification interactive dans GHCi pour confirmer les types.

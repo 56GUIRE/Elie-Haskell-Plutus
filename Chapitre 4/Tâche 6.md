@@ -1,4 +1,4 @@
-Voici le code que vous avez envoyé, suivi d'une explication détaillée en français :
+HC4T6 - Tâche 6 : Identifier le contenu d'une liste par pattern matching :
 
 ```haskell
 whatsInsideThisList :: [a] -> String
@@ -95,4 +95,4 @@ whatsInsideThisList [1, 2, 3, 4]: La liste contient trois éléments ou plus.
   - Si vous souhaitez visualiser les résultats (par exemple, un graphique montrant les longueurs des listes testées et leurs messages), je peux générer un diagramme simple sur un panneau de visualisation. Voulez-vous que je le fasse ?
 
 #### 6. **Conclusion**
-Le code est un exemple simple et efficace de correspondance de motifs en Haskell. Il démontre comment gérer différents cas en fonction de la structure d'une liste et comment tester une fonction avec des entrées variées. La fonction est robuste, facile à comprendre, et respecte les conventions de programmation fonctionnelle de Haskell. Si vous avez des questions spécifiques sur le code ou souhaitez des modifications, faites-le-moi savoir !
+Le code est un exemple simple et efficace de correspondance de motifs en Haskell. Il démontre comment gérer différents cas en fonction de la structure d'une liste et comment tester une fonction avec des entrées variées. La fonction est robuste, facile à comprendre, et respecte les conventions de programmation fonctionnelle de Haskell.

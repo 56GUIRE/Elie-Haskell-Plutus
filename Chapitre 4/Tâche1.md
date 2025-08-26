@@ -1,3 +1,4 @@
+
 weatherReport :: String -> String
 weatherReport condition = case condition of
     "sunny"  -> "Il fait beau et ensoleillé !"

@@ -1,4 +1,3 @@
-HC4T1 - Tâche 1 : définir une fonction WeatherReport
 weatherReport :: String -> String
 weatherReport condition = case condition of
     "sunny"  -> "Il fait beau et ensoleillé !"

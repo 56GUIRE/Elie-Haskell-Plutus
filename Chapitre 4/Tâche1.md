@@ -16,7 +16,7 @@ main = do
     putStrLn $ "weatherReport \"cloudy\": " ++ weatherReport "cloudy"  -- Affiche "weatherReport \"cloudy\": Un peu gris, mais pas de pluie pour l'instant !"
     putStrLn $ "weatherReport \"snowy\": " ++ weatherReport "snowy"    -- Affiche "weatherReport \"snowy\": Météo inconnue"
 ```
-Bien sûr 👍 Voici l’explication que tu avais envoyée :
+
 
 
 ---

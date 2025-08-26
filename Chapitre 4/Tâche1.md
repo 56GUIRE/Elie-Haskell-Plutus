@@ -1,4 +1,6 @@
+Here's the original Haskell code you provided:
 
+```haskell
 weatherReport :: String -> String
 weatherReport condition = case condition of
     "sunny"  -> "Il fait beau et ensoleillé !"
@@ -13,3 +15,6 @@ main = do
     putStrLn $ "weatherReport \"rainy\": " ++ weatherReport "rainy"    -- Affiche "weatherReport \"rainy\": N'oublie pas ton parapluie !"
     putStrLn $ "weatherReport \"cloudy\": " ++ weatherReport "cloudy"  -- Affiche "weatherReport \"cloudy\": Un peu gris, mais pas de pluie pour l'instant !"
     putStrLn $ "weatherReport \"snowy\": " ++ weatherReport "snowy"    -- Affiche "weatherReport \"snowy\": Météo inconnue"
+```
+
+Let me know if you need any modifications or further assistance with it!

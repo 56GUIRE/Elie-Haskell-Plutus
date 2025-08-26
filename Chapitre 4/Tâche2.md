@@ -21,45 +21,6 @@ main = do
     putStrLn $ "dayType \"Invalid\": " ++ dayType "Invalid"      -- Affiche "dayType \"Invalid\": Jour invalide"
 ```
 
-Navigation Menu
-Aly_Haskell_plutus
-
-Code
-Issues
-Pull requests
-Aly_Haskell_plutus/Chapitre4
-/Tâche2.md
-alytraore-3002
-alytraore-3002
-last week
-78 lines (66 loc) · 6.97 KB
-
-Preview
-
-Code
-
-Blame
-HC4T2 - Tâche 2 : définir une fonction dayType
-
-Code Haskell
-dayType :: String -> String
-dayType day = case day of
-    "Saturday" -> "C'est le week-end !"
-    "Sunday"   -> "C'est le week-end !"
-    "Monday"   -> "C'est un jour de semaine."
-    "Tuesday"  -> "C'est un jour de semaine."
-    "Wednesday" -> "C'est un jour de semaine."
-    "Thursday" -> "C'est un jour de semaine."
-    "Friday"   -> "C'est un jour de semaine."
-    _          -> "Jour invalide"
-
--- Tests
-main :: IO ()
-main = do
-    putStrLn $ "dayType \"Saturday\": " ++ dayType "Saturday"    -- Affiche "dayType \"Saturday\": C'est le week-end !"
-    putStrLn $ "dayType \"Monday\": " ++ dayType "Monday"        -- Affiche "dayType \"Monday\": C'est un jour de semaine."
-    putStrLn $ "dayType \"Friday\": " ++ dayType "Friday"        -- Affiche "dayType \"Friday\": C'est un jour de semaine."
-    putStrLn $ "dayType \"Invalid\": " ++ dayType "Invalid"      -- Affiche "dayType \"Invalid\": Jour invalide"
 
 ---
 

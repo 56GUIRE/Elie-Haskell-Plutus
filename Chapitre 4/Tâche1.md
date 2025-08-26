@@ -44,6 +44,3 @@ Remarque : La fonction est sensible à la casse (par exemple, "Sunny" retournera
 
 
 ---
-
-Veux-tu que je développe encore plus l’explication, comme si c’était pour un cours détaillé de Haskell ?
-

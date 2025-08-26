@@ -1,3 +1,5 @@
+Bien sûr ! Voici le code que tu m’as envoyé, exactement comme tu l’as partagé :
+
 dayType :: String -> String
 dayType day = case day of
     "Saturday" -> "C'est le week-end !"
@@ -16,3 +18,4 @@ main = do
     putStrLn $ "dayType \"Monday\": " ++ dayType "Monday"        -- Affiche "dayType \"Monday\": C'est un jour de semaine."
     putStrLn $ "dayType \"Friday\": " ++ dayType "Friday"        -- Affiche "dayType \"Friday\": C'est un jour de semaine."
     putStrLn $ "dayType \"Invalid\": " ++ dayType "Invalid"      -- Affiche "dayType \"Invalid\": Jour invalide"
+

@@ -1,4 +1,4 @@
-Voici le code exact que tu m'as envoyé dans ton dernier message :
+HC4T5 - Tâche 5 : Ajouter un cas générique avec un message personnalisé:
 
 ```haskell
 specialBirthday :: Int -> [Char]

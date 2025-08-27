@@ -1,5 +1,4 @@
 HC5T7 : L'opérateur $
-Je comprends que vous voulez que je corrige le code Haskell fourni, mais le code donné dans ma réponse précédente est déjà correct et fonctionnel pour la tâche demandée (réécrire `result = sum (map (*2) (filter (>3) [1..10]))` en utilisant l'opérateur `$` avec une fonction `main`). Cependant, je vais supposer que vous voulez peut-être une clarification ou une légère modification, comme rendre la fonction plus générale ou explicite. Voici une version corrigée et clarifiée du code, en s'assurant qu'il est robuste et respecte strictement la demande :
 
 ```haskell
 main :: IO ()
@@ -20,5 +19,4 @@ Pour la liste `[1..10]` :
 - `map (*2)` donne `[8, 10, 12, 14, 16, 18, 20]`.
 - `sum` donne `8 + 10 + 12 + 14 + 16 + 18 + 20 = 98`.
 
-### Si vous avez une correction spécifique en tête :
-Si vous pensez à une erreur spécifique ou à une modification particulière (par exemple, un comportement différent, une autre signature de type, ou une contrainte supplémentaire), merci de préciser pour que je puisse adapter le code exactement à vos besoins !
+

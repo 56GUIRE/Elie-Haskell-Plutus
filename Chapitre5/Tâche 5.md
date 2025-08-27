@@ -18,4 +18,3 @@ main = do
   - `multiplierByFive 10` retourne `50` (car 10 * 5 = 50).
 - `print` affiche les résultats dans la console.
 
-Ce code est idiomatique, concis et peut être exécuté dans GHC pour voir les résultats.

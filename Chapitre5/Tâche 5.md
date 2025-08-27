@@ -1,5 +1,5 @@
 HC5T5 : Application partielle
-Voici le code en Haskell qui définit une fonction `multiplierByFive` utilisant l'application partielle pour multiplier un nombre par 5, avec un `main` pour tester :
+Voici le code en Haskell qui définit une fonction `multiplierByFive` utilisant l'a :
 
 ```haskell
 -- Fonction utilisant l'application partielle pour multiplier par 5

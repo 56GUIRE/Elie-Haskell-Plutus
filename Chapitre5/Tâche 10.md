@@ -1,5 +1,5 @@
 HC5T10 : Combiner les fonctions d'ordre supérieur
-Voici un programme Haskell qui combine les fonctions `filter`, `map`, et `any` pour créer une fonction vérifiant si au moins une valeur au carré dans une liste est supérieure à 50, avec une fonction `main` pour démontrer son utilisation :
+
 
 ```haskell
 main :: IO ()
@@ -40,4 +40,3 @@ hasSquareAbove50 xs = not $ null $ filter (>50) $ map (^2) xs
 
 Dans cette version, `filter (>50)` est utilisé pour ne garder que les carrés supérieurs à 50, et `not $ null` vérifie si la liste résultante n'est pas vide. Le résultat est identique.
 
-Si vous avez une préférence entre ces versions ou une autre exigence, précisez-le !

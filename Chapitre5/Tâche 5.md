@@ -1,4 +1,4 @@
-
+HC5T5 : Application partielle
 ```haskell
 -- Fonction utilisant l'application partielle pour multiplier par 5
 multiplierByFive :: Int -> Int

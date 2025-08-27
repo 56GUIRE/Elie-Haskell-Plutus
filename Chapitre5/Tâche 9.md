@@ -1,5 +1,5 @@
 HC5T9 : Fonction d'ordre supérieur pour transformer une liste
-Voici un programme Haskell qui définit une fonction d'ordre supérieur `transformList` appliquant une fonction donnée deux fois à chaque élément d'une liste, avec une fonction `main` pour démontrer son utilisation :
+
 
 ```haskell
 main :: IO ()
@@ -21,4 +21,3 @@ transformList f xs = map (f . f) xs
   - Ainsi, `[1, 2, 3, 4]` devient `[1+10, 2+10, 3+10, 4+10] = [11, 12, 13, 14]`.
 - **Résultat** : Le programme affiche `[11, 12, 13, 14]`.
 
-Ce code est concis, utilise une fonction d'ordre supérieur comme demandé, et inclut un `main` pour démontrer son fonctionnement. Si vous avez besoin d'une variation (par exemple, un type spécifique ou une autre fonction de test), précisez-le !

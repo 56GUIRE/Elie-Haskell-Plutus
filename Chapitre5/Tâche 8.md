@@ -1,5 +1,6 @@
 HC5T8 : Style sans point
-En Haskell, le style "sans point" (point-free) consiste à exprimer une fonction sans mentionner explicitement ses arguments, en utilisant la composition de fonctions ou d'autres opérateurs. La fonction donnée `addFive x = x + 5` peut être réécrite en style sans point en utilisant l'opérateur de section. Voici le code Haskell avec une fonction `main` :
+En Haskell,rateursateurs.ateursrateursrateursérateursérateurspérateurs. La opérateursnctionfoctionfontiondon
+iondonné
 
 ```haskell
 main :: IO ()

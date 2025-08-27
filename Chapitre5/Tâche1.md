@@ -1,5 +1,4 @@
 HC5T1 : Utiliser applyTwice
-Voici le code en Haskell pour une fonction qui prend une fonction et un entier, puis applique la fonction trois fois à l'entier, avec un `main` pour démontrer son fonctionnement :
 
 ```haskell
 -- Définition de la fonction qui applique une fonction trois fois à un entier
@@ -24,4 +23,3 @@ main = do
   - `double`, qui double l'entier (par exemple, `applyThreeTimes double 3` donne `3 * 2 * 2 * 2 = 24`).
 - Le `main` utilise `print` pour afficher les résultats dans la console.
 
-Ce code est concis, fonctionnel et respecte les conventions de Haskell. Vous pouvez l'exécuter dans un environnement comme GHC pour voir les résultats.

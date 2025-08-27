@@ -1,5 +1,3 @@
-utilisantsanteuneuneuneuneneueununenefefo : Application partielle
-nttefo
 
 ```haskell
 -- Fonction utilisant l'application partielle pour multiplier par 5

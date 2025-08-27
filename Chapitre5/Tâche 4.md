@@ -18,4 +18,4 @@ main = do
   - `biggerThan10 15` retourne `True` car 15 > 10.
   - `biggerThan10 5` retourne `False` car 5 n'est pas > 10.
 - `print` affiche les résultats dans la console
-résultats.
+

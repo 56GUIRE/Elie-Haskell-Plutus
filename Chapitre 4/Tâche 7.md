@@ -1,4 +1,4 @@
-Voici le code que vous avez envoyé, suivi d'une explication détaillée en français :
+HC4T7 - Tâche 7 : Ignorer des éléments dans une liste:
 
 ```haskell
 -- Module principal
@@ -125,4 +125,4 @@ Test 3 (Liste ["a","b","c"]): ["a","c"]
   - Si vous souhaitez visualiser les résultats (par exemple, un graphique montrant les longueurs des listes d'entrée et leurs sorties), je peux générer un diagramme simple sur un panneau de visualisation. Par exemple, un graphique à barres montrant les longueurs des listes testées (5, 2, 3) et les tailles des listes retournées (2, 0, 2). Voulez-vous que je le fasse ?
 
 #### 7. **Conclusion**
-Le code est un exemple clair et efficace de l'utilisation du pattern matching en Haskell pour extraire des éléments spécifiques d'une liste. Il est robuste, polymorphe, et les tests couvrent les cas principaux. Si vous avez des questions supplémentaires, souhaitez une modification du code, ou voulez une visualisation des résultats, n'hésitez pas à me le dire !
+Le code est un exemple clair et efficace de l'utilisation du pattern matching en Haskell pour extraire des éléments spécifiques d'une liste. Il est robuste, polymorphe, et les tests couvrent les cas principaux.

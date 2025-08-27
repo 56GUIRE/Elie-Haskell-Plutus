@@ -1,5 +1,5 @@
 HC5T8 : Style sans point
-En Haskell, le style "sans point" 
+
 
 ```haskell
 main :: IO ()

@@ -1,5 +1,4 @@
 HC5T3 : Vérifier la présence de majuscules
-Voici le code en Haskell qui utilise la fonction `any` pour vérifier si une liste de mots contient au moins un mot commençant par une majuscule, avec un `main` pour tester :
 
 ```haskell
 import Data.Char (isUpper)
@@ -26,4 +25,4 @@ main = do
   - `testList2` ne contient aucun mot commençant par une majuscule, donc `hasCapital testList2` retourne `False`.
 - `print` affiche les résultats dans la console.
 
-Ce code est idiomatique, concis et peut être exécuté dans GHC pour voir les résultats.
+

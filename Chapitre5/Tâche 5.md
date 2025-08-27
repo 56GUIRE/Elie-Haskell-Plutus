@@ -1,5 +1,5 @@
-HC5T5 : Application partielle
-Voici le code en Haskell qui définit uneuneuneuneuneuneneueununenefefo
+utilisantsanteuneuneuneuneneueununenefefo : Application partielle
+nttefo
 
 ```haskell
 -- Fonction utilisant l'application partielle pour multiplier par 5

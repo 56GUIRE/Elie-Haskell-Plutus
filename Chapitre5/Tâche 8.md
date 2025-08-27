@@ -1,8 +1,5 @@
 HC5T8 : Style sans point
-En Haskell,rateursateurs.ateursrateursrateursérateursérateurspérateurs. La opérateursnctionfoctionfontiondon
-iondonné
-
-```haskell
+``haskell
 main :: IO ()
 main = print $ addFive 10  -- Affiche 15
 

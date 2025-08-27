@@ -1,4 +1,4 @@
-Voici le code que vous avez envoyé, suivi d'une explication détaillée en français :
+HC4T8 - Tâche 8 : Extraire des valeurs de tuples:
 
 ```haskell
 -- Module principal
@@ -110,4 +110,4 @@ Test 3 : Le tuple contient : premier élément = "Haskell", deuxième élément 
   - Si vous souhaitez visualiser les résultats (par exemple, un tableau ou un graphique montrant les types des éléments des tuples et leurs sorties), je peux générer une visualisation simple sur un panneau de canvas. Par exemple, un diagramme à barres montrant les longueurs des chaînes retournées pour chaque test. Voulez-vous que je le fasse ?
 
 #### 7. **Conclusion**
-Le code est un exemple clair et efficace de l'utilisation du pattern matching et du polymorphisme en Haskell pour manipuler des tuples et générer des descriptions textuelles. La fonction `décrireTuple` est robuste, flexible grâce à sa généricité, et les tests dans `main` démontrent son bon fonctionnement avec différents types. Si vous avez des questions supplémentaires, souhaitez une modification du code, ou voulez une visualisation des résultats, n'hésitez pas à me le dire !
+Le code est un exemple clair et efficace de l'utilisation du pattern matching et du polymorphisme en Haskell pour manipuler des tuples et générer des descriptions textuelles. La fonction `décrireTuple` est robuste, flexible grâce à sa généricité, et les tests dans `main` démontrent son bon fonctionnement avec différents types.

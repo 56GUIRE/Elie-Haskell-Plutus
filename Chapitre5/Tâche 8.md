@@ -15,4 +15,3 @@ addFive = (+5)
 - **Main** : La fonction `main` teste `addFive` avec l'entrée `10`, ce qui donne `10 + 5 = 15`, affiché via `print`.
 - **Résultat** : Pour l'entrée `10`, le programme affiche `15`.
 
-Ce code est concis, respecte le style sans point, et inclut une fonction `main` comme demandé. Si vous avez besoin d'une variation ou d'une clarification supplémentaire, faites-le-moi savoir !

@@ -1,5 +1,4 @@
 HC5T6 : Composition de fonctions
-Voici le code Haskell qui utilise la composition de fonctions (.) pour prendre une liste de nombres, calculer leurs carrés et filtrer les nombres pairs, avec une fonction main :
 
 ```haskell
 main :: IO ()
@@ -19,4 +18,4 @@ Explications :
 - Dans `main`, on définit une liste de test `[1, 2, 3, 4, 5, 6]` et on affiche le résultat de `evenSquares` appliqué à cette liste.
 - Résultat pour `[1, 2, 3, 4, 5, 6]` : `[4, 16, 36]` (carrés de 2, 4, 6, qui sont pairs).
 
-Le programme est concis et utilise l'opérateur de composition comme demandé.
+

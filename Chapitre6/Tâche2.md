@@ -52,9 +52,3 @@ main = do
   *** Exception: Prelude.read: no parse
   ```
 
-### Remarques
-- **Limite de 30** : La récursion naïve de Fibonacci est très lente pour de grands nombres (complexité O(2^n)). Une limite de 30 est raisonnable pour éviter les timeouts dans des environnements en ligne avec des contraintes de temps (par exemple, 7 secondes). Pour des valeurs plus grandes, une implémentation itérative ou avec mémoïsation serait préférable, mais cela compliquerait le code.
-- **Compilation locale** : Si vous utilisez GHC, sauvegardez dans `Fibonacci.hs`, compilez avec `ghc Fibonacci.hs`, puis exécutez avec `./Fibonacci`.
-- **Environnement en ligne** : Testez dans votre éditeur (comme CompilerBerry) en cliquant sur "RUN".
-
-Testez ce code et dites-moi si vous rencontrez des problèmes ou si vous voulez une version optimisée !

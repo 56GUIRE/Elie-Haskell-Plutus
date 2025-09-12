@@ -1,5 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour calculer le nième nombre de la suite de Fibonacci, avec une fonction `main` pour interagir avec l'utilisateur. La suite de Fibonacci est définie comme suit : F(0) = 0, F(1) = 1, et F(n) = F(n-1) + F(n-2) pour n ≥ 2. Pour éviter les timeouts dans des environnements en ligne avec des limites strictes, j'ai ajouté une limite raisonnable sur l'entrée.
-
+HC6T2 : Suite de Fibonacci (récursif)
 ```haskell
 -- Fonction récursive pour calculer le nième nombre de Fibonacci
 fib :: Integer -> Integer

@@ -1,5 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour calculer la factorielle d'un nombre, avec une fonction `main` pour interagir avec l'utilisateur. Ce code est conçu pour être simple, robuste, et éviter les problèmes de timeout dans des environnements en ligne avec des limites strictes.
-
+HC6T1 : Factorielle (récursif)
 ```haskell
 -- Fonction factorielle récursive
 factorial :: Integer -> Integer
@@ -49,9 +48,3 @@ main = do
   *** Exception: Prelude.read: no parse
   ```
 
-### Remarques
-- Ce code est optimisé pour fonctionner dans des environnements en ligne avec des limites de temps (comme 7 secondes). La limite de 20 évite les calculs excessivement longs.
-- Si vous utilisez une plateforme avec un timeout strict, testez avec des petits nombres (0 à 20).
-- Pour compiler localement avec GHC : `ghc Factorial.hs` puis `./Factorial`.
-
-Testez ce code dans votre environnement et informez-moi si vous rencontrez des problèmes !

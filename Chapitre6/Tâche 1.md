@@ -1,3 +1,4 @@
+HC6T1 : Factorielle (récursif)
 ```haskell
 -- Définition de la fonction factorielle
 factorial :: Integer -> Integer
@@ -29,11 +30,4 @@ main = do
    - `putStrLn` : Affiche une chaîne de caractères (ici, le message d'erreur).
    - `print (factorial n)` : Calcule la factorielle de `n` et l'affiche. Pour `n = 5`, cela donne `120` (car 5! = 5 * 4 * 3 * 2 * 1 = 120).
 
-### Pourquoi ça marche maintenant ?
-- En supprimant l'interaction avec `getLine`, on évite les problèmes liés à l'entrée dans certains éditeurs en ligne. Le programme exécute directement le calcul avec la valeur fixe.
-
-### Que faire ensuite ?
-- Si tu veux tester avec d'autres nombres, tu peux changer la valeur de `n` (par exemple, `let n = 6 :: Integer` pour obtenir 720).
-- Pour revenir à une version interactive, tu devras utiliser un environnement local comme GHC, où tu pourras entrer des valeurs manuellement.
-
-Si tu veux plus de détails ou une modification (par exemple, ajouter une boucle ou gérer des erreurs), fais-le-moi savoir !
+#

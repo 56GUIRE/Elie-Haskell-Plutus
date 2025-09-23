@@ -1,4 +1,4 @@
-
+HC6T2 : Suite de Fibonacci (récursif)
 
 ```haskell
 -- Définition de la fonction Fibonacci
@@ -29,6 +29,3 @@ main = do
    - `if n < 0 then ... else ...` : Vérifie si l'index est négatif (la suite de Fibonacci n'est pas définie pour les indices négatifs).
    - `print (fib n)` : Calcule et affiche le nième nombre de Fibonacci. Pour \( n = 10 \), le résultat est 55 (car la suite commence par 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55).
 
-### Remarques :
-- Cette implémentation récursive naïve peut être lente pour de grandes valeurs de \( n \) en raison des appels récursifs multiples. Pour des performances optimales, on pourrait utiliser une version itérative ou une programmation dynamique, mais celle-ci est simple et illustre bien la récursion.
-- Pour \( n = 10 \), le programme affiche 55. Tu peux changer la valeur de `n` (par exemple, `let n = 5` pour obtenir 5) pour tester d'autres indices.

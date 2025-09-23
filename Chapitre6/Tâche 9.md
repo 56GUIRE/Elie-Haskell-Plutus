@@ -1,5 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive similaire à `map`, qui applique une fonction donnée à chaque élément d'une liste et retourne une nouvelle liste avec les résultats, avec une fonction `main` incluse.
-
+HC6T9 : Implémentation de map
 ```haskell
 -- Définition de la fonction myMap (similaire à map)
 myMap :: (a -> b) -> [a] -> [b]
@@ -30,8 +29,3 @@ main = do
    - `let double x = x * 2` : Définit une fonction exemple qui double un nombre.
    - `print (myMap double myList)` : Applique `myMap` et affiche le résultat. Pour cette liste, cela donne `[2,4,6,8,10]`.
 
-### Remarques :
-- Cette implémentation est récursive et équivalente à la fonction `map` de la bibliothèque standard de Haskell. Elle est efficace pour des listes de taille raisonnable.
-- Pour tester avec une autre fonction ou liste, change `double` ou `myList` (par exemple, `let square x = x * x` pour obtenir les carrés : `[1,4,9,16,25]`).
-
-Copie ce code dans ton éditeur et exécute-le. Si tu veux une version interactive ou des ajustements, fais-le-moi savoir !

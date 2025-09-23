@@ -1,5 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour convertir un nombre en une liste de ses chiffres, avec une fonction `main` incluse. La fonction décompose le nombre en ses chiffres individuels en utilisant la division et le reste.
-
+HC6T10 : Récupérer les chiffres d'un nombre (récursif)
 ```haskell
 -- Définition de la fonction pour convertir un nombre en liste de chiffres
 digits :: Integer -> [Integer]
@@ -31,10 +30,3 @@ main = do
    - `main :: IO ()` : Point d'entrée du programme, gérant les opérations d'entrée/sortie.
    - `let number = 12345 :: Integer` : Définit un nombre fixe pour tester.
    - `print (digits number)` : Affiche la liste des chiffres. Pour 12345, le résultat est `[1,2,3,4,5]`.
-
-### Remarques :
-- Cette implémentation retourne les chiffres dans l'ordre croissant (de gauche à droite, comme dans le nombre original), mais comme elle construit la liste en ajoutant à droite avec `++`, elle est moins efficace pour de grands nombres. Une version avec accumulation (via une liste auxiliaire) serait plus performante.
-- Pour tester avec un autre nombre, change `number` (par exemple, `let number = 987` pour obtenir `[9,8,7]`).
-- Si tu veux gérer les nombres négatifs différemment ou ajouter une version interactive, fais-le-moi savoir !
-
-Copie ce code dans ton éditeur et exécute-le. Si tu as des questions ou veux des ajustements, dis-le-moi !

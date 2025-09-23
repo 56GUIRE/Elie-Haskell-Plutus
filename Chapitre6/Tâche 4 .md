@@ -1,4 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour calculer la factorielle d'un nombre, avec une fonction `main` incluse. La factorielle de \( n \) (notée \( n! \)) est le produit de tous les entiers positifs de 1 à \( n \), avec \( 0! = 1 \).
+HC6T4 : Produit des éléments avec pliable
 
 ```haskell
 -- Définition de la fonction factorielle
@@ -26,9 +26,3 @@ main = do
    - `let n = 5 :: Integer` : Définit un nombre fixe (5) pour tester sans entrée interactive.
    - `if n < 0 then ... else ...` : Vérifie si \( n \) est négatif (la factorielle n'est pas définie pour les nombres négatifs).
    - `print (factorial n)` : Calcule et affiche la factorielle. Pour \( n = 5 \), le résultat est 120.
-
-### Remarques :
-- Cette version utilise un nombre fixe pour éviter les problèmes d'entrée/sortie rencontrés précédemment. Pour une version interactive avec `getLine`, tu peux me le demander, et je l'adapterai.
-- Pour tester avec un autre nombre, change la valeur de `n` (par exemple, `let n = 6` pour obtenir 720).
-
-Copie ce code dans ton éditeur et exécute-le. Si tu as des questions ou veux des ajustements, fais-le-moi savoir !

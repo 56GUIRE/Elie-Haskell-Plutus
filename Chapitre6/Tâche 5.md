@@ -1,4 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour inverser une liste, avec une fonction `main` incluse. La fonction utilise la récursion pour construire une nouvelle liste dans l'ordre inverse.
+HC6T5 : Inverser une liste (récursif)
 
 ```haskell
 -- Définition de la fonction pour inverser une liste
@@ -27,8 +27,3 @@ main = do
    - `let myList = [1, 2, 3, 4, 5] :: [Integer]` : Définit une liste fixe pour tester la fonction.
    - `print (reverseList myList)` : Affiche la liste inversée. Pour cette liste, le résultat est `[5, 4, 3, 2, 1]`.
 
-### Remarques :
-- Cette implémentation récursive utilise l'opérateur `++` pour concaténer, ce qui peut être inefficace pour de grandes listes car il parcourt la liste de gauche à droite à chaque étape. Une version plus performante utiliserait une accumulation avec une liste auxiliaire, mais celle-ci illustre bien la récursion.
-- Pour tester avec une autre liste, change la valeur de `myList` (par exemple, `["a", "b", "c"]` pour obtenir `["c", "b", "a"]`).
-
-Copie ce code dans ton éditeur et exécute-le. Si tu veux une version interactive ou des ajustements, fais-le-moi savoir !

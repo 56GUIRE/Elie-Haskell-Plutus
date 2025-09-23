@@ -1,4 +1,4 @@
-
+HC7T1 : Implémenter une instance Eq pour un type personnalisé
 
 ```haskell
 -- Définition du type de données Color

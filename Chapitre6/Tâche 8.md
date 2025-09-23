@@ -1,4 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour filtrer tous les nombres pairs d'une liste (c'est-à-dire, retourne une nouvelle liste contenant uniquement les nombres pairs), avec une fonction `main` incluse.
+HC6T8 : Filtrer les nombres paires
 
 ```haskell
 -- Définition de la fonction pour filtrer les nombres pairs
@@ -31,10 +31,3 @@ main = do
    - `main :: IO ()` : Point d'entrée du programme, gérant les opérations d'entrée/sortie.
    - `let myList = [1, 2, 3, 4, 5, 6] :: [Integer]` : Définit une liste fixe pour tester la fonction.
    - `print (filterEvens myList)` : Affiche la liste filtrée. Pour cette liste, le résultat est `[2,4,6]`.
-
-### Remarques :
-- Cette implémentation est récursive et simple. Elle utilise `even` pour vérifier la parité, ce qui est efficace pour des listes de taille raisonnable.
-- Note que la fonction filtre les pairs (même si la requête dit "filtre tous les nombres paires", ce qui signifie extraire les pairs en français). Si tu voulais filtrer les impairs à la place, change `even x` en `odd x`.
-- Pour tester avec une autre liste, change la valeur de `myList` (par exemple, `[10, 15, 20]` pour obtenir `[10,20]`).
-
-Copie ce code dans ton éditeur et exécute-le. Si tu veux une version interactive ou des ajustements, fais-le-moi savoir !

@@ -1,50 +1,41 @@
-HC6T1 : Factorielle (récursif)
+Voici une version du code Haskell avec des explications détaillées pour calculer la factorielle d'un nombre de manière récursive, en utilisant un nombre fixe comme dans la version qui a fonctionné. J'inclus aussi des commentaires dans le code pour clarifier chaque partie.
+
 ```haskell
--- Fonction factorielle récursive
+-- Définition de la fonction factorielle
 factorial :: Integer -> Integer
-factorial 0 = 1
-factorial n
-    | n < 0     = error "Erreur : la factorielle n'est pas définie pour les nombres négatifs."
-    | n > 20    = error "Erreur : nombre trop grand, veuillez entrer un nombre <= 20."
-    | otherwise = n * factorial (n - 1)
+factorial 0 = 1              -- Cas de base : la factorielle de 0 est 1
+factorial n = n * factorial (n - 1)  -- Cas récursif : n! = n * (n-1)!
 
 -- Fonction principale
 main :: IO ()
 main = do
-    putStrLn "Entrez un nombre entier non négatif (max 20) pour calculer sa factorielle :"
-    input <- getLine
-    let n = read input :: Integer
-    let result = factorial n
-    putStrLn $ "La factorielle de " ++ input ++ " est : " ++ show result
-    `catch` \e -> putStrLn (show (e :: SomeException))
+    let n = 5 :: Integer     -- On définit un nombre fixe (5) pour éviter les problèmes d'entrée
+                            -- :: Integer spécifie le type pour s'assurer que c'est un entier
+    if n < 0                 -- Condition pour vérifier si le nombre est négatif
+        then putStrLn "Erreur : la factorielle n'est pas définie pour les nombres négatifs."
+                            -- Si n est négatif, affiche un message d'erreur
+        else print (factorial n)  -- Sinon, calcule et affiche la factorielle de n
 ```
 
-### Explications
-1. **Fonction `factorial`** :
-   - Cas de base : `factorial 0 = 1`.
-   - Récursion : `n * factorial (n - 1)` pour `n > 0`.
-   - Vérifications : Limite à 20 pour éviter les débordements ou timeouts, et rejette les nombres négatifs.
+### Explications détaillées :
+
+1. **Déclaration de la fonction `factorial`** :
+   - `factorial :: Integer -> Integer` : Cette ligne déclare que `factorial` prend un entier (`Integer`) comme entrée et retourne un entier.
+   - `factorial 0 = 1` : C'est le cas de base de la récursion. La factorielle de 0 est définie comme 1 (convention mathématique).
+   - `factorial n = n * factorial (n - 1)` : C'est le cas récursif. Pour calculer la factorielle de `n`, on multiplie `n` par la factorielle de `n-1`. Par exemple, pour `5!`, cela devient `5 * 4 * 3 * 2 * 1`.
 
 2. **Fonction `main`** :
-   - Demande une entrée utilisateur via `getLine`.
-   - Convertit l'entrée en `Integer` avec `read`.
-   - Calcule et affiche le résultat.
-   - Utilise `catch` pour gérer les erreurs (entrées invalides comme des lettres ou des exceptions).
+   - `main :: IO ()` : Cette fonction est le point d'entrée d'un programme Haskell. Elle effectue des actions d'entrée/sortie (`IO`) et ne retourne rien (`()`).
+   - `let n = 5 :: Integer` : On assigne la valeur 5 à `n` de type `Integer`. Cela évite d'utiliser `getLine`, qui causait des problèmes dans ton environnement.
+   - `if n < 0 then ... else ...` : Une condition qui vérifie si `n` est négatif. Si oui, elle affiche un message d'erreur, sinon elle calcule la factorielle.
+   - `putStrLn` : Affiche une chaîne de caractères (ici, le message d'erreur).
+   - `print (factorial n)` : Calcule la factorielle de `n` et l'affiche. Pour `n = 5`, cela donne `120` (car 5! = 5 * 4 * 3 * 2 * 1 = 120).
 
-### Exemples d'exécution
-- Entrée : `5`
-  ```
-  Entrez un nombre entier non négatif (max 20) pour calculer sa factorielle :
-  La factorielle de 5 est : 120
-  ```
-- Entrée : `21`
-  ```
-  Entrez un nombre entier non négatif (max 20) pour calculer sa factorielle :
-  *** Exception: user error (Erreur : nombre trop grand, veuillez entrer un nombre <= 20.)
-  ```
-- Entrée : `abc`
-  ```
-  Entrez un nombre entier non négatif (max 20) pour calculer sa factorielle :
-  *** Exception: Prelude.read: no parse
-  ```
+### Pourquoi ça marche maintenant ?
+- En supprimant l'interaction avec `getLine`, on évite les problèmes liés à l'entrée dans certains éditeurs en ligne. Le programme exécute directement le calcul avec la valeur fixe.
 
+### Que faire ensuite ?
+- Si tu veux tester avec d'autres nombres, tu peux changer la valeur de `n` (par exemple, `let n = 6 :: Integer` pour obtenir 720).
+- Pour revenir à une version interactive, tu devras utiliser un environnement local comme GHC, où tu pourras entrer des valeurs manuellement.
+
+Si tu veux plus de détails ou une modification (par exemple, ajouter une boucle ou gérer des erreurs), fais-le-moi savoir !

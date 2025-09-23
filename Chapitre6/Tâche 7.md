@@ -1,4 +1,4 @@
-Voici un code Haskell qui implémente une fonction récursive pour calculer la longueur d'une liste, avec une fonction `main` incluse. La fonction utilise la récursion pour compter les éléments de la liste.
+HC6T7 : Taille d'une liste
 
 ```haskell
 -- Définition de la fonction pour calculer la longueur d'une liste
@@ -26,9 +26,3 @@ main = do
    - `main :: IO ()` : Point d'entrée du programme, gérant les opérations d'entrée/sortie.
    - `let myList = [1, 2, 3, 4, 5] :: [Integer]` : Définit une liste fixe pour tester la fonction.
    - `print (lengthList myList)` : Affiche la longueur de la liste. Pour cette liste, le résultat est 5.
-
-### Remarques :
-- Cette implémentation récursive est simple mais peut être moins efficace que la fonction `length` de la bibliothèque standard pour de très grandes listes, car elle parcourt la liste entièrement à chaque appel. Cependant, elle illustre bien le principe de la récursion.
-- Pour tester avec une autre liste, change la valeur de `myList` (par exemple, `["a", "b"]` pour obtenir 2).
-
-Copie ce code dans ton éditeur et exécute-le. Si tu veux une version interactive ou des ajustements, fais-le-moi savoir !

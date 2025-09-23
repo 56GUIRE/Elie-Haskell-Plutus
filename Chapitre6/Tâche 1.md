@@ -1,5 +1,3 @@
-Voici une version du code Haskell avec des explications détaillées pour calculer la factorielle d'un nombre de manière récursive, en utilisant un nombre fixe comme dans la version qui a fonctionné. J'inclus aussi des commentaires dans le code pour clarifier chaque partie.
-
 ```haskell
 -- Définition de la fonction factorielle
 factorial :: Integer -> Integer

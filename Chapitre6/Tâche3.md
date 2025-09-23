@@ -1,4 +1,4 @@
-
+HC6T3 : Somme des éléments avec dossier
 
 ```haskell
 -- Définition de la fonction de somme utilisant foldr

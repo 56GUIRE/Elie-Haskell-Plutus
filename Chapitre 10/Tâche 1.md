@@ -1,4 +1,4 @@
-Voici le code Haskell pour définir une classe de type `ShowSimple` avec une fonction `showSimple :: a -> String`, et implémenter une instance pour un type `PaymentMethod`. J'inclus également une fonction `main` pour tester l'affichage.
+HC10T1 : Classe de type ShowSimple
 
 ```haskell
 -- Définition du type PaymentMethod
@@ -45,12 +45,3 @@ main = do
    - Crée trois exemples de `PaymentMethod` : un paiement en espèces, une carte de crédit avec un numéro, et un compte PayPal avec un e-mail.
    - Utilise `putStrLn` pour afficher le résultat de `showSimple` pour chaque exemple.
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-Cash
-Credit Card ending in 3456
-PayPal account: user@example.com
-```
-
-Ce code est idiomatique en Haskell, définit correctement la classe `ShowSimple`, et fournit une implémentation pour `PaymentMethod`. Si tu veux ajouter d'autres instances, modifier la logique d'affichage, ou si tu as besoin d'explications supplémentaires, fais-le-moi savoir !

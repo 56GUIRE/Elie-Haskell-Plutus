@@ -1,6 +1,4 @@
-Voici le code Haskell pour créer une classe de type `Concatenatable` avec une fonction `concatWith :: a -> a -> a`, et implémenter une instance pour le type `[Char]` (c'est-à-dire `String`). J'inclus également une fonction `main` pour tester l'implémentation. Pour `String`, la concaténation logique est l'ajout de deux chaînes de caractères, ce que nous pouvons implémenter en utilisant l'opérateur `++`.
-
-### Code :
+HC10T10 : Classe concaténable
 ```haskell
 -- Définition de la classe de type Concatenatable
 class Concatenatable a where
@@ -35,15 +33,3 @@ main = do
    - Utilise `concatWith str1 str2` pour concaténer ces chaînes et affiche le résultat avec `putStrLn`.
    - Le résultat est affiché directement comme une chaîne, sans nécessiter `show`, car `concatWith` retourne déjà une `String`.
 
-### Résultat attendu :
-En exécutant ce programme à 10:17 PM GMT le 24 septembre 2025, la sortie sera :
-```
-Concaténation de str1 et str2: Hello, World!
-```
-
-### Remarques :
-- **Simplicité** : L'implémentation pour `String` est straightforward grâce à l'opérateur `++`, qui est déjà optimisé pour les listes en Haskell.
-- **Extensibilité** : Tu peux ajouter des instances pour d'autres types (par exemple, `[a]` pour des listes génériques avec une contrainte `Monoid`, ou un type personnalisé comme `Text`) en définissant une logique de concaténation appropriée.
-- **Performance** : Pour de très grandes chaînes, l'utilisation de `++` peut être inefficace (car il recopie la liste entière). Dans une application réelle, tu pourrais envisager d'utiliser `Data.Text` avec une concaténation plus performante, mais ici, pour un exemple simple, `String` suffit.
-
-Si tu veux tester avec d'autres types ou ajouter une logique plus complexe (par exemple, un séparateur entre les chaînes), fais-le-moi savoir !

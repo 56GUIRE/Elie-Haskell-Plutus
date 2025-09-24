@@ -1,6 +1,5 @@
-D'accord ! Voici le code corrigé avec une explication détaillée en français.
+HC7T10 : Fonction avec plusieurs contraintes de classes de types
 
-### Code Haskell corrigé :
 ```haskell
 -- Définir la classe Describable
 class (Ord a) => Describable a where
@@ -40,16 +39,3 @@ main = do
    - Le `main` est le point d'entrée du programme en Haskell.
    - On définit deux variables locales `x` et `y` avec les valeurs 5 et 10, respectivement, en les annotant comme `Int`.
    - `putStrLn $ décritEtCompare x y` affiche la description de la plus grande valeur (ici, "Le nombre est 10") en utilisant la fonction `décritEtCompare`.
-
-### Correction de l'erreur :
-- L'erreur dans votre capture d'écran (`Variable not in scope: déc`) venait du fait que vous avez écrit `putStrLn $ déc` au lieu de `putStrLn $ décritEtCompare x y`. Cela signifie que Haskell ne reconnaissait pas `déc` comme une variable ou fonction définie.
-- La correction consiste à utiliser le nom correct de la fonction (`décritEtCompare`) avec les arguments `x` et `y`.
-
-### Résultat attendu :
-Lorsque vous exécutez ce code, il affichera :
-```
-Le nombre est 10
-```
-Cela fonctionne car 10 est plus grand que 5, et la fonction `décritEtCompare` retourne la description de 10.
-
-Testez ce code, et il devrait maintenant fonctionner sans erreur ! Si vous avez d'autres questions ou besoin d'ajustements, n'hésitez pas !

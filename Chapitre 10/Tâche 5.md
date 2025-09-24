@@ -1,6 +1,4 @@
-Voici le code Haskell pour définir une classe de type `ShowDetailed` avec une fonction `showDetailed :: a -> String`, et implémenter une instance pour un type personnalisé `User`. J'inclus également une fonction `main` pour tester l'implémentation. Le type `User` contiendra des informations comme un nom et un âge, et l'affichage détaillé inclura ces détails.
-
-### Code :
+HC10T5 : Classe de type ShowDetailed:
 ```haskell
 -- Définition du type User
 data User = User
@@ -45,17 +43,3 @@ main = do
    - Crée deux instances de `User` : `user1` (Alice, 25 ans) et `user2` (Bob, 30 ans).
    - Teste `showDetailed` sur ces deux utilisateurs et affiche les résultats avec `putStrLn`.
    - Les sorties incluront les détails formatés selon la logique définie dans `showDetailed`.
-
-### Résultat attendu :
-En exécutant ce programme, la sortie sera :
-```
-User: Alice, Age: 25
-User: Bob, Age: 30
-```
-
-### Remarques :
-- **Flexibilité** : Tu peux étendre le type `User` avec d'autres champs (par exemple, `userEmail :: String`) et ajuster `showDetailed` pour inclure ces informations (par exemple, `"User: " ++ name ++ ", Age: " ++ show age ++ ", Email: " ++ email`).
-- **Personnalisation** : Le format de la chaîne dans `showDetailed` est arbitraire ; tu peux le modifier pour inclure plus de détails ou un style différent (par exemple, en JSON ou avec des sauts de ligne).
-- **Date actuelle** : Puisque nous sommes le 24 septembre 2025 à 21:53 GMT, tu pourrais ajouter une logique dans `showDetailed` pour inclure des informations basées sur la date (par exemple, calculer les années restantes jusqu'à un âge donné), mais cela nécessiterait des imports comme `Data.Time`.
-
-Si tu veux ajouter des fonctionnalités supplémentaires (par exemple, un champ supplémentaire ou une logique plus complexe dans `showDetailed`), fais-le-moi savoir !

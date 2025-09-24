@@ -1,4 +1,4 @@
-Super, ravi que ça marche enfin ! Voici le code corrigé avec une explication détaillée de chaque partie :
+HC7T6 : Utiliser Intégral et Flottant
 
 ```haskell
 module Main where
@@ -47,16 +47,3 @@ main = do
 - **Élimination du conflit** : Contrairement aux versions précédentes avec plusieurs définitions, cette version n'a qu'une seule implémentation, évitant l'erreur "multiple declarations".
 - **Compatibilité** : La fonction répond à la demande initiale de fonctionner avec `Integral` et `Floating` en produisant un résultat cohérent en `Double`.
 
-### Exécution :
-- Compilez avec `ghc Main.hs` et exécutez `./Main`.
-- Sortie attendue (approximative, avec `pi ≈ 3.14159`) :
-  ```
-  Circonférence avec rayon 5 (Int) : 31.41592653589793
-  Circonférence avec rayon 3.5 (Double) : 21.991148575128552
-  ```
-
-### Remarques :
-- La constante `pi` est fournie par `Prelude` par défaut, mais elle est implicitement utilisée ici avec `Double`. Si tu veux une définition explicite, tu peux ajouter `pi :: Double = 3.141592653589793` au début, comme dans une version précédente.
-- Les annotations de type (`:: Int`, `:: Double`) sont incluses pour clarté et pour éviter des ambiguïtés lors de la compilation.
-
-Si tu as d'autres questions ou veux ajouter des fonctionnalités (par exemple, gérer d'autres types ou ajouter des tests), fais-le-moi savoir !

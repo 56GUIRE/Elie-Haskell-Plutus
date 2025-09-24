@@ -1,4 +1,4 @@
-Voici le code Haskell qui définit le type de données `Shape` avec les constructeurs `Circle` et `Rectangle`, et implémente les instances `Show` et `Read` pour ce type, ainsi qu’un `main` pour tester :
+HC6T4 : Produit des éléments avec pliable
 
 ```haskell
 module Main where
@@ -71,7 +71,3 @@ main = do
   Circle 3.0
   Rectangle 2.0 7.0
   ```
-
-### Remarques :
-- L’instance `Read` suppose un format strict (`"Circle <nombre>"` ou `"Rectangle <nombre> <nombre>"`). Une implémentation plus robuste pourrait gérer des erreurs ou des formats variés, mais ceci répond à l’énoncé.
-- Les valeurs `Double` sont utilisées pour la précision des calculs géométriques.

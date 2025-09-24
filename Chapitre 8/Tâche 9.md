@@ -1,5 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
-
+HC8T9 : Type enregistrement Transaction et fonction associée
 ```haskell
 -- Définitions des synonymes de type pour plus de clarté
 type Address = String
@@ -34,8 +33,3 @@ main = do
   - Une transaction de "Bob" à "Charlie" de 50.5 avec l'ID "TX002".
 - Les IDs des transactions sont affichés avec `putStrLn`.
 
-Quand vous exécutez ce programme, il affichera :
-```
-ID de la première transaction : TX001
-ID de la deuxième transaction : TX002
-```

@@ -1,4 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
+HC8T8 : Synonymes de type et fonction de salutation
 
 ```haskell
 -- Définitions des synonymes de type
@@ -21,8 +21,3 @@ main = do
 - La fonction `greet` prend un `Name` (String) et un `Age` (Int) et construit une chaîne de salutation. La fonction `show` est utilisée pour convertir l'âge (`Int`) en `String` afin de le concaténer.
 - La fonction `main` teste `greet` avec deux exemples : "Alice" (30 ans) et "Bob" (25 ans), en affichant les résultats avec `putStrLn`.
 
-Quand vous exécutez ce programme, il affichera :
-```
-Bonjour, Alice! Vous avez 30 ans.
-Bonjour, Bob! Vous avez 25 ans.
-```

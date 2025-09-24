@@ -1,12 +1,4 @@
-Pour répondre à votre demande, je vais implémenter en Haskell un programme qui définit un type `Color` avec les valeurs `Red`, `Green` et `Blue`, et qui implémente la classe de type `Ord` pour établir l'ordre `Red < Green < Blue`. Le programme inclura également une fonction `main` pour démontrer l'utilisation.
-
-### Étapes de la solution :
-1. Définir le type `Color` avec les constructeurs `Red`, `Green` et `Blue`.
-2. Faire de `Color` une instance des classes `Eq` (nécessaire pour `Ord`) et `Ord`.
-3. Définir l'ordre souhaité : `Red < Green < Blue`.
-4. Ajouter une fonction `main` pour tester les comparaisons.
-
-### Code Haskell :
+HC7T2 : Implémenter une instance Ord pour un type personnalisé
 
 ```haskell
 -- Définition du type Color
@@ -48,25 +40,3 @@ main = do
 3. **Instance `Ord`** : La classe `Ord` définit l'ordre des couleurs avec `compare`. On spécifie explicitement que `Red < Green`, `Red < Blue`, et `Green < Blue`. Les cas d'égalité (`EQ`) sont définis pour chaque couleur avec elle-même. Pour les cas inverses (par exemple, `Green > Red`), on utilise `compare c2 c1` pour respecter la symétrie.
 4. **Fonction `main`** : Le `main` teste diverses comparaisons (`<`, `==`, `>`) et affiche les résultats pour démontrer que l'ordre `Red < Green < Blue` est respecté.
 
-### Résultat attendu :
-Lorsque vous exécutez ce programme, il produira une sortie comme celle-ci :
-
-```
-Comparaisons de couleurs (Red < Green < Blue) :
-True
-True
-True
-False
-False
-True
-False
-```
-
-### Notes :
-- Assurez-vous d'avoir un compilateur Haskell (comme GHC) installé pour exécuter ce code.
-- Vous pouvez compiler et exécuter le programme avec les commandes :
-  ```bash
-  ghc -o color color.hs
-  ./color
-  ```
-- Si vous avez des questions supplémentaires ou besoin de modifications, n'hésitez pas à préciser !

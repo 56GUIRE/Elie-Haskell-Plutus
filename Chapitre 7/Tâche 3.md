@@ -1,4 +1,4 @@
-Voici le code en Haskell pour la fonction `compareValues` avec un `main` :
+ HC7T3 : Fonction avec contraintes multiples
 
 ```haskell
 module Main where

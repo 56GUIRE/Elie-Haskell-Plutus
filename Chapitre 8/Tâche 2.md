@@ -1,6 +1,4 @@
-Voici une solution en Haskell qui répond à votre demande. Nous allons définir un nouveau type `PaymentMethod` avec les constructeurs `Cash`, `Card`, et `Cryptocurrency`, créer un type `Person` avec un nom, une adresse (tuple `String` et `Int`), et un mode de paiement, puis instancier une personne nommée "Bob" qui paie en espèces. Le programme inclut une fonction `main` pour tester.
-
-### Code Haskell :
+HC8T2 : Types personnalisés et constructeurs de données:
 ```haskell
 -- Définir le type PaymentMethod
 data PaymentMethod = Cash | Card | Cryptocurrency
@@ -43,11 +41,3 @@ main = do
 4. **Fonction `main`** :
    - Utilise `print` pour afficher les détails de `bob`. Grâce à `deriving (Show)`, la sortie sera formatée automatiquement.
 
-### Résultat attendu :
-Lorsque vous exécutez ce programme, il affichera quelque chose comme :
-```
-Person {name = "Bob", address = ("Paris",75001), paymentMethod = Cash}
-```
-(La sortie exacte peut varier légèrement selon l'implémentation de `Show`, mais elle montrera clairement les valeurs de `bob`.)
-
-Ce code est fonctionnel et respecte vos exigences. Vous pouvez modifier les valeurs de `bob` ou ajouter d'autres personnes si besoin !

@@ -1,5 +1,4 @@
-Voici le code Haskell pour créer une fonction `addN` qui prend un nombre et une `Box` contenant potentiellement un nombre, et ajoute ce nombre à la valeur contenue dans la `Box`. Je vais d'abord définir un type `Box` (comme une boîte pouvant être vide ou contenir une valeur), puis implémenter la fonction `addN` avec un `main` pour tester.
-
+ HC9T3 : Fonction pour additionner les valeurs dans une Box
 ```haskell
 -- Définition du type Box
 data Box a = Empty | Value a deriving (Show)
@@ -26,11 +25,3 @@ main = do
    - Si la boîte contient une valeur (`Value x`), retourne une nouvelle boîte avec la valeur `x + n`.
 3. **Main** : Teste la fonction avec une boîte contenant 10 (ajoute 5 pour obtenir 15) et une boîte vide (reste vide).
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-Value 15
-Empty
-```
-
-Ce code est concis, fonctionnel et respecte les conventions de Haskell. Si tu as besoin d'explications supplémentaires ou de modifications, fais-le-moi savoir !

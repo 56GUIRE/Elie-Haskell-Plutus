@@ -1,5 +1,4 @@
-Voici le code Haskell pour définir un type de données récursif `Sequence a` représentant une séquence linéaire de nœuds, où chaque nœud contient une valeur de type `a` et pointe vers le nœud suivant (ou rien si c'est la fin). J'inclus également une fonction `main` pour tester ce type.
-
+HC9T8 : définir un type de séquence récursif
 ```haskell
 -- Définition du type de données récursif Sequence
 data Sequence a = Empty | Node a (Sequence a) deriving (Show)
@@ -24,11 +23,3 @@ main = do
 2. **Fonction `main`** :
    - Crée une séquence contenant les valeurs 1, 2 et 3, dans cet ordre, terminée par `Empty`.
    - Affiche la séquence avec `print`.
-
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-Node 1 (Node 2 (Node 3 Empty))
-```
-
-Ce code définit correctement une séquence linéaire récursive, similaire à une liste chaînée. Si tu veux ajouter des fonctions pour manipuler la séquence (par exemple, ajouter un élément, calculer la longueur, etc.), ou si tu as besoin d'autres précisions, fais-le-moi savoir !

@@ -1,5 +1,4 @@
-Voici le code Haskell pour créer une fonction `engagement` qui calcule l'engagement total d'un `Tweet` en sommant ses likes et l'engagement de ses commentaires (qui sont eux-mêmes des `Tweet`). Le type `Tweet` est défini comme dans votre demande précédente, et j'inclus une fonction `main` pour tester.
-
+HC9T7 : Fonction pour calculer l'engagement
 ```haskell
 -- Définition du type de données récursif Tweet
 data Tweet = Tweet
@@ -39,10 +38,3 @@ main = do
    - Crée un tweet principal (`mainTweet`) avec 10 likes et les deux commentaires.
    - Calcule et affiche l'engagement total, qui est `10 (mainTweet) + 5 (comment1) + 3 (comment2) = 18`.
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-18
-```
-
-Ce code est idiomatique en Haskell, efficace, et répond à la demande. Si tu as besoin d'ajouter d'autres fonctionnalités ou d'explications supplémentaires, fais-le-moi savoir !

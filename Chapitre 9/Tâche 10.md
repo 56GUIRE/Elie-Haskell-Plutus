@@ -1,5 +1,4 @@
-Voici le code Haskell pour définir un type de données récursif `BST a` représentant un arbre binaire de recherche (Binary Search Tree), avec des constructeurs pour un arbre vide et un nœud contenant une valeur de type `a` et deux sous-arbres. J'inclus également une fonction `main` pour tester ce type.
-
+HC9T10 : Type d'arbre binaire de recherche (BST)
 ```haskell
 -- Définition du type de données récursif BST (Binary Search Tree)
 data BST a = Empty | Node a (BST a) (BST a) deriving (Show)
@@ -35,10 +34,3 @@ main = do
 3. **Structure de l'arbre** :
    - L'arbre respecte la propriété d'un BST : pour tout nœud, les valeurs dans le sous-arbre gauche sont inférieures à la valeur du nœud, et celles dans le sous-arbre droit sont supérieures (en supposant que `a` est ordonnable, bien que cela ne soit pas encore contraint ici).
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera (formatée pour plus de clarté) :
-```
-Node 5 (Node 3 (Node 1 Empty Empty) Empty) (Node 7 Empty Empty)
-```
-
-Ce code définit correctement un type d'arbre binaire de recherche. Si tu veux ajouter des contraintes (par exemple, `Ord a` pour garantir que les valeurs sont comparables) ou des fonctions (comme l'insertion ou la recherche dans l'arbre), ou si tu as besoin d'autres précisions, fais-le-moi savoir !

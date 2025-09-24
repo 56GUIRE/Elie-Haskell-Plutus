@@ -41,9 +41,3 @@ main = do
      - **Avec `Double`** : `let radiusDouble :: Double = 3.5` définit un rayon à virgule. `putStrLn $ "Circonférence avec rayon " ++ show radiusDouble ++ " (Double) : " ++ show (circleCircumference radiusDouble)` affiche la circonférence pour un rayon de 3.5.
    - **Utilisation de `show`** : Convertit les valeurs en chaînes pour les afficher avec `putStrLn`.
    - **Concaténation avec `++`** : Combine les chaînes de texte avec les valeurs converties.
-
-### Pourquoi cette solution fonctionne :
-- **Unification des types** : La contrainte `Real` permet d'accepter à la fois des types `Integral` (comme `Int`) et `Floating` (comme `Double`), et `realToFrac` gère la conversion vers `Double` de manière appropriée.
-- **Élimination du conflit** : Contrairement aux versions précédentes avec plusieurs définitions, cette version n'a qu'une seule implémentation, évitant l'erreur "multiple declarations".
-- **Compatibilité** : La fonction répond à la demande initiale de fonctionner avec `Integral` et `Floating` en produisant un résultat cohérent en `Double`.
-

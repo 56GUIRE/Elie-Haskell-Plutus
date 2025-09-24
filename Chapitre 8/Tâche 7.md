@@ -1,5 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
-
+HC8T7 : Types de données et description d'animaux
 ```haskell
 -- Définition du type Animal avec deux constructeurs
 data Animal = Dog String | Cat String
@@ -32,9 +31,3 @@ main = do
 - Une instance de `Dog` est créée avec le nom "Rex".
 - Une instance de `Cat` est créée avec le nom "Mimi".
 - La fonction `main` utilise `putStrLn` pour afficher les descriptions des deux animaux.
-
-Quand vous exécutez ce programme, il affichera :
-```
-C'est un chien nommé Rex.
-C'est un chat nommé Mimi.
-```

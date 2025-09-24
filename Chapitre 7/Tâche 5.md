@@ -1,4 +1,4 @@
-D'accord ! Voici le code corrigé avec une explication détaillée de chaque partie :
+HC7T5 : Fonction utilisant la contrainte Num
 
 ```haskell
 module Main where
@@ -49,22 +49,4 @@ main = do
    - `show` convertit une valeur en une chaîne (nécessite une instance `Show`, fournie pour `[Int]` et `[Char]` par défaut).
    - `++` concatène des chaînes. L'expression `"Liste originale : " ++ show list1` combine une chaîne fixe avec la représentation textuelle de la liste.
 
-### Pourquoi l'annotation de type était nécessaire :
-- Sans `:: [Int]` ou `:: String`, le compilateur rencontrait une erreur d'ambiguïté car il ne pouvait pas déterminer quelle instance `Show` utiliser pour `list1`, `list2`, ou `list3`. L'annotation résout cela en spécifiant explicitement les types.
-
-### Exécution :
-- Compilez avec `ghc Main.hs` et exécutez `./Main`.
-- Sortie attendue :
-  ```
-  Liste originale : [1,2,3,4,5]
-  Liste inversée : [5,4,3,2,1]
-  Liste originale : "hello"
-  Liste inversée : "olleh"
-  Liste originale : []
-  Liste inversée : []
-  ```
-
-### Remarque :
-- L'approche récursive avec `++` a une complexité O(n²) pour de grandes listes, car `++` parcourt la liste entière à chaque appel. Une version avec un accumulateur (comme suggéré précédemment) serait plus efficace (O(n)), mais cette implémentation répond à la demande initiale d'une récursion simple.
-
-Si vous avez d'autres questions ou souhaitez une optimisation, faites-le-moi savoir !
+### 

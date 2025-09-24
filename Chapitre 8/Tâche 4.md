@@ -1,6 +1,4 @@
-Voici une solution en Haskell qui répond à votre demande. Nous allons définir un type `Employee` en syntaxe d'enregistrement avec les champs `name :: String` et `experienceInYears :: Float`, créer un employé nommé "Richard" avec 7.5 ans d'expérience, et inclure une fonction `main` pour tester.
-
-### Code Haskell :
+HC8T4 : Syntaxe d'enregistrement pour Employé:
 ```haskell
 -- Définir le type Employee en syntaxe d'enregistrement
 data Employee = Employee {
@@ -33,16 +31,3 @@ main = do
 
 3. **Fonction `main`** :
    - Utilise `print` pour afficher les détails de `richard`. Grâce à `deriving (Show)`, la sortie sera formatée automatiquement.
-
-### Résultat attendu :
-Lorsque vous exécutez ce programme, il affichera quelque chose comme :
-```
-Employee {name = "Richard", experienceInYears = 7.5}
-```
-(La sortie exacte peut varier légèrement selon l'implémentation de `Show`, mais elle montrera clairement les valeurs de `richard`.)
-
-### Notes :
-- Le type `Float` est utilisé pour `experienceInYears` afin de supporter des valeurs comme 7.5. Si vous préférez une précision plus élevée, vous pourriez utiliser `Double`.
-- Ce code est simple et fonctionnel. Vous pouvez ajouter d'autres employés ou fonctions si nécessaire !
-
-Testez ce code, et il devrait fonctionner comme attendu !

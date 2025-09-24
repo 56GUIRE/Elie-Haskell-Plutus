@@ -1,6 +1,4 @@
-Voici le code Haskell pour créer une classe de type `Convertible` avec une fonction `convert :: a -> b`, et implémenter une instance pour convertir le type `PaymentMethod` en `String`. J'inclus également une fonction `main` pour tester l'implémentation. Note que, en raison de la nature polymorphe de `convert :: a -> b`, nous devons utiliser une contrainte de type fonctionnel ou une spécialisation explicite, car Haskell ne permet pas une conversion arbitraire entre n'importe quels types sans contexte. Je vais donc définir une instance spécifique pour `PaymentMethod` vers `String`.
-
-### Code :
+HC10T7 : Classe de type Cabriolet :
 ```haskell
 -- Définition du type PaymentMethod
 data PaymentMethod = Cash | CreditCard String | PayPal String deriving (Show)
@@ -52,18 +50,3 @@ main = do
    - Crée trois instances de `PaymentMethod` : `payment1` (Cash), `payment2` (CreditCard avec un numéro), et `payment3` (PayPal avec un e-mail).
    - Teste `convert` sur ces trois cas et affiche les résultats avec `putStrLn`.
    - Les sorties sont formatées selon la logique définie dans l'instance `Convertible`.
-
-### Résultat attendu :
-En exécutant ce programme à 10:00 PM GMT le 24 septembre 2025, la sortie sera :
-```
-Cash Payment
-Credit Card ending in 3456
-PayPal account: user@example.com
-```
-
-### Remarques :
-- **Limitation de `Convertible`** : La signature `convert :: a -> b` est très générale, mais Haskell exige que chaque instance spécifie des types concrets (par exemple, `PaymentMethod` vers `String`). Si tu veux convertir entre d'autres types, tu devras ajouter d'autres instances (par exemple, `Convertible Int String`).
-- **Sécurité** : La fonction `lastFour` gère les cas où le numéro de carte est trop court, mais elle ne valide pas les entrées (par exemple, une chaîne vide). Pour une application réelle, tu pourrais ajouter des vérifications.
-- **Extensibilité** : Tu peux ajouter d'autres constructeurs à `PaymentMethod` (par exemple, `BankTransfer`) et étendre `convert` en conséquence.
-
-Si tu veux ajouter d'autres conversions ou modifier le format des chaînes, fais-le-moi savoir !

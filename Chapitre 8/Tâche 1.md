@@ -1,6 +1,4 @@
-Voici une solution en Haskell qui répond à votre demande. Nous allons créer des synonymes de type `Address` et `Value`, puis définir une fonction `generateTx` qui concatène deux adresses et une valeur dans une chaîne. Le programme inclut également une fonction `main` pour tester le résultat.
-
-### Code Haskell :
+ HC8T1 : Synonymes de type et fonction de base:
 ```haskell
 -- Définir les synonymes de type
 type Address = String
@@ -32,11 +30,3 @@ main = do
 3. **Fonction `main`** :
    - Définit des valeurs de test : `from = "Addr1"`, `to = "Addr2"`, et `val = 100`.
    - Utilise `putStrLn` pour afficher le résultat de `generateTx from to val`.
-
-### Résultat attendu :
-Lorsque vous exécutez ce programme, il affichera :
-```
-Addr1 -> Addr2: 100
-```
-
-Ce code est simple, fonctionnel et respecte les exigences. Vous pouvez modifier les valeurs dans `main` ou ajuster le format de la chaîne dans `generateTx` si nécessaire !

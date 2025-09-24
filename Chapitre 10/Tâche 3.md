@@ -1,6 +1,4 @@
-Voici le code Haskell pour définir une classe de type `Comparable` avec une fonction `compareWith :: a -> a -> Ordering`, et implémenter une instance pour un type personnalisé `Blockchain`. Pour rendre l'exemple intéressant, je vais supposer que `Blockchain` représente une blockchain avec un identifiant unique (par exemple, un entier représentant un timestamp ou un numéro de bloc), et que la comparaison se fait sur cet identifiant. J'inclus également une fonction `main` pour tester l'implémentation.
 
-### Code :
 ```haskell
 -- Définition du type Blockchain
 data Blockchain = Blockchain
@@ -49,17 +47,3 @@ main = do
      - `block1` vs `block3` : Comme 100 = 100, retourne `EQ`.
    - Utilise `putStrLn` avec `show` pour afficher les résultats sous forme de chaînes lisibles.
 
-### Résultat attendu :
-En exécutant ce programme, la sortie sera :
-```
-block1 vs block2: LT
-block2 vs block1: GT
-block1 vs block3: EQ
-```
-
-### Remarques :
-- **Simplicité** : J'ai choisi `Int` comme type pour `blockId` pour simplifier. Si tu veux une blockchain plus complexe (par exemple, avec des données ou des hashes), tu peux étendre `Blockchain` (par exemple, `data Blockchain = Blockchain { blockId :: Int, data :: String }`), mais la comparaison resterait basée sur `blockId`.
-- **Contraintes** : La fonction `compare` nécessite que `Int` soit une instance de `Ord`, ce qui est vrai par défaut, donc aucune contrainte supplémentaire n'est nécessaire ici.
-- **Extensibilité** : Si tu veux comparer sur un autre critère (par exemple, une chaîne ou un hash), tu peux modifier l'instance `Comparable Blockchain` en conséquence.
-
-Si tu veux ajuster la définition de `Blockchain` ou ajouter d'autres fonctionnalités (par exemple, ajouter des blocs ou tester d'autres cas), fais-le-moi savoir !

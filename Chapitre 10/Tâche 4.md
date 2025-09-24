@@ -1,6 +1,5 @@
-Voici le code Haskell pour créer un type paramétrique `Box a` et en faire une instance de la classe `Eq`, qui permet de comparer deux instances de `Box` pour l'égalité. J'inclue également une fonction `main` pour tester cette implémentation.
 
-### Code :
+HC10T4 : Instance Eq pour Box:
 ```haskell
 -- Définition du type paramétrique Box
 data Box a = Box a deriving (Show)
@@ -39,18 +38,3 @@ main = do
      - `box1 == box3` : Faux, car 5 != 10.
      - `box2 == box3` : Faux, car 5 != 10.
    - Utilise `putStrLn` avec `show` pour afficher les résultats sous forme de chaînes lisibles (`True` ou `False`).
-
-### Résultat attendu :
-En exécutant ce programme, la sortie sera :
-```
-box1 == box2: True
-box1 == box3: False
-box2 == box3: False
-```
-
-### Remarques :
-- **Contrainte `Eq a`** : La contrainte `Eq a =>` est nécessaire, car `==` est utilisé sur les valeurs de type `a` à l'intérieur de `Box`. Cela signifie que `Box` peut être comparé uniquement si le type contenu (`a`) supporte l'égalité (par exemple, `Int`, `String`, etc.).
-- **Flexibilité** : Le type `Box a` est paramétrique, donc il fonctionne avec n'importe quel type `a` qui est une instance de `Eq`. Par exemple, tu peux tester avec `Box "hello"` ou `Box True` si tu ajoutes des exemples appropriés dans `main`.
-- **Extension** : Si tu veux ajouter d'autres classes (par exemple, `Ord` pour comparer avec `<`, `>`, etc.), tu peux définir une instance `Ord (Box a)` en utilisant les mêmes principes.
-
-Si tu veux tester avec d'autres types ou ajouter des fonctionnalités (par exemple, une fonction pour extraire la valeur de la boîte), fais-le-moi savoir !

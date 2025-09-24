@@ -62,12 +62,3 @@ main = do
    - Teste `Show` en affichant un `Circle` et un `Rectangle`.
    - Teste `Read` en parsant des chaînes pour recréer des `Shape` et les afficher.
 
-### Exécution :
-- Compilez avec `ghc fichier.hs` et exécutez `./fichier`.
-- Sortie attendue :
-  ```
-  Circle 5.0
-  Rectangle 4.0 6.0
-  Circle 3.0
-  Rectangle 2.0 7.0
-  ```

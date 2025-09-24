@@ -1,4 +1,4 @@
-Voici le code Haskell pour créer une fonction `extract` qui prend une valeur par défaut et une `Box a`, et renvoie la valeur contenue dans la boîte ou la valeur par défaut si la boîte est vide. Le type `Box` est défini comme précédemment, et un `main` est inclus pour tester la fonction.
+HC9T4 : Extraire une valeur d'une Coffret
 
 ```haskell
 -- Définition du type Box
@@ -24,13 +24,4 @@ main = do
    - Prend une valeur par défaut (`defaultValue`) et une `Box a`.
    - Si la boîte est `Empty`, renvoie `defaultValue`.
    - Si la boîte contient une valeur (`Value x`), renvoie `x`.
-3. **Main** : Teste la fonction avec une boîte contenant 42 (renvoie 42) et une boîte vide (renvoie la valeur par défaut, 0).
-
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-42
-0
-```
-
-Ce code est simple, idiomatique en Haskell, et répond à la demande. Si tu as besoin d'autres fonctionnalités ou d'explications, n'hésite pas !
+3. **Main** : Teste la fonction avec une boîte contenant 42 (renvoie 42) et une boîte vide (renvoie la valeur par défaut, 0).!

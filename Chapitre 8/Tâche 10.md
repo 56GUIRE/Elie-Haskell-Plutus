@@ -1,5 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
-
+HC8T10 : Spectacle dérivé pour livre
 ```haskell
 -- Définition du type Book avec la syntaxe d'enregistrement
 data Book = Book { title :: String, author :: String, year :: Int }
@@ -20,7 +19,3 @@ main = print book
 - Une instance de `Book` est créée pour le livre "1984" de George Orwell, publié en 1949.
 - La fonction `main` utilise `print` pour afficher l'instance de `Book`, en exploitant l'instance dérivée de `Show`.
 
-Quand vous exécutez ce programme, il affichera :
-```
-Book {title = "1984", author = "George Orwell", year = 1949}
-```

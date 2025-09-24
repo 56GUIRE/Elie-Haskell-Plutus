@@ -1,0 +1,54 @@
+Voici une solution en Haskell qui répond à votre demande. Nous allons définir un type `Shape` avec les constructeurs `Circle Float` et `Rectangle Float Float`, créer une fonction `area :: Shape -> Float` pour calculer l'aire, et inclure un `main` pour tester les aires d'un cercle de rayon 5 et d'un rectangle de côtés 10 et 5.
+
+### Code Haskell :
+```haskell
+-- Définir le type Shape
+data Shape = Circle Float | Rectangle Float Float
+  deriving (Show)
+
+-- Fonction pour calculer l'aire
+area :: Shape -> Float
+area (Circle r) = pi * r * r       -- Aire d'un cercle : π * r²
+area (Rectangle w h) = w * h       -- Aire d'un rectangle : largeur * hauteur
+
+-- Fonction main pour tester
+main :: IO ()
+main = do
+  let circle = Circle 5.0
+      rectangle = Rectangle 10.0 5.0
+  putStrLn $ "Aire du cercle de rayon 5 : " ++ show (area circle)
+  putStrLn $ "Aire du rectangle 10x5 : " ++ show (area rectangle)
+```
+
+### Explications :
+1. **Type `Shape`** :
+   - `data Shape = Circle Float | Rectangle Float Float` définit un type algébrique avec deux constructeurs :
+     - `Circle Float` pour un cercle avec un rayon (`Float`).
+     - `Rectangle Float Float` pour un rectangle avec une largeur et une hauteur (`Float`).
+   - `deriving (Show)` permet d'afficher les valeurs de `Shape` de manière lisible.
+
+2. **Fonction `area`** :
+   - `area :: Shape -> Float` prend une forme et retourne son aire en `Float`.
+   - Pour un `Circle r`, l'aire est calculée avec la formule `pi * r * r` (où `pi` est une constante définie dans le module `Prelude`).
+   - Pour un `Rectangle w h`, l'aire est simplement `w * h` (largeur * hauteur).
+   - Les motifs (`Circle r` et `Rectangle w h`) permettent de décomposer les constructeurs pour extraire les valeurs.
+
+3. **Fonction `main`** :
+   - Crée une instance `circle` avec un rayon de 5.0.
+   - Crée une instance `rectangle` avec une largeur de 10.0 et une hauteur de 5.0.
+   - Utilise `putStrLn` pour afficher les aires calculées, converties en chaîne avec `show`.
+
+### Résultat attendu :
+Lorsque vous exécutez ce programme, il affichera quelque chose comme :
+```
+Aire du cercle de rayon 5 : 78.53982
+Aire du rectangle 10x5 : 50.0
+```
+- L'aire du cercle est approximative car `pi` est une constante approximée (environ 3.14159), et pour un rayon de 5, on obtient environ 78.54.
+- L'aire du rectangle est exacte : 10 * 5 = 50.
+
+### Notes :
+- Les valeurs sont en `Float` pour permettre des calculs avec des décimales.
+- Si vous avez besoin de plus de précision, vous pourriez utiliser `Double` au lieu de `Float`.
+
+Testez ce code, et il devrait fonctionner comme attendu !

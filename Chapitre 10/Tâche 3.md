@@ -1,4 +1,4 @@
-
+HC10T3 : Classe de type Comparable
 ```haskell
 -- Définition du type Blockchain
 data Blockchain = Blockchain

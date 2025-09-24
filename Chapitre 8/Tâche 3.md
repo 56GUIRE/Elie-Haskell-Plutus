@@ -1,6 +1,4 @@
-Voici une solution en Haskell qui répond à votre demande. Nous allons définir un type `Shape` avec les constructeurs `Circle Float` et `Rectangle Float Float`, créer une fonction `area :: Shape -> Float` pour calculer l'aire, et inclure un `main` pour tester les aires d'un cercle de rayon 5 et d'un rectangle de côtés 10 et 5.
-
-### Code Haskell :
+HC8T3 : Types algébriques et fonctions :
 ```haskell
 -- Définir le type Shape
 data Shape = Circle Float | Rectangle Float Float

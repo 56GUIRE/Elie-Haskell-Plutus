@@ -1,6 +1,4 @@
-Voici le code Haskell pour définir une sous-classe `AdvancedEq` qui étend la classe `Eq` avec une méthode supplémentaire `compareEquality :: a -> a -> Bool`. Je vais également fournir une instance pour un type personnalisé (par exemple, `Pair`) pour illustrer l'utilisation de cette sous-classe. J'inclus une fonction `main` pour tester l'implémentation. Note que Haskell ne supporte pas directement les sous-classes au sens classique (comme en Java ou C++), mais on peut simuler cela en définissant `AdvancedEq` comme une classe qui hérite de `Eq` via une contrainte.
 
-### Code :
 ```haskell
 -- Définition du type Pair
 data Pair a b = Pair a b deriving (Show)
@@ -61,18 +59,3 @@ main = do
      - `compareEquality` (de `AdvancedEq`) pour tester la méthode supplémentaire.
    - Utilise `putStrLn` avec `show` pour afficher les résultats (`True` ou `False`).
 
-### Résultat attendu :
-En exécutant ce programme à 10:08 PM GMT le 24 septembre 2025, la sortie sera :
-```
-pair1 == pair2: True
-pair1 == pair3: False
-compareEquality pair1 pair2: True
-compareEquality pair1 pair3: False
-```
-
-### Remarques :
-- **Sous-classe simulée** : En Haskell, `AdvancedEq` n'est pas une sous-classe au sens classique, mais une extension de `Eq` via une contrainte. Toute instance de `AdvancedEq` doit aussi définir `Eq`, ce qui respecte l'idée d'héritage.
-- **Personnalisation** : Tu peux modifier `compareEquality` pour une logique différente (par exemple, comparer uniquement la première composante avec `x1 == x2`, ignorant `y1` et `y2`).
-- **Extensibilité** : Tu peux appliquer `AdvancedEq` à d'autres types (par exemple, `Blockchain` ou `User`) en définissant des instances appropriées.
-
-Si tu veux ajuster la logique de `compareEquality` ou tester avec un autre type, fais-le-moi savoir !

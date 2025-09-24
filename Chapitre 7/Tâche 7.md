@@ -1,4 +1,4 @@
-Voici le code Haskell qui définit une fonction `nextColor` pour gérer une séquence de couleurs cyclique, avec un `main` pour tester :
+HC7T7 : Utiliser Bounded et Enum
 
 ```haskell
 module Main where
@@ -48,18 +48,3 @@ main = do
      - `putStrLn $ "Suivant de Red : " ++ show (nextColor Red)` teste la transition `Red` -> `Green`.
      - `putStrLn $ "Suivant de Green : " ++ show (nextColor Green)` teste `Green` -> `Blue`.
      - `putStrLn $ "Suivant de Blue : " ++ show (nextColor Blue)` teste `Blue` -> `Red`.
-
-### Exécution :
-- Compilez avec `ghc Main.hs` et exécutez `./Main`.
-- Sortie attendue :
-  ```
-  Suivant de Red : Green
-  Suivant de Green : Blue
-  Suivant de Blue : Red
-  ```
-
-### Remarques :
-- L'ordre cyclique est fixé par la définition de `Enum` : `Red` (0), `Green` (1), `Blue` (2). Quand on atteint `Blue`, `succ` dépasserait l'énumération, d'où la condition explicite pour revenir à `Red`.
-- Si tu veux ajouter plus de couleurs (par exemple, `Yellow`), tu peux étendre `data Color = Red | Green | Blue | Yellow` et ajuster la logique de `nextColor` pour gérer le nouveau cycle.
-
-Si tu souhaites des modifications (comme une liste de couleurs personnalisée ou une gestion différente), fais-le-moi savoir !

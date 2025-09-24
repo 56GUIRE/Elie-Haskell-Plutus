@@ -1,5 +1,4 @@
-Voici le code Haskell pour créer une fonction `elemSeq` qui vérifie si un élément donné est présent dans une `Sequence a`, où `Sequence` est un type de données récursif représentant une séquence linéaire de nœuds. Le type `Sequence` est défini comme dans votre demande précédente, et j'inclus une fonction `main` pour tester.
-
+HC9T9 : Vérifier la présence d'un élément dans une séquence
 ```haskell
 -- Définition du type de données récursif Sequence
 data Sequence a = Empty | Node a (Sequence a) deriving (Show)
@@ -36,11 +35,3 @@ main = do
    - Teste `elemSeq` pour vérifier si 2 (présent) et 4 (absent) sont dans la séquence.
    - Affiche les résultats avec `print`.
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-True
-False
-```
-
-Ce code est idiomatique en Haskell, efficace, et répond à la demande. Si tu as besoin d'autres fonctionnalités (comme ajouter des éléments à la séquence ou d'autres tests), ou si tu veux des explications supplémentaires, fais-le-moi savoir !

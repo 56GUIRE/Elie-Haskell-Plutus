@@ -1,4 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
+HC8T6 : Syntaxe d'enregistrement pour variantes Shape
 
 ```haskell
 -- Définition du type Shape avec deux constructeurs pour Circle et Rectangle
@@ -30,8 +30,3 @@ main = do
 - Une instance de `Rectangle` est créée avec un centre à (2,3), couleur bleue, largeur 4 et hauteur 6.
 - La fonction `main` affiche les deux instances dans la console.
 
-Quand vous exécutez ce programme, il affichera :
-```
-Circle {center = (0.0,0.0), color = "Red", radius = 5.0}
-Rectangle {center = (2.0,3.0), color = "Blue", width = 4.0, height = 6.0}
-```

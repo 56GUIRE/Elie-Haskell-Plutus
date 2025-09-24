@@ -1,5 +1,4 @@
-Voici le code Haskell pour définir un type de données récursif `Tweet` représentant un tweet avec du contenu (une chaîne de caractères), un nombre de likes (un entier), et une liste de commentaires (eux-mêmes des `Tweet`). J'inclus également une fonction `main` pour tester ce type.
-
+HC9T6 : définir un type de données récursif
 ```haskell
 -- Définition du type de données récursif Tweet
 data Tweet = Tweet
@@ -32,10 +31,3 @@ main = do
    - Crée un tweet principal (`mainTweet`) avec le contenu `"Hello, world!"`, 10 likes, et une liste contenant les deux commentaires.
    - Utilise `print` pour afficher la structure du tweet.
 
-### Résultat attendu :
-En exécutant le programme, la sortie sera (formatée pour plus de clarté ici) :
-```
-Tweet {content = "Hello, world!", likes = 10, comments = [Tweet {content = "Great post!", likes = 5, comments = []}, Tweet {content = "Interesting!", likes = 3, comments = []}]}
-```
-
-Ce code définit correctement un type récursif `Tweet` et montre comment l'utiliser. Si tu veux ajouter des fonctionnalités (comme compter le nombre total de likes ou afficher les tweets différemment), n'hésite pas à me le demander !

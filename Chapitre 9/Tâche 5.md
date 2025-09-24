@@ -20,12 +20,3 @@ main = do
 2. **Fonction `main`** :
    - Crée deux formes : un `Circle` avec la couleur `"Blue"` et un `Rectangle` avec la couleur `"Red"`.
    - Utilise `print` pour afficher ces formes dans la console.
-
-### Résultat attendu :
-En exécutant le programme, la sortie sera :
-```
-Circle "Blue"
-Rectangle "Red"
-```
-
-Ce code est simple et respecte les conventions Haskell. Si tu veux ajouter des fonctionnalités (comme des fonctions pour manipuler les formes) ou si tu as des questions, fais-le-moi savoir !

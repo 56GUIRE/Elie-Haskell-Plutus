@@ -1,6 +1,4 @@
-Il semble y avoir une petite incohérence dans ta demande : tu mentionnes "Boolet Shape", qui pourrait être une faute de frappe. Je suppose que tu veux dire **"Bool et Shape"** (les types `Bool` et `Shape`), ou peut-être uniquement `Shape`. Puisque nous avons travaillé avec `Shape` dans les exemples précédents, je vais implémenter la classe `Descriptable` pour le type `Shape` (déjà défini comme `Circle Double` et `Rectangle Double Double`) et inclure `Bool` comme exemple supplémentaire. Si tu avais autre chose en tête, fais-le-moi savoir !
-
-Voici le code Haskell avec une classe `Descriptable`, implémentée pour `Bool` et `Shape`, ainsi qu'un `main` pour tester :
+HC7T9 : définir une classe de type avec plusieurs instances
 
 ```haskell
 module Main where
@@ -66,20 +64,3 @@ main = do
    - **Tests** :
      - Pour `Bool` : Affiche les descriptions de `True` et `False`.
      - Pour `Shape` : Définit un `circle` et un `rectangle`, puis affiche leurs descriptions avec `show` pour montrer la valeur originale et `describe` pour la description textuelle.
-
-### Exécution :
-- Compilez avec `ghc Main.hs` et exécutez `./Main`.
-- Sortie attendue (aujourd'hui, 10:39 AM GMT, mercredi 24 septembre 2025) :
-  ```
-  Description de True : Vrai
-  Description de False : Faux
-  Description de Circle 5.0 : Un cercle de rayon 5.0
-  Description de Rectangle 4.0 6.0 : Un rectangle de largeur 4.0 et hauteur 6.0
-  ```
-
-### Remarques :
-- **Flexibilité** : La classe `Descriptable` peut être étendue à d'autres types (par exemple, `Int`, `String`) en ajoutant de nouvelles instances.
-- **Langue** : Les descriptions sont en français ; tu peux les modifier en anglais (par exemple, "True" -> "True") si préféré.
-- **Erreur potentielle** : Si tu avais voulu dire autre chose par "Boolet Shape", ajuste la demande, et je corrigerai en conséquence.
-
-Si tu veux ajouter d'autres types ou modifier les descriptions, dis-le-moi !

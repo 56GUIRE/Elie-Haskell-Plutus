@@ -1,4 +1,4 @@
-Voici le code Haskell pour répondre à votre demande :
+
 
 ```haskell
 -- Définition du type Person avec la syntaxe d'enregistrement
@@ -25,9 +25,3 @@ main = do
 - `person1` est définie comme une personne employée (Alice, 30 ans, isEmployed = True).
 - `person2` est définie comme une personne sans emploi (Bob, 25 ans, isEmployed = False).
 - La fonction `main` affiche les deux personnes dans la console.
-
-Quand vous exécutez ce programme, il affichera :
-```
-Person {name = "Alice", age = 30, isEmployed = True}
-Person {name = "Bob", age = 25, isEmployed = False}
-```

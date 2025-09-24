@@ -1,4 +1,4 @@
-
+HC10T8 : Sous-classe AdvancedEq de Eq
 ```haskell
 -- Définition du type Pair
 data Pair a b = Pair a b deriving (Show)

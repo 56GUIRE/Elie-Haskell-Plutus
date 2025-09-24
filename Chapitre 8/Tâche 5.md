@@ -1,4 +1,4 @@
-
+HC8T5 : Syntaxe d'enregistrement pour Personne
 
 ```haskell
 -- Définition du type Person avec la syntaxe d'enregistrement

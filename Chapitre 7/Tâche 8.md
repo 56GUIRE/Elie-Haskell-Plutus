@@ -1,4 +1,4 @@
-Voici le code Haskell qui définit une fonction `parseShape` pour parser une chaîne (`String`) et retourner un `Shape`, avec un `main` pour tester. Le type `Shape` inclut des constructeurs comme `Circle` et `Rectangle`, et la fonction gère la conversion à partir d'une chaîne.
+ HC7T8 : Analyser une valeur avec Read
 
 ```haskell
 module Main where
@@ -58,19 +58,3 @@ main = do
      - `rectStr = "Rectangle 4.0 6.0"` teste le parsing d'un rectangle.
      - `invalidStr = "Invalid"` est commenté car `parseShape` lèverait une erreur pour une chaîne invalide, ce qui interromprait l'exécution.
    - `putStrLn` utilise `show` pour afficher les résultats sous forme de chaînes.
-
-### Exécution :
-- Compilez avec `ghc Main.hs` et exécutez `./Main`.
-- Sortie attendue :
-  ```
-  Parsing 'Circle 5.0' : Circle 5.0
-  Parsing 'Rectangle 4.0 6.0' : Rectangle 4.0 6.0
-  ```
-- Si tu décommente la ligne avec `invalidStr`, tu obtiendras une erreur comme `Format invalide : attendu 'Circle <rayon>' ou 'Rectangle <largeur> <hauteur>'`.
-
-### Remarques :
-- **Limitation** : La fonction suppose que les nombres dans la chaîne sont valides (`read` échouera si la conversion échoue). Pour une gestion d'erreur plus robuste, tu pourrais utiliser `reads` ou une monade comme `Maybe`.
-- **Format attendu** : Les chaînes doivent être sous la forme `"Circle <nombre>"` ou `"Rectangle <nombre> <nombre>"`, avec des espaces comme séparateurs.
-- **Sécurité** : L'utilisation de `error` est basique ; une version plus avancée pourrait retourner un `Maybe Shape` pour gérer les échecs sans crash.
-
-Si tu veux améliorer la gestion des erreurs ou ajouter des tests, dis-le-moi !

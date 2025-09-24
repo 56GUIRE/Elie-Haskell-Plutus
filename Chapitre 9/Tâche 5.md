@@ -1,5 +1,4 @@
-Voici le code Haskell pour définir un type de données paramétré `Shape a` avec deux constructeurs, `Circle` et `Rectangle`, chacun contenant un champ `color` de type `a`. J'inclus également une fonction `main` pour démontrer l'utilisation de ce type.
-
+HC9T5 : Type de données paramétré avec syntaxe d'enregistrement
 ```haskell
 -- Définition du type de données paramétré Shape
 data Shape a = Circle a | Rectangle a deriving (Show)

@@ -1,5 +1,4 @@
-Voici le code Haskell correspondant à votre demande :
-
+HC9T1 : définir un synonyme de type paramétrique
 ```haskell
 -- Définition du synonyme de type paramétrique Entity
 type Entity a = (a, String)  -- Premier élément : type paramétrique, deuxième élément : adresse (String)
@@ -23,10 +22,4 @@ main = do
 - Deux instances sont créées :
   - `person` : une entité avec `a = String` pour le nom "Alice" et l'adresse "123 Rue Principale".
   - `company` : une entité avec `a = Int` pour l'identifiant 101 et l'adresse "456 Avenue des Entreprises".
-- La fonction `main` affiche les deux entités en utilisant `show` pour convertir les tuples en chaînes de caractères.
-
-Quand vous exécutez ce programme, il affichera :
-```
-Entité personne : ("Alice","123 Rue Principale")
-Entité entreprise : (101,"456 Avenue des Entreprises")
-```
+- La fonction `main` affiche les deux entités en utilisant `show` pour convertir les tuples en chaînes de caractères.`

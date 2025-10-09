@@ -1,5 +1,4 @@
-Pour répondre à votre demande, je vais créer un programme en Haskell qui définit une instance de la classe `WeAccept` pour un type `Box` et une fonction qui renvoie une liste de boîtes acceptées. Je vais supposer que `WeAccept` est une classe de type qui définit une méthode pour déterminer si une valeur est "acceptée" ou non, et que `Box` est un type simple contenant une valeur (par exemple, un entier). Voici une implémentation complète avec un `main` :
-
+HC11T1 : Instance WeAccept pour Box
 ```haskell
 -- Définition de la classe WeAccept
 class WeAccept a where
@@ -33,18 +32,3 @@ main = do
 4. **Fonction `acceptedBoxes`** : Cette fonction utilise `filter` pour ne garder que les boîtes pour lesquelles `isAccepted` renvoie `True`.
 5. **Fonction `main`** : Le `main` crée une liste d'exemple de boîtes, affiche la liste initiale, puis affiche la liste des boîtes acceptées.
 
-### Sortie attendue :
-En exécutant ce programme, vous obtiendrez quelque chose comme :
-
-```
-Boîtes initiales :
-[Box 5,Box (-2),Box 10,Box 0,Box 3]
-Boîtes acceptées :
-[Box 5,Box 10,Box 3]
-```
-
-### Remarques :
-- Si vous avez une définition spécifique pour `WeAccept` ou `Box`, ou des critères d'acceptation différents, merci de préciser pour que je puisse adapter le code.
-- Le programme peut être compilé et exécuté avec GHC (par exemple, `ghc fichier.hs` puis `./fichier`).
-
-Si vous avez besoin d'une version différente ou de plus de détails, faites-le-moi savoir !

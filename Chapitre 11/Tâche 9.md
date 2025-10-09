@@ -1,12 +1,4 @@
-Je vais créer un programme Haskell qui définit un type `Length` avec les constructeurs `Met` (mètres) et `Km` (kilomètres), dérive automatiquement l'instance `Eq`, et définit manuellement l'instance `Ord` pour corriger les comparaisons en tenant compte de la conversion entre mètres et kilomètres. Le programme inclura un `main` pour tester les comparaisons.
-
-### Hypothèses :
-- Le type `Length` est défini avec deux constructeurs : `Met Double` (mètres) et `Km Double` (kilomètres), où `Double` représente la valeur numérique.
-- L'instance `Eq` est dérivée automatiquement, ce qui compare les constructeurs et leurs valeurs directement.
-- L'instance `Ord` est définie manuellement pour convertir les kilomètres en mètres (1 km = 1000 m) avant de comparer les valeurs.
-- Le `main` teste les comparaisons d'égalité (`==`) et d'ordre (`<`, `>`, `compare`).
-
-### Code Haskell :
+ HC11T9 : Type Longueur avec unités
 
 ```haskell
 -- Définition du type Length
@@ -72,42 +64,3 @@ main = do
    - Teste l'égalité avec `==` (via `Eq` dérivée).
    - Teste l'ordre avec `compare`, `<`, et `>` (via `Ord` manuelle), en montrant que les comparaisons tiennent compte de la conversion mètres/kilomètres.
 
-### Sortie attendue :
-En exécutant ce programme (par exemple, avec GHC), la sortie sera :
-
-```
-Longueurs définies :
-len1 = Met 1000.0
-len2 = Km 1.0
-len3 = Met 500.0
-len4 = Km 2.0
-
-Tests d'égalité (Eq) :
-len1 == len2 = False
-len1 == Met 1000.0 = True
-len2 == Km 1.0 = True
-
-Tests d'ordre (Ord) :
-len1 `compare` len2 = EQ
-len3 < len1 = True
-len4 > len1 = True
-len3 < len4 = True
-```
-
-### Remarques :
-- **Dérivation de `Eq`** :
-  - La dérivation automatique de `Eq` compare les constructeurs et leurs valeurs brutes, donc `Met 1000.0` et `Km 1.0` ne sont pas égaux, même s'ils représentent la même longueur. Si vous voulez que `Eq` tienne compte de la conversion, il faudrait aussi définir `Eq` manuellement, comme suit :
-    ```haskell
-    instance Eq Length where
-      l1 == l2 = toMeters l1 == toMeters l2
-    ```
-    Voulez-vous que j'ajoute cela ?
-- **Précision avec `Double`** :
-  - Les comparaisons avec `Double` peuvent être sensibles aux erreurs d'arrondi. Si la précision est critique, envisagez d'utiliser un type comme `Rational`.
-- **Personnalisation** :
-  - Si vous voulez ajouter d'autres unités (par exemple, centimètres) ou modifier la logique de comparaison (par exemple, en arrondissant les valeurs), précisez-le.
-  - Si vous souhaitez que l'égalité (`Eq`) prenne en compte la conversion mètres/kilomètres, je peux ajuster le code.
-- **Exécution** :
-  - Ce programme peut être compilé et exécuté avec GHC. Assurez-vous d'avoir un environnement Haskell configuré.
-
-Si vous avez des exigences supplémentaires (par exemple, une instance `Eq` manuelle, d'autres unités, ou une logique de comparaison différente), faites-le moi savoir, et je peux modifier le code !

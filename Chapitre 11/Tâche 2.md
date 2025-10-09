@@ -1,8 +1,4 @@
-### Code Haskell pour la classe WeAccept
-
-Voici une implémentation complète en Haskell d'un programme qui définit une classe de type `WeAccept` avec la méthode `fancyFunction`. J'ai supposé que `fancyFunction` est une fonction polymorphique qui retourne un message personnalisé en fonction du type (par exemple, une chaîne de caractères descriptive). Les types `Cardano`, `Cash` et `Country` sont définis comme des data types simples pour démontrer l'utilisation avec différents types.
-
-Les instances de la classe sont implémentées pour chacun de ces types, et un testeur est inclus dans la fonction `main` pour afficher les résultats.
+HC11T2 : Fonction fancyFunction pour WeAccept
 
 ```haskell
 -- Définition de la classe WeAccept
@@ -58,4 +54,3 @@ main = tester
 - **Testeur** : La fonction `tester` appelle `fancyFunction` sur des exemples et affiche les résultats. Elle est appelée dans `main`.
 - **Compilation et exécution** : Compilez avec `ghc -o programme Main.hs` (si le fichier s'appelle `Main.hs`), puis exécutez `./programme`. Cela affichera les messages personnalisés.
 
-Si cette implémentation ne correspond pas exactement à ce que vous aviez en tête (par exemple, si `fancyFunction` doit avoir un comportement différent ou si les types ont plus de structure), fournissez plus de détails pour que je raffine le code !

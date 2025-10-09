@@ -86,5 +86,5 @@ main = do
      - Deux blockchains identiques (`chain1` et `chain2`).
      - Deux blockchains différentes au niveau du contenu d'un bloc (`chain1` et `chain3`).
      - Une blockchain plus courte (`chain1` et `chain4`).
-   - Affiche les résultats.
+   - .
 

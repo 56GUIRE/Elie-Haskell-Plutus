@@ -1,12 +1,4 @@
-Je vais créer un programme Haskell qui définit une classe de type `AdvancedEq` étendant `Eq`, avec une méthode `compareEquality`, et l'implémenter pour un type `Blockchain`. Je vais également inclure un `main` pour démontrer son utilisation.
-
-### Hypothèses :
-- La classe `AdvancedEq` étend `Eq`, donc elle inclut la capacité à comparer l'égalité (`==`) et ajoute une méthode `compareEquality` qui pourrait, par exemple, fournir une comparaison plus détaillée ou spécifique.
-- Le type `Blockchain` sera défini comme une structure simple pour représenter une chaîne de blocs (par exemple, une liste de blocs contenant des données).
-- La méthode `compareEquality` retournera un type personnalisé pour indiquer le résultat de la comparaison (par exemple, un message ou un type spécifique).
-
-### Code Haskell :
-
+HC11T6 : AdvancedEq pour Blockchain
 ```haskell
 -- Définition d'un type pour représenter le résultat de la comparaison
 data EqualityResult = Equal | NotEqual String deriving Show
@@ -96,21 +88,3 @@ main = do
      - Une blockchain plus courte (`chain1` et `chain4`).
    - Affiche les résultats.
 
-### Sortie attendue :
-En exécutant ce programme (par exemple, avec GHC), vous obtiendrez quelque chose comme :
-
-```
-Comparaison de chain1 et chain2 (identiques) :
-Equal
-
-Comparaison de chain1 et chain3 (différentes) :
-NotEqual "Blockchains differ at some block: Just (Block {blockId = 3, dataContent = \"Transaction3\"},Block {blockId = 3, dataContent = \"Transaction4\"})"
-
-Comparaison de chain1 et une chaîne plus courte :
-NotEqual "Blockchains have different lengths: 3 vs 1"
-```
-
-### Remarques :
-- La méthode `compareEquality` est ici conçue pour fournir des informations détaillées sur les différences, mais vous pouvez la personnaliser (par exemple, pour comparer des métadonnées spécifiques dans la blockchain).
-- Si vous avez une définition spécifique de `Blockchain` ou des exigences supplémentaires pour `compareEquality` (par exemple, comparer uniquement certains champs), précisez-les, et je peux ajuster le code.
-- Le programme est fonctionnel et peut être compilé avec GHC. Assurez-vous d'avoir un environnement Haskell configuré pour l'exécuter.

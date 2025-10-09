@@ -1,4 +1,4 @@
-
+HC11T5 : Fonction devinerWhat'sInside pour Container
 
 ```haskell
 -- Définition d'un type Container (ici, une liste)

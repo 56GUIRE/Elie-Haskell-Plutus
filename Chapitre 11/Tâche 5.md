@@ -1,11 +1,4 @@
-Je vais vous fournir un programme Haskell qui implémente une fonction `guessWhatsInside` pour vérifier si un élément spécifique se trouve dans un `Container`, avec un `main` pour tester la fonction.
 
-### Hypothèses :
-- Un `Container` peut être représenté comme une liste (`[a]`) pour simplifier, car c'est une structure courante en Haskell pour contenir des éléments.
-- La fonction `guessWhatsInside` prend un `Container` (une liste) et un élément, et retourne un `Bool` indiquant si l'élément est présent.
-- L'élément doit être comparable, donc on utilisera la contrainte de type `Eq` pour permettre la comparaison.
-
-### Code Haskell :
 
 ```haskell
 -- Définition d'un type Container (ici, une liste)
@@ -38,15 +31,3 @@ main = do
    - Teste la fonction `guessWhatsInside` avec deux éléments : `3` (présent) et `6` (absent).
    - Affiche les résultats dans la console.
 
-### Exécution :
-Si vous compilez et exécutez ce programme (par exemple, avec GHC), la sortie sera :
-
-```
-Container: [1,2,3,4,5]
-Est-ce que 3 est dans le container ? True
-Est-ce que 6 est dans le container ? False
-```
-
-### Remarques :
-- Si vous aviez une définition spécifique de `Container` (par exemple, un type de données personnalisé comme `data Container a = Empty | Cons a (Container a)`), merci de préciser, et je peux adapter le code.
-- Si vous voulez une version plus détaillée ou avec des fonctionnalités supplémentaires (par exemple, un container avec des types différents ou des tests plus complexes), faites-le moi savoir !

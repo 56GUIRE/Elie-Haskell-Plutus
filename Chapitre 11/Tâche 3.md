@@ -1,4 +1,4 @@
-Voici une implémentation en Haskell d'une classe de type `Container` avec les méthodes demandées (`isEmpty`, `contains`, `replace`) et une instance pour le type `Box`, incluant un programme principal (`main`) pour démontrer son utilisation.
+HC11T3 : Classe de type Container pour Box
 
 ```haskell
 -- Définition de la classe de type Container
@@ -66,16 +66,3 @@ main = do
    - Teste les méthodes `isEmpty`, `contains` et `replace` avec des exemples.
    - Affiche les résultats pour démontrer le fonctionnement.
 
-### Sortie attendue :
-En exécutant ce programme (par exemple, avec GHC), la sortie sera :
-```
-Is emptyBox empty? True
-Is boxWith5 empty? False
-Does emptyBox contain 5? False
-Does boxWith5 contain 5? True
-Does boxWith5 contain 3? False
-After replacing emptyBox with 10: Content 10
-After replacing boxWith5 with 20: Content 20
-```
-
-Ce code respecte les spécifications demandées et fournit une implémentation claire et fonctionnelle en Haskell. Si vous avez besoin d'ajustements ou d'explications supplémentaires, faites-le-moi savoir !

@@ -1,10 +1,4 @@
-Pour implémenter la classe `Container` pour le type `Present` en Haskell avec un `main`, il faut d'abord clarifier ce que représente le type `Present` et la classe `Container`. Comme vous n'avez pas fourni la définition exacte de la classe `Container` ou du type `Present`, je vais supposer une définition classique et simple pour illustrer l'implémentation. Voici une hypothèse raisonnable :
-
-- Le type `Present` est un type de données qui peut contenir une valeur, comme une boîte cadeau contenant un élément ou rien (similaire à `Maybe`).
-- La classe `Container` définit des opérations pour manipuler le contenu d'un conteneur, comme vérifier s'il est vide ou accéder à son contenu.
-
-Voici une implémentation en Haskell avec ces hypothèses :
-
+HC11T4 : Conteneur d'instance pour présent
 ```haskell
 -- Définition de la classe Container
 class Container c where
@@ -52,18 +46,3 @@ main = do
 4. **Main** :
    - Le programme crée deux valeurs `Present` : une vide (`Empty`) et une avec un contenu (`Gift 42`).
    - Il teste les fonctions `isEmpty` et `getContent` et affiche les résultats.
-
-### Sortie attendue :
-En exécutant ce programme (par exemple, avec `ghc` ou dans GHCi), la sortie sera :
-```
-Is empty present empty? True
-Is gift present empty? False
-Content of empty present: Nothing
-Content of gift present: Just 42
-```
-
-### Remarques :
-- Si vous avez une définition spécifique de la classe `Container` ou du type `Present`, veuillez la fournir pour que je puisse adapter le code.
-- Si vous voulez ajouter d'autres méthodes à la classe `Container` ou modifier le comportement, indiquez-le, et je mettrai à jour l'implémentation.
-
-Vous pouvez compiler et exécuter ce code avec GHC ou le tester dans GHCi. Si vous avez besoin d'aide pour exécuter ou modifier le code, faites-le-moi savoir !

@@ -1,6 +1,4 @@
-Super, je suis content que ça marche enfin ! Voici le code que je t'ai envoyé précédemment, accompagné d'une explication détaillée pour que tu comprennes bien ce qui se passe et pourquoi ça fonctionne.
-
-### Code fonctionnel
+HC12T5 : Vérification de palindrome
 ```haskell
 import Data.Char (toLower, isAlpha)
 
@@ -32,18 +30,4 @@ main = do
 
 3. **Fonction `main`**
    - **Définition des tests** : `let test1 = "radar"` et `let test2 = "hello"` définissent deux chaînes statiques à tester.
-   - **Affichage des résultats** :
-     - `putStrLn $ "Test avec '" ++ test1 ++ "': " ++ show (isPalindrome test1)` construit une chaîne de sortie. `++` concatène les morceaux de texte, et `show` convertit le résultat booléen (`True` ou `False`) en une chaîne.
-     - Pour "radar", ça affiche "Test avec 'radar': True".
-     - Pour "hello", ça affiche "Test avec 'hello': False".
-   - **Exécution** : `do` permet d'exécuter ces lignes dans l'ordre, affichant les résultats l'un après l'autre.
-
-### Pourquoi ça marche maintenant ?
-- **Pas d'entrée utilisateur** : Dans les versions précédentes, `getLine` demandait une saisie interactive, ce que certains éditeurs en ligne (comme celui de ta capture d'écran) ne gèrent pas bien, d'où l'erreur "Command failed". En utilisant des tests statiques, on évite ce problème.
-- **Compatibilité** : Ce code est simple et devrait fonctionner dans la plupart des environnements Haskell, y compris les éditeurs en ligne ou locaux avec GHC.
-
-### Comment l'utiliser ou l'améliorer ?
-- **Tester d'autres mots** : Tu peux ajouter d'autres `let test3 = "level"` et `putStrLn $ "Test avec '" ++ test3 ++ "': " ++ show (isPalindrome test3)` pour tester davantage de cas.
-- **Revenir à l'entrée utilisateur** : Si tu veux réintroduire `getLine`, il faudrait utiliser un environnement local avec GHC (par exemple, installe Haskell via [Haskell.org](https://www.haskell.org/) et exécute avec `ghc fichier.hs`).
-
-Teste ce code autant que tu veux, et si tu as des questions ou veux ajouter des fonctionnalités (comme gérer des espaces ou des ponctuations), fais-le-moi savoir !
+     

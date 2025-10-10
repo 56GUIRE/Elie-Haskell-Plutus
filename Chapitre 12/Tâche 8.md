@@ -1,6 +1,4 @@
-Voici un programme Haskell qui définit une fonction `mergeLists` pour fusionner deux listes triées en une seule liste triée, avec une fonction `main` pour tester cette fonctionnalité. La fusion sera effectuée en comparant les éléments des deux listes et en les combinant dans l'ordre croissant.
-
-### Code Haskell
+HC12T8 : Fusionner deux listes triées
 ```haskell
 -- Fonction pour fusionner deux listes triées
 mergeLists :: Ord a => [a] -> [a] -> [a]
@@ -39,28 +37,4 @@ main = do
 2. **Fonction `main`**
    - **Définition des listes** : `list1 = [1, 3, 5]` et `list2 = [2, 4, 6]` sont des listes triées statiques pour le test.
    - **Fusion** : `mergedList = mergeLists list1 list2` appelle la fonction pour fusionner les listes.
-   - **Affichage** : `putStrLn` et `print` affichent les listes originale et la liste fusionnée, par exemple :
-     ```
-     Première liste :
-     [1,3,5]
-     Deuxième liste :
-     [2,4,6]
-     Liste fusionnée :
-     [1,2,3,4,5,6]
-     ```
-
-### Comment tester
-1. **Dans un éditeur en ligne** :
-   - Colle ce code dans la section "CODE".
-   - Clique sur "RUN".
-   - Tu devrais voir les résultats comme ci-dessus.
-2. **Localement avec GHC** :
-   - Sauvegarde dans un fichier, par exemple `mergeLists.hs`.
-   - Exécute `ghc mergeLists.hs` puis `./mergeLists` (ou `mergeLists.exe` sur Windows).
-
-### Remarques
-- **Précondition** : La fonction suppose que les listes d'entrée sont déjà triées. Si elles ne le sont pas, le résultat ne sera pas forcément trié.
-- **Pas d'entrée utilisateur** : Comme ton environnement précédent avait des problèmes avec `getLine`, j'ai utilisé des listes statiques. Si tu veux une version avec saisie utilisateur, dis-le-moi, et je l'adapterai avec une gestion d'erreurs.
-- **Type polymorphe** : Grâce à `Ord a`, la fonction fonctionne avec n'importe quel type comparable (par exemple, `Int`, `Float`, ou même des chaînes).
-
-Teste ce code et fais-moi savoir si ça fonctionne ou si tu veux des modifications !
+     

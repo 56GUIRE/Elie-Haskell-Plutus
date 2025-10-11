@@ -1,8 +1,5 @@
-Je te remercie pour ta demande. Voici le code exact pour un programme Haskell qui affiche un nombre aléatoire entre 1 et 100, en modifiant le fichier `.cabal` pour inclure la dépendance `random`, avec la fonction `main` comme point d'entrée. Je vais également inclure une explication claire pour chaque partie, comme demandé, et m'assurer qu'il n'y a pas d'erreur, en tenant compte de ton commentaire précédent sur une erreur dans le fichier `Main.hs`.
-
-### Code demandé
-
-#### 1. Fichier `app/Main.hs`
+HC14T2 : Ajouter une dépendance et afficher un nombre aléatoire
+1. Fichier app/Main.hs
 ```haskell
 module Main where
 
@@ -90,58 +87,3 @@ executable hello-cabal
      ```
      (Le nombre sera différent à chaque exécution, car il est aléatoire.)
 
-### Résultat attendu
-Le programme affiche un message contenant un nombre aléatoire entre 1 et 100, par exemple :
-```
-Nombre aléatoire : 73
-```
-Chaque exécution génère un nouveau nombre aléatoire.
-
-### Gestion des erreurs potentielles
-Tu as mentionné une erreur dans le "1. Fichier" (`Main.hs`) dans une réponse précédente, mais sans préciser la nature de l'erreur. Voici les problèmes courants et leurs solutions :
-
-1. **Erreur : "Could not find module ‘System.Random’"** :
-   - **Cause** : Le paquet `random` n'est pas installé ou la dépendance n'est pas correctement configurée.
-   - **Solution** :
-     - Vérifie que `random ^>= 1.2` est bien dans la section `build-depends` du fichier `.cabal`.
-     - Exécute `cabal update` pour mettre à jour l'index des paquets, puis `cabal build` pour installer `random`.
-
-2. **Erreur de compatibilité avec `base`** :
-   - **Cause** : La version `base ^>= 4.14` peut ne pas être compatible avec ta version de GHC. Par exemple, GHC 9.0 nécessite `base ^>= 4.16`.
-   - **Solution** :
-     - Vérifie la version de GHC avec `ghc --version`.
-     - Ajuste la version de `base` dans le fichier `.cabal`. Par exemple, pour GHC 9.0 :
-       ```cabal
-       build-depends:    base ^>= 4.16,
-                         random ^>= 1.2
-       ```
-
-3. **Erreur de syntaxe ou indentation** :
-   - Le code fourni suit les conventions Haskell (indentation de 4 espaces dans le bloc `do`, bien que 2 espaces soient aussi valides). Vérifie que le code copié n'a pas d'indentation incorrecte. Par exemple, les lignes dans le bloc `do` doivent être alignées :
-     ```haskell
-     main = do
-         randomNumber <- randomRIO (1 :: Int, 100 :: Int)
-         putStrLn $ "Nombre aléatoire : " ++ show randomNumber
-     ```
-
-4. **Erreur d'exécution ou sortie inattendue** :
-   - Si le programme n'affiche pas un nombre entre 1 et 100, vérifie que le code n'a pas été modifié (par exemple, changement de la plage dans `randomRIO`).
-   - Si rien ne s'affiche, assure-toi que le fichier `Main.hs` est bien dans le dossier `app` et que le fichier `.cabal` pointe correctement vers `main-is: Main.hs`.
-
-### Notes supplémentaires
-- **Environnement** : Assure-toi que GHC et Cabal sont installés (par exemple, via GHCup). Vérifie avec `ghc --version` et `cabal --version`.
-- **Version de `random`** : La version `^>= 1.2` est récente (compatible avec les versions modernes de GHC). Si tu rencontres des problèmes, tu peux essayer une contrainte plus large, comme `random >= 1.1`.
-- **Test alternatif** : Si tu veux tester sans Cabal, compile directement avec :
-  ```bash
-  cabal install --lib random
-  ghc -o hello-cabal app/Main.hs
-  ./hello-cabal
-  ```
-
-### Demande de clarification
-Si l'erreur que tu as mentionnée persiste, peux-tu fournir :
-- Le message d'erreur exact (par exemple, une erreur de compilation ou d'exécution).
-- La version de GHC que tu utilises (`ghc --version`).
-- Toute modification que tu as apportée au code ou au fichier `.cabal`.
-
-Cela m'aidera à identifier précisément le problème et à te donner une solution adaptée. Si tout fonctionne avec ce code, fais-moi savoir si tu veux ajouter des fonctionnalités (par exemple, générer plusieurs nombres aléatoires) !

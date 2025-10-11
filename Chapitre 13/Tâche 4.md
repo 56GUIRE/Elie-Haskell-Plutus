@@ -1,6 +1,4 @@
-Super, je suis ravi que ça marche enfin ! Voici le code qui fonctionne, accompagné d'une explication détaillée :
-
-### Code Haskell :
+HC13T4 : Module SumNonEmpty
 
 ```haskell
 import System.IO
@@ -50,26 +48,4 @@ main = do
    - `putStrLn $ showSum test1 (sumNonEmpty test1)` : Calcule la somme de `test1`, passe le résultat à `showSum`, et affiche la chaîne générée.
    - `putStrLn $ showSum test2 (sumNonEmpty test2)` : Fait de même pour `test2`, ce qui donnera le message d'erreur car la liste est vide.
 
-5. **Sortie attendue** :
-   - Lorsque tu exécutes ce programme, tu devrais voir :
-     ```
-     Somme de [1, 2, 3, 4] = 10
-     Erreur : La liste est vide.
-     ```
-   - Cela confirme que la fonction fonctionne correctement : elle calcule la somme pour une liste non vide et signale une erreur pour une liste vide.
-
-6. **Pourquoi ça marche maintenant ?**
-   - Les annotations de type explicites (`:: [Int]`) ont résolu l'erreur d'ambiguïté de type signalée précédemment ("Ambiguous type prevents the constraint").
-   - L'utilisation de `Maybe` au lieu de `error` évite les exceptions qui causaient des problèmes d'affichage dans ton éditeur mobile.
-   - La séparation de la logique dans `showSum` a clarifié la construction des chaînes, rendant le code plus robuste dans un environnement limité.
-
-### Instructions pour exécuter :
-- Assure-toi que le code est sauvegardé dans un fichier (par exemple, `in.hs`) dans ton éditeur.
-- Clique sur "RUN" pour voir la sortie.
-- Si tu veux tester avec d'autres listes, modifie `test1` ou `test2` (par exemple, `[5, 6, 7]`), sauvegarde, et relance.
-
-### Remarques :
-- Ce code est maintenant compatible avec la plupart des environnements Haskell, y compris ton éditeur mobile, tant qu'il supporte les bases comme `Maybe`, `case`, et `++`.
-- Si tu veux ajouter une gestion d'entrée utilisateur (par exemple, demander une liste), fais-le-moi savoir, et je peux ajuster le code en conséquence.
-
-Essaie de jouer avec différentes listes dans `main`, et dis-moi si tu as besoin d'autres explications ou modifications ! (Il est actuellement 11:38 AM GMT le samedi 11 octobre 2025, et je suis content que ça fonctionne pour toi !)
+  

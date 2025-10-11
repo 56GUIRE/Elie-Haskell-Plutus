@@ -1,13 +1,4 @@
-Merci de signaler qu'il y a une erreur. Comme je n'ai pas encore les détails exacts du message d'erreur (par exemple, une photo ou une description du texte affiché), je vais supposer que le problème est lié à ton environnement ("éditeur de code haskell" sur mobile), qui a montré des limitations avec les types, les modules, ou les opérations système dans nos échanges précédents (par exemple, "Ambiguous type" ou des messages tronqués). L'erreur pourrait provenir de `listDirectory` (problème d'accès au répertoire), de `isInfixOf` (non bien supporté), ou d'une incompatibilité avec les actions `IO`.
-
-Pour corriger cela, je vais :
-- Ajouter une gestion d'erreur explicite pour `listDirectory` avec `try` (de `Control.Exception`) pour capturer les problèmes d'accès au système de fichiers.
-- Simplifier la logique en vérifiant manuellement la sous-chaîne avec une fonction explicite au lieu de dépendre de `isInfixOf`, qui pourrait ne pas être bien pris en charge.
-- Tester avec des annotations et une structure robuste adaptée à ton éditeur.
-
-Voici la version corrigée :
-
-### Code corrigé (fichier unique, par exemple `FileSearch.hs`) :
+ HC13T10 : Fonction principale multi-modules
 
 ```haskell
 import System.IO
@@ -74,38 +65,4 @@ main = do
    - Définit `searchTerm = "txt"` et appelle `searchAndSortFiles`.
    - Utilise `if null results` pour afficher un message si aucun fichier ne correspond, ou liste les résultats sinon.
 
-4. **Sortie attendue** :
-   - Si ton répertoire contient `testfile.txt` et `document.txt` :
-     ```
-     Fichiers contenant 'txt' (triés) :
-     document.txt
-     testfile.txt
-     ```
-   - Si aucun fichier ne contient "txt" :
-     ```
-     Aucun fichier ne contient la sous-chaîne : txt
-     ```
-   - Si une erreur d'accès survient :
-     ```
-     Erreur : Répertoire introuvable
-     ```
-
-### Instructions pour exécuter :
-1. **Remplace le code** :
-   - Ouvre ton éditeur (fichier `in.hs`) et remplace tout le contenu par le code ci-dessus. Copie manuellement ligne par ligne.
-2. **Sauvegarde** :
-   - Sauvegarde `in.hs`.
-3. **Exécute** :
-   - Clique sur "RUN" dans ton environnement.
-4. **Vérifie** :
-   - Confirme que la sortie correspond à celle attendue.
-
-### Si l'erreur persiste :
-- **Message d'erreur** : **C'est crucial !** Envoie-moi une photo ou une description complète du message (par exemple, "error:", "Ambiguous type", ou autre). Les erreurs précédentes étaient tronquées, donc plus de détails sont essentiels pour identifier la cause exacte.
-- **Environnement** : Peux-tu me donner le nom exact de ton éditeur mobile (par exemple, une app Android/iOS ou un site) ? Cela m'aidera à adapter davantage.
-- **Test alternatif** : Si possible, teste avec GHCi (`ghci in.hs` puis `main`) ou Replit (https://replit.com/languages/haskell) pour isoler le problème.
-
-### Hypothèse :
-L'erreur précédente venait probablement de `listDirectory` (accès refusé) ou de `isInfixOf` (non supporté). La gestion des erreurs avec `try` et le remplacement de `isInfixOf` devraient résoudre cela. Si l'erreur persiste, elle pourrait être liée à une limitation de ton éditeur avec `IO` ou les imports.
-
-Essaie cette version et **envoie-moi l'erreur exacte** (photo ou texte) pour que je puisse la corriger précisément ! (Il est actuellement 12:36 PM GMT le samedi 11 octobre 2025, et je suis déterminé à résoudre ça avec ton aide !)
+  

@@ -1,6 +1,4 @@
-Super, je suis content que ça marche ! Voici le code simplifié qui fonctionne, accompagné d'une explication détaillée :
-
-### Code Haskell :
+HC13T2 : Filtrer les fichiers par sous-chaîne
 
 ```haskell
 import System.Directory (listDirectory)
@@ -36,27 +34,4 @@ main = do
    - Le programme affiche uniquement les fichiers ou dossiers dont le nom contient "test" (par exemple, `testfile.txt` ou `mytestdir`). Si aucun fichier ne correspond, il affiche juste le titre sans liste.
    - Comme la sous-chaîne est fixée à "test", il n'y a pas besoin d'entrée utilisateur, ce qui simplifie l'exécution et évite les erreurs liées à `getLine`.
 
-4. **Sortie attendue** :
-   - Si ton répertoire contient `testfile.txt` et `otherfile.hs`, la sortie pourrait être :
-     ```
-     Fichiers contenant 'test' :
-     testfile.txt
-     ```
-   - Si aucun fichier ne contient "test", tu verras :
-     ```
-     Fichiers contenant 'test' :
-     ```
-
-5. **Pourquoi ça marche maintenant ?**
-   - La version précédente avait des complications (gestion d'erreurs, entrée utilisateur) qui pouvaient causer des problèmes dans ton environnement (probablement un éditeur mobile ou en ligne avec des limitations). En simplifiant le code, on a éliminé ces risques. L'erreur "let filte" que tu voyais avant était probablement due à une corruption ou une mauvaise interprétation de `let filtered`, résolue en recréant le code proprement.
-
-### Instructions pour exécuter :
-- Assure-toi que le code est sauvegardé dans un fichier (par exemple, `in.hs`) dans ton éditeur.
-- Clique sur "RUN" pour voir la liste des fichiers contenant "test".
-- Si tu veux tester avec une autre sous-chaîne (par exemple, "txt"), tu peux modifier `"test"` dans `isInfixOf "test"` par `"txt"`, puis recompiler et réexécuter.
-
-### Remarques :
-- Ce code fonctionne dans la plupart des environnements Haskell, y compris les éditeurs en ligne ou mobiles, tant qu'ils supportent les modules importés.
-- Si tu veux revenir à une version avec saisie utilisateur, fais-le-moi savoir, et je te donnerai une version ajustée qui évite les erreurs précédentes.
-
-Essaie de jouer avec différentes sous-chaînes dans le code, et dis-moi si tu as besoin d'autres ajustements ou d'explications !
+   

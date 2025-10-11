@@ -1,13 +1,4 @@
-Merci de signaler qu'il y a une erreur. Comme je n'ai pas les détails exacts de l'erreur (par exemple, le message affiché), je vais supposer que le problème est lié à l'environnement que tu utilises ("éditeur de code haskell" sur mobile), qui semble avoir des difficultés avec les modules ou les types comme `Maybe`, comme observé précédemment. L'erreur précédente ("Ambiguous type") a été résolue avec des annotations de type, mais l'introduction du module `SumNonEmpty` pourrait causer des problèmes si ton éditeur ne supporte pas correctement les modules ou si le fichier n'est pas nommé correctement (doit être `SumNonEmpty.hs`).
-
-Je vais corriger le code en :
-- Supprimant temporairement la déclaration de module si elle pose problème dans ton environnement.
-- Vérifiant que les types et les dépendances sont bien gérés.
-- Testant une version sans module pour voir si cela résout l'erreur.
-
-Voici une version corrigée sans module :
-
-### Code corrigé :
+HC13T5 : Restreindre la visibilité dans le module
 
 ```haskell
 import System.IO
@@ -61,29 +52,4 @@ main = do
 3. **Fonction `main`** :
    - Teste `test1` et `test2` avec `showSum` pour afficher les résultats.
 
-4. **Sortie attendue** :
-   - Tu devrais voir :
-     ```
-     Somme de [1, 2, 3, 4] = 10
-     Erreur : La liste est vide.
-     ```
-
-### Instructions pour exécuter :
-1. **Remplace le code** :
-   - Ouvre ton éditeur (fichier `in.hs`) et remplace tout le contenu par le code ci-dessus. Copie-le manuellement ligne par ligne pour éviter les erreurs de copier-coller.
-2. **Sauvegarde** :
-   - Sauvegarde le fichier `in.hs`.
-3. **Exécute** :
-   - Clique sur "RUN" dans ton environnement.
-4. **Vérifie** :
-   - Confirme que la sortie correspond à celle attendue.
-
-### Si l'erreur persiste :
-- **Message d'erreur complet** : Envoie-moi une photo ou une description détaillée du message d'erreur (par exemple, "error:", "Ambiguous type", ou autre). L'erreur précédente était tronquée, donc plus de détails aideront.
-- **Environnement** : Peux-tu me donner le nom exact de l'application ou du site que tu utilises (par exemple, une app Android/iOS ou un éditeur en ligne) ? Cela m'aidera à identifier les limitations.
-- **Test alternatif** : Si possible, teste sur GHCi (`ghci in.hs` puis `main`) ou Replit (https://replit.com/languages/haskell) pour isoler le problème.
-
-### Hypothèse :
-L'erreur vient probablement de la déclaration de module, qui n'est pas bien supportée par ton éditeur mobile. En la supprimant, on teste si le problème est lié à cela. Si ça ne fonctionne toujours pas, il pourrait y avoir un problème avec `Maybe` ou `show`.
-
-Essaie cette version et dis-moi si ça fonctionne ou partage l'erreur si elle persiste ! (Il est actuellement 11:52 AM GMT le samedi 11 octobre 2025, et je suis déterminé à résoudre ça pour toi !)
+   

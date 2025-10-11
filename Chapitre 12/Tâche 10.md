@@ -1,7 +1,4 @@
-D'accord ! Voici le code simplifié qui fonctionne sans module, accompagné d'une explication détaillée :
-
-### Code Haskell :
-
+HC12T10 : Module d'opérations mathématiques
 ```haskell
 -- Fonction pour calculer la puissance d'un nombre
 power :: Double -> Double -> Double
@@ -54,23 +51,4 @@ main = do
    - Des valeurs de test sont définies (`x = 2.0`, `n = 3.0`, `num = 7`, `count = 5`).
    - Les résultats des fonctions sont affichés avec `putStrLn`, en convertissant les nombres en chaînes avec `show` pour les concaténer.
 
-4. **Sortie attendue** :
-   Lorsque tu exécutes ce code, tu devrais voir :
-   ```
-   Démonstration des opérations mathématiques :
-   Puissance : 2.0^3.0 = 8.0
-   Factorielle de 7 = 5040
-   7 est premier ? True
-   Somme des 5 premiers nombres = 15
-   ```
-
-5. **Pourquoi ça marche maintenant ?**
-   - L'erreur précédente venait probablement d'un conflit entre le nom du module et le fichier, ou d'un environnement qui ne supporte pas les modules. En enlevant `module MathOperations where`, le code devient un script Haskell standard que la plupart des environnements (y compris les éditeurs en ligne) peuvent exécuter directement, tant qu'il contient une fonction `main`.
-
-### Instructions pour exécuter :
-- Copie ce code dans ton éditeur (par exemple, l'environnement que tu utilises avec le bouton "RUN").
-- Sauvegarde-le dans un fichier (par exemple, `test.hs`) si l'environnement le permet.
-- Clique sur "RUN" pour voir la sortie.
-- Si tu utilises un environnement spécifique (comme une application mobile ou un site web), assure-toi qu'il est configuré pour exécuter du Haskell (par exemple, avec GHC ou un interpréteur en ligne).
-
-Si tu rencontres encore un problème, dis-moi quel environnement tu utilises, et je t'aiderai à l'ajuster !
+   

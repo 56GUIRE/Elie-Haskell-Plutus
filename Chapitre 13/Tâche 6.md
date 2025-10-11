@@ -1,7 +1,4 @@
-Super, je suis ravi que ça marche enfin ! Voici le code qui fonctionne, accompagné d'une explication détaillée basée sur les concepts de ton cours sur les modules en Haskell :
-
-### Code Haskell :
-
+HC13T6 : Convertir des fichiers filtrés en map
 ```haskell
 import System.Directory (listDirectory)
 import Data.List (filter, isInfixOf)
@@ -31,7 +28,7 @@ main = do
       mapM_ (\(k, v) -> putStrLn $ show k ++ " -> " ++ v) (Map.toList result)
 ```
 
-### Explication (alignée avec ton cours) :
+### Explication :
 
 1. **Importations** :
    - `import System.Directory (listDirectory)` : Importe uniquement la fonction `listDirectory` pour lister les fichiers du répertoire courant. Cela suit le conseil de ton cours d'importer seulement les éléments nécessaires, évitant la pollution de l'environnement.
@@ -55,35 +52,4 @@ main = do
    - `putStrLn $ "Fichiers filtrés convertis en map (clé = indice, valeur = nom) :"` : Affiche un titre.
    - `mapM_ (\(k, v) -> putStrLn $ show k ++ " -> " ++ v) (Map.toList result)` : Convertit la map en liste de paires avec `Map.toList`, puis utilise `mapM_` pour afficher chaque paire `(clé, valeur)` sous la forme "clé -> valeur". Cela utilise une lambda pour formater chaque ligne.
 
-4. **Sortie attendue** :
-   - Si ton répertoire contient `testfile.txt` et `document.txt` :
-     ```
-     Fichiers filtrés convertis en map (clé = indice, valeur = nom) :
-     1 -> document.txt
-     2 -> testfile.txt
-     ```
-   - Si aucun fichier ne contient "txt" :
-     ```
-     Aucun fichier ne contient la sous-chaîne : txt
-     ```
-
-5. **Pourquoi ça marche maintenant ?**
-   - La suppression de `getLine` évite les problèmes d'entrée utilisateur qui pourraient causer des erreurs dans ton éditeur mobile.
-   - Les importations spécifiques et qualifiées respectent les recommandations de ton cours, évitant les conflits.
-   - La décomposition explicite des étapes (`zip`, `Map.fromList`) facilite la compréhension et réduit les risques d'erreur dans un environnement limité.
-
-6. **Respect du cours** :
-   - **Importation contrôlée** : Utilise des importations spécifiques et `qualified` pour `Data.Map`, comme enseigné.
-   - **Utilisation de `Data.Map`** : Implémente `Map.fromList` avec `zip`, suivant l'exemple du cours.
-   - **Gestion de l'environnement** : Évite les ambiguïtés avec des importations qualifiées.
-
-### Instructions pour exécuter :
-- Assure-toi que le code est sauvegardé dans un fichier (par exemple, `in.hs`) dans ton éditeur.
-- Clique sur "RUN" pour voir la sortie.
-- Si tu veux tester avec une autre sous-chaîne, modifie `substring = "txt"` (par exemple, en `"pdf"`) et relance.
-
-### Remarques :
-- Ce code est maintenant robuste pour ton environnement mobile. Si tu veux réintroduire l'entrée utilisateur avec `getLine`, fais-le-moi savoir, et je te guiderai pour l'ajouter proprement.
-- Si tu as des fichiers spécifiques dans ton répertoire, la sortie reflétera ceux qui contiennent la sous-chaîne.
-
-Essaie de jouer avec différentes sous-chaînes dans `main`, et dis-moi si tu as besoin d'autres explications ou modifications ! (Il est actuellement 11:49 AM GMT le samedi 11 octobre 2025, et je suis heureux que ça fonctionne pour toi !)
+   

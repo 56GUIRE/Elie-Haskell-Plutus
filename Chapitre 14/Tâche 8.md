@@ -1,5 +1,4 @@
-Voici une implémentation en Haskell de la fonction `counts` qui retourne une liste de tuples représentant la fréquence des caractères dans une chaîne, avec un `main` pour tester :
-
+HC14T8 : Fonction de comptage de fréquence de caractères
 ```haskell
 module Main where
 
@@ -28,14 +27,4 @@ main = do
 2. **Fonction `main`** :
    - Teste la fonction `counts` avec la chaîne `"hello"`.
    - Affiche le résultat `[( 'e', 1), ('h', 1), ('l', 2), ('o', 1)]`.
-
-Vous pouvez compiler et exécuter ce programme avec GHC. Par exemple :
-```bash
-ghc -o counts counts.hs
-./counts
-```
-
-Sortie attendue :
-```
-[('e',1),('h',1),('l',2),('o',1)]
-```
+`

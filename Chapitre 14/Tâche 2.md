@@ -1,5 +1,7 @@
-HC14T2 : Ajouter une dépendance et afficher un nombre aléatoire
-1. Fichier app/Main.hs
+Je vais vous fournir un programme Haskell qui génère un nombre aléatoire entre 1 et 100, avec le code source et les modifications nécessaires pour le fichier `.cabal`.
+
+### 1. Code Haskell (fichier `Main.hs`)
+
 ```haskell
 module Main where
 
@@ -7,58 +9,81 @@ import System.Random (randomRIO)
 
 main :: IO ()
 main = do
-    randomNumber <- randomRIO (1 :: Int, 100 :: Int)
-    putStrLn $ "Nombre aléatoire : " ++ show randomNumber
+    randomNum <- randomRIO (1 :: Int, 100 :: Int) -- Génère un nombre aléatoire entre 1 et 100
+    putStrLn $ "Nombre aléatoire : " ++ show randomNum
 ```
 
-#### 2. Fichier `hello-cabal.cabal`
+**Explications :**
+- `System.Random` fournit des fonctions pour la génération de nombres aléatoires.
+- `randomRIO` est utilisé pour générer un nombre aléatoire dans une plage donnée (ici, 1 à 100).
+- Le type `Int` est explicitement spécifié pour éviter toute ambiguïté.
+- Le programme affiche le nombre aléatoire avec un message.
+
+### 2. Fichier `.cabal`
+
+Voici un exemple de fichier `.cabal` configuré pour inclure la dépendance sur le paquet `random`. Supposons que votre projet s'appelle `random-number`.
+
 ```cabal
-cabal-version:      2.4
-name:               hello-cabal
-version:            0.1.0.0
+cabal-version:       3.0
+name:                random-number
+version:             0.1.0.0
+synopsis:            A simple program to generate a random number
+license:             BSD-3-Clause
+author:              Votre Nom
+maintainer:          votre.email@example.com
+build-type:          Simple
 
-executable hello-cabal
-    main-is:          Main.hs
-    build-depends:    base ^>= 4.14,
-                      random ^>= 1.2
-    hs-source-dirs:   app
-    default-language: Haskell2010
+executable random-number
+  main-is:             Main.hs
+  build-depends:       base ^>= 4.16,
+                       random >= 1.2
+  hs-source-dirs:      src
+  default-language:    Haskell2010
 ```
 
-### Explication détaillée
+**Explications :**
+- La dépendance `random >= 1.2` est ajoutée dans la section `build-depends`.
+- `base ^>= 4.16` est inclus pour la compatibilité avec la bibliothèque standard de Haskell.
+- `main-is: Main.hs` indique que le fichier principal est `Main.hs`.
+- `hs-source-dirs: src` suppose que `Main.hs` est dans un dossier `src`.
 
-#### Fichier `app/Main.hs`
-- **`module Main where`** :
-  - Déclare le module principal nommé `Main`, qui est requis pour un exécutable Haskell. La fonction `main` dans ce module sert de point d'entrée pour le programme.
-- **`import System.Random (randomRIO)`** :
-  - Importe la fonction `randomRIO` du module `System.Random`, qui fait partie du paquet `random`. Cette fonction est utilisée pour générer un nombre aléatoire dans une plage donnée (ici, 1 à 100).
-- **`main :: IO ()`** :
-  - La fonction `main` est le point d'entrée du programme. Son type `IO ()` indique qu'elle effectue des opérations d'entrée/sortie (comme générer un nombre aléatoire ou afficher du texte) et ne retourne aucune valeur (`()`).
-- **`randomNumber <- randomRIO (1 :: Int, 100 :: Int)`** :
-  - `randomRIO` prend un tuple `(a, b)` représentant la plage des nombres aléatoires (inclusivement). Ici, `(1 :: Int, 100 :: Int)` spécifie une plage de 1 à 100, avec des annotations de type `:: Int` pour s'assurer que les bornes sont des entiers.
-  - L'opérateur `<-` extrait le résultat de l'action `IO` (le nombre aléatoire) et l'assigne à `randomNumber`.
-- **`putStrLn $ "Nombre aléatoire : " ++ show randomNumber`** :
-  - `show randomNumber` convertit le nombre aléatoire (de type `Int`) en une chaîne de caractères (`String`).
-  - `"Nombre aléatoire : " ++ show randomNumber` concatène le texte `"Nombre aléatoire : "` avec la représentation textuelle du nombre.
-  - `putStrLn` affiche la chaîne résultante dans la console, suivie d'un saut de ligne.
+### 3. Instructions pour exécuter le programme
 
-#### Fichier `hello-cabal.cabal`
-- **`cabal-version: 2.4`** :
-  - Spécifie la version du format du fichier `.cabal`. La version 2.4 est standard et compatible avec les outils modernes de Cabal.
-- **`name: hello-cabal`** :
-  - Définit le nom du projet comme `hello-cabal`, qui est le nom par défaut généré par `cabal init`.
-- **`version: 0.1.0.0`** :
-  - Indique la version initiale du projet, générée par `cabal init`.
-- **`executable hello-cabal`** :
-  - Définit une section pour l'exécutable nommé `hello-cabal`, qui sera généré à partir du code source.
-- **`main-is: Main.hs`** :
-  - Indique que le fichier `Main.hs` (situé dans le dossier spécifié par `hs-source-dirs`) contient la fonction `main`, point d'entrée de l'exécutable.
-- **`build-depends: base ^>= 4.14, random ^>= 1.2`** :
-  - Liste les dépendances du projet :
-    - `base ^>= 4.14` : La bibliothèque standard de Haskell, compatible avec GHC 8.10. La contrainte `^>= 4.14` accepte la version 4.14.x ou toute version mineure compatible.
-    - `random ^>= 1.2` : Le paquet `random`, qui fournit le module `System.Random` pour la génération de nombres aléatoires. La version 1.2 est récente et largement compatible.
-- **`hs-source-dirs: app`** :
-  - Indique que les fichiers source Haskell, comme `Main.hs`, se trouvent dans le dossier `app`.
-- **`default-language: Haskell2010`** :
-  - Spécifie que le langage utilisé est Haskell 2010, une version standard du langage Haskell.
+1. **Structure du projet :**
+   Créez un dossier pour votre projet avec la structure suivante :
+   ```
+   random-number/
+   ├── random-number.cabal
+   ├── src/
+   │   └── Main.hs
+   ```
 
+2. **Initialisation et exécution :**
+   - Assurez-vous que Cabal et GHC sont installés (via GHCup ou Stack).
+   - Dans le dossier du projet, exécutez :
+     ```bash
+     cabal update
+     cabal build
+     cabal run random-number
+     ```
+   - Cela téléchargera la dépendance `random`, compilera le programme, et affichera un nombre aléatoire entre 1 et 100, par exemple : `Nombre aléatoire : 42`.
+
+3. **Alternative avec Stack :**
+   Si vous utilisez Stack, créez un fichier `stack.yaml` ou initialisez un projet avec `stack new random-number`, puis ajoutez `random` dans la section `dependencies` du fichier `package.yaml` :
+   ```yaml
+   dependencies:
+   - base >= 4.7 && < 5
+   - random >= 1.2
+   ```
+   Ensuite, exécutez :
+   ```bash
+   stack build
+   stack exec random-number
+   ```
+
+### Remarques
+- Le paquet `random` est une bibliothèque standard pour la génération de nombres aléatoires en Haskell.
+- Si vous rencontrez des problèmes avec les versions, vérifiez la compatibilité de `random` avec votre version de GHC via `cabal info random` ou sur Hackage.
+- Pour une génération de nombres aléatoires plus complexe, vous pouvez explorer des bibliothèques comme `mwc-random` ou `tf-random`, mais `random` est suffisant ici.
+
+Si vous avez besoin d'aide supplémentaire (par exemple, pour configurer l'environnement ou ajouter d'autres fonctionnalités), faites-le-moi savoir !

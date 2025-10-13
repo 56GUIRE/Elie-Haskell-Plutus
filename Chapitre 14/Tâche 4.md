@@ -1,5 +1,4 @@
 HC14T4 : Type d'extensionApplications
-### Code Haskell (fichier `Main.hs`)
 
 ```haskell
 {-# LANGUAGE TypeApplications #-}

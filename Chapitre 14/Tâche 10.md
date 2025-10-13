@@ -1,4 +1,4 @@
-Pour créer une suite de tests Cabal pour un module Haskell contenant la fonction `counts` (qui retourne une liste de tuples représentant la fréquence des caractères dans une chaîne), nous allons organiser le projet avec un module principal, un module de tests, et un fichier Cabal pour gérer les dépendances et les tests. Voici une implémentation complète avec des explications.
+HC14T10 : Suite de tests Cabal pour counts
 
 ### Structure du projet
 1. **Module principal** : Contient la fonction `counts`.
@@ -109,40 +109,7 @@ counts/
 └── counts.cabal
 ```
 
-### Étape 6 : Instructions pour exécuter
-1. **Initialiser le projet** :
-   - Assurez-vous d'avoir Cabal et GHC installés.
-   - Créez un répertoire pour le projet et placez les fichiers ci-dessus.
-   - Exécutez `cabal init` si vous voulez générer un squelette, mais le fichier `counts.cabal` fourni est suffisant.
 
-2. **Construire le projet** :
-   ```bash
-   cabal build
-   ```
-
-3. **Exécuter les tests** :
-   ```bash
-   cabal test
-   ```
-
-   Sortie attendue (si tous les tests passent) :
-   ```
-   Running 1 test suites...
-   Test suite counts-test: RUNNING...
-   Test suite counts-test: PASS
-   Test suite logged to: dist-newstyle/.../counts-test.log
-   1 of 1 test suites (1 of 1 test cases) passed.
-   ```
-
-4. **Exécuter le programme principal** :
-   ```bash
-   cabal run counts-exe
-   ```
-
-   Sortie attendue :
-   ```
-   Counts for "hello": [('e',1),('h',1),('l',2),('o',1)]
-   ```
 
 ### Explications
 - **Fonction `counts`** : Comme dans les réponses précédentes, elle calcule la fréquence des caractères dans une chaîne en utilisant `sort` et `group` de `Data.List`.

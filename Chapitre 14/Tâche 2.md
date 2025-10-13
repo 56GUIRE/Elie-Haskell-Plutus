@@ -1,5 +1,4 @@
-Je vais vous fournir un programme Haskell qui génère un nombre aléatoire entre 1 et 100, avec le code source et les modifications nécessaires pour le fichier `.cabal`.
-
+HC14T2 : Ajouter une dépendance et afficher un nombre aléatoire
 ### 1. Code Haskell (fichier `Main.hs`)
 
 ```haskell
@@ -81,9 +80,3 @@ executable random-number
    stack exec random-number
    ```
 
-### Remarques
-- Le paquet `random` est une bibliothèque standard pour la génération de nombres aléatoires en Haskell.
-- Si vous rencontrez des problèmes avec les versions, vérifiez la compatibilité de `random` avec votre version de GHC via `cabal info random` ou sur Hackage.
-- Pour une génération de nombres aléatoires plus complexe, vous pouvez explorer des bibliothèques comme `mwc-random` ou `tf-random`, mais `random` est suffisant ici.
-
-Si vous avez besoin d'aide supplémentaire (par exemple, pour configurer l'environnement ou ajouter d'autres fonctionnalités), faites-le-moi savoir !

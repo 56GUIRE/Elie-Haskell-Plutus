@@ -1,4 +1,4 @@
-Voici un exemple de programme Haskell qui utilise l'extension `PartialTypeSignatures` pour permettre des types jokers (`_`) dans la signature de fonction, avec une fonction `counts` (comme dans votre demande précédente) et un `main` pour tester :
+HC14T9 : Extension de signatures de type partiel
 
 ```haskell
 {-# LANGUAGE PartialTypeSignatures #-}
@@ -33,19 +33,4 @@ main = do
    - Teste `counts` avec la chaîne `"hello"`.
    - Affiche le résultat `[('e',1),('h',1),('l',2),('o',1)]`.
 
-### Compilation et exécution :
-Pour compiler ce programme avec GHC :
-```bash
-ghc -o counts counts.hs
-./counts
-```
 
-Sortie attendue :
-```
-[('e',1),('h',1),('l',2),('o',1)]
-```
-
-### Notes :
-- L'extension `PartialTypeSignatures` est utile pour prototyper ou lorsque le type exact d'une partie de la signature n'est pas critique.
-- GHC peut émettre des avertissements si les types jokers ne sont pas assez contraints, mais ici, le contexte est suffisant pour inférer correctement `Char` et `IO ()`.
-- Si vous voulez voir les types inférés par GHC, vous pouvez compiler avec l'option `-Wpartial-type-signatures` pour obtenir des avertissements détaillant les inférences.

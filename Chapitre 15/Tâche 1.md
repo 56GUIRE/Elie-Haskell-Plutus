@@ -1,5 +1,4 @@
-Voici un programme en Haskell qui lit un fichier, calcule une vitesse à partir d'une saisie utilisateur et gère les exceptions potentielles. Le programme suppose que le fichier contient une distance (en mètres) et demande à l'utilisateur un temps (en secondes) pour calculer la vitesse (distance/temps).
-
+HC15T1 : Gérer les exceptions lors de la lecture d'un fichier et du calcul de la vitesse
 ```haskell
 import System.IO
 import Control.Exception
@@ -66,43 +65,4 @@ main = do
    - Coordonne l'exécution en enchaînant les appels aux fonctions `readDistanceFromFile` et `readTimeFromUser`.
    - Affiche les messages d'erreur ou le résultat du calcul selon les cas.
 
-### Pré-requis :
-- Le fichier `distance.txt` doit exister dans le répertoire courant et contenir un nombre (par exemple, `100.5` pour 100,5 mètres).
-- Si le fichier n'existe pas ou si son contenu est invalide, un message d'erreur approprié est affiché.
-- L'utilisateur doit entrer un temps valide (nombre positif) via la console.
 
-### Exemple d'exécution :
-1. Si `distance.txt` contient `100` et l'utilisateur entre `5` :
-   ```
-   Entrez le temps (en secondes) :
-   5
-   La vitesse est : 20.0 m/s
-   ```
-
-2. Si le fichier `distance.txt` n'existe pas :
-   ```
-   Erreur lors de la lecture du fichier : dist.txt: openFile: does not exist (No such file or directory)
-   ```
-
-3. Si l'utilisateur entre une saisie invalide (par exemple, `abc`) :
-   ```
-   Entrez le temps (en secondes) :
-   abc
-   La saisie n'est pas un nombre valide
-   ```
-
-4. Si l'utilisateur entre un temps négatif ou nul (par exemple, `0`) :
-   ```
-   Entrez le temps (en secondes) :
-   0
-   Le temps doit être supérieur à 0
-   ```
-
-### Notes :
-- Le programme utilise le type `Either` pour gérer les erreurs de manière explicite et fonctionnelle.
-- Les exceptions liées aux entrées/sorties (IO) sont gérées avec `try` et `Control.Exception`.
-- Pour compiler et exécuter ce programme, assurez-vous d'avoir GHC installé et utilisez une commande comme :
-  ```bash
-  ghc -o programme programme.hs
-  ./programme
-  ```

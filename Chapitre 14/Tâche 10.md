@@ -123,10 +123,3 @@ counts/
   - Le programme principal dans `app/Main.hs` montre un exemple d'utilisation de `counts`.
   - Le `main` des tests dans `test/Tests.hs` exécute la suite de tests avec `runTestTT`.
 
-### Notes
-- **Dépendances** : Assurez-vous que `HUnit` est disponible. Si nécessaire, ajoutez-le à votre environnement avec `cabal install --lib HUnit`.
-- **Extension `PartialTypeSignatures`** : Vous n'avez pas explicitement demandé son utilisation ici, mais si vous voulez l'intégrer, ajoutez `{-# LANGUAGE PartialTypeSignatures #-}` dans `Counts.hs` ou `Tests.hs` et utilisez des signatures comme `counts :: String -> [(_, Int)]`.
-- **Personnalisation** : Vous pouvez ajouter plus de tests pour couvrir d'autres cas, comme des chaînes avec des espaces ou des caractères Unicode.
-- **Sortie des tests** : La sortie de `cabal test` indique si les tests passent ou échouent, avec des détails en cas d'erreur.
-
-Si vous avez besoin d'ajustements ou de tests supplémentaires, faites-le-moi savoir !

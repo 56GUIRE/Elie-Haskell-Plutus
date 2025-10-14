@@ -28,17 +28,6 @@ main = do
   putStrLn $ showSum test2 (sumNonEmpty test2)
 ```
 
-### Corrections et améliorations :
-
-1. **Suppression du module** :
-   - J'ai retiré `module SumNonEmpty (sumNonEmpty) where` pour éviter les problèmes liés à la gestion des modules dans ton éditeur mobile. Sans module, toutes les fonctions sont publiques par défaut, mais cela devrait contourner une éventuelle erreur de compilation liée au nom du fichier ou à la déclaration de module.
-
-2. **Conserver les fonctionnalités** :
-   - La logique reste identique : `sumNonEmpty` utilise `Maybe` pour gérer les listes vides, et `showSum` construit les chaînes de sortie.
-   - Les annotations de type explicites (`:: [Int]`) sont conservées pour éviter l'erreur d'ambiguïté de type.
-
-3. **Compatibilité** :
-   - Cette version utilise uniquement des fonctionnalités de base (`Maybe`, `case`, `foldl`, `++`), qui devraient être supportées par ton environnement, même avec ses limitations.
 
 ### Explication :
 

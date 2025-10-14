@@ -45,11 +45,4 @@ main = do
 
 3. **Fonction `main`** :
    - `let substring = "txt"` : Définit une sous-chaîne fixe `"txt"` pour tester la fonction. Cela remplace une entrée utilisateur (`getLine`) pour simplifier le code dans ton éditeur mobile.
-   - `result <- filesToMap substring` : Exécute `filesToMap` avec la sous-chaîne et stocke le résultat dans `result`.
-   - `if Map.null result` : Vérifie si la map est vide avec `Map.null`.
-     - Si vraie (`then`), affiche un message indiquant qu'aucun fichier ne contient la sous-chaîne.
-     - Sinon (`else`), exécute un bloc `do` pour afficher les résultats.
-   - `putStrLn $ "Fichiers filtrés convertis en map (clé = indice, valeur = nom) :"` : Affiche un titre.
-   - `mapM_ (\(k, v) -> putStrLn $ show k ++ " -> " ++ v) (Map.toList result)` : Convertit la map en liste de paires avec `Map.toList`, puis utilise `mapM_` pour afficher chaque paire `(clé, valeur)` sous la forme "clé -> valeur". Cela utilise une lambda pour formater chaque ligne.
-
    

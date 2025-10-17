@@ -1,5 +1,4 @@
-Voici un programme en Haskell qui définit et utilise une exception personnalisée pour gérer les erreurs liées à un système de feux tricolores. Le programme inclut un `main` pour démontrer le lancement et la capture de l'exception.
-
+HC15T3 : définir et lancer une exception personnalisée pour les feux
 ```haskell
 module Main where
 
@@ -80,20 +79,3 @@ main = do
    - Il teste une transition valide (`Red` → `Green`), une transition invalide (`Red` → `Yellow`), et un état invalide (`Blue`).
    - Les erreurs sont capturées avec `try` et affichées.
 
-### Sortie attendue :
-Lorsque vous exécutez ce programme, vous obtiendrez quelque chose comme :
-
-```
-Démarrage du système de feux tricolores...
-État initial : Red
-Nouvel état : Green
-Erreur : InvalidLightState "Transition invalide de Red à Yellow"
-Erreur : InvalidLightState "État invalide du feu tricolore : Blue"
-```
-
-### Notes :
-- Le programme utilise `throwIO` pour lancer des exceptions dans le monade `IO`.
-- Les erreurs sont gérées de manière sécurisée avec `try`, qui retourne un `Either` contenant soit l'erreur (`Left`), soit le résultat (`Right`).
-- Vous pouvez compiler et exécuter ce code avec GHC (par exemple, `ghc -o traffic_light traffic_light.hs` et `./traffic_light`).
-
-Si vous avez besoin de modifications ou d'explications supplémentaires, faites-le-moi savoir !

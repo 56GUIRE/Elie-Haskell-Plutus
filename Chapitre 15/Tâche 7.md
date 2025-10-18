@@ -1,6 +1,4 @@
-Je vais créer un programme Haskell qui calcule la vitesse (v = distance / temps) en utilisant des valeurs optionnelles avec `readMaybe` pour gérer les entrées de manière sécurisée et éviter les erreurs d'exécution. Le programme simulera des entrées (distance et temps) et gérera les cas où les entrées ne sont pas des nombres valides.
-
-### Code
+HC15T7 : Calcul de vitesse avec gestion des valeurs optionnelles et du parsing
 ```haskell
 import Text.Read (readMaybe)
 
@@ -41,18 +39,3 @@ main = do
    - `readMaybe` évite les crashs en cas d'entrée invalide (par exemple, lettres ou chaînes vides).
    - La vérification de `t == 0` empêche les erreurs de division par zéro.
 
-### Résultat attendu
-En exécutant ce code à 14:01 GMT le 18 octobre 2025, vous devriez voir :
-```
-Vitesse = 10.0 unités par unité de temps
-Erreur : 50 ou abc n'est pas un nombre valide
-Vitesse = -4.0 unités par unité de temps
-Erreur :  ou 15 n'est pas un nombre valide
-```
-
-### Remarques
-- Les unités ne sont pas spécifiées (par exemple, m/s), mais vous pouvez les ajuster dans les messages si besoin.
-- Comme dans votre cas précédent, l'environnement semble ne pas supporter `getLine`, donc les entrées sont simulées. Si vous voulez une interaction en temps réel, cela nécessiterait un environnement avec `getLine`.
-- Vous pouvez modifier `testCases` pour tester d'autres valeurs (par exemple, `("75.5", "2.5")`).
-
-Testez ce code et dites-moi si vous voulez des ajustements !

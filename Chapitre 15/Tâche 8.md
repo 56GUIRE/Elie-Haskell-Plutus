@@ -1,6 +1,4 @@
-Super, je suis content que ça marche ! Voici le code corrigé avec une explication détaillée pour vous aider à comprendre chaque partie.
-
-### Code
+HC15T8 : Fonction Soit pour messages d'erreur détaillés en division
 ```haskell
 import Text.Read (readMaybe)
 
@@ -51,19 +49,3 @@ main = do
 
 5. **Utilisation de `Either`** :
    - `Either String Double` est utilisé pour représenter soit une erreur (`Left` avec un message `String`) soit un succès (`Right` avec une valeur `Double`). Cela permet de fournir des messages d'erreur détaillés, répondant à votre demande.
-
-### Résultat attendu
-À 14:07 GMT le 18 octobre 2025, en exécutant ce code, vous devriez voir :
-```
-Résultat = 10.0
-Erreur : Division par zéro avec 50 / 0
-Résultat = -4.0
-Erreur : abc ou 15 n'est pas un nombre valide
-```
-
-### Remarques
-- Le code utilise des entrées simulées via `testCases` car l'environnement semble ne pas supporter `getLine`. Vous pouvez modifier `testCases` pour tester d'autres valeurs (par ex. `("75.5", "2.5")`).
-- Les messages d'erreur sont détaillés grâce à `Either`, comme demandé.
-- Si vous avez besoin d'interaction en temps réel à l'avenir, cela nécessiterait un environnement prenant en charge `getLine`.
-
-Testez à nouveau si besoin, et dites-moi si vous voulez ajouter des fonctionnalités !

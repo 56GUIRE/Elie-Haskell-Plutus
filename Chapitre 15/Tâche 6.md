@@ -1,6 +1,6 @@
-Content que ça marche ! Oui, ce code répond à votre demande initiale d'utiliser `readMaybe` pour analyser les entrées utilisateur de manière sûre et éviter les erreurs d'exécution, bien que nous ayons adapté la solution à l'environnement en simulant les entrées au lieu d'utiliser `getLine` en raison des limitations observées. Voici le code avec une explication détaillée :
+HC15T6 : Analyse d'entrée utilisateur avec readMaybe:
 
-### Code
+
 ```haskell
 import Text.Read (readMaybe)
 
@@ -34,17 +34,3 @@ main = do
 4. **Gestion sécurisée** :
    - Grâce à `readMaybe`, le programme ne plante pas avec des entrées invalides. Au lieu de cela, il passe au cas `Nothing` et informe l'utilisateur de l'erreur.
 
-### Résultat attendu
-Quand vous exécutez ce code, vous devriez voir :
-```
-42 est un nombre positif !
--5 est un nombre négatif !
-0 est zéro !
-abc n'est pas un nombre entier valide.
-```
-
-### Remarques
-- Ce code remplit votre demande d'utiliser `readMaybe` pour une analyse sûre, mais comme l'environnement ne semble pas supporter `getLine`, il simule les entrées. Si vous aviez besoin d'une interaction en temps réel, cela nécessiterait un environnement prenant en charge `getLine` (par exemple, en local avec GHC).
-- Vous pouvez modifier la liste `testCases` pour tester d'autres valeurs (par exemple, ajouter `"12.34"` ou `"-10"`).
-
-C'est cool que ça marche pour vous ! Si vous voulez ajouter des fonctionnalités ou tester d'autres cas, faites-le-moi savoir !

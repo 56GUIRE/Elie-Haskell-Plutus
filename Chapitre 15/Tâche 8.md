@@ -47,5 +47,3 @@ main = do
        - Sinon, renvoie `Right (n / d)` avec le résultat de la division.
      - `_` : Si une conversion échoue (par ex. "abc"), renvoie `Left` avec un message d'erreur générique (ex. "Erreur : abc ou 15 n'est pas un nombre valide").
 
-5. **Utilisation de `Either`** :
-   - `Either String Double` est utilisé pour représenter soit une erreur (`Left` avec un message `String`) soit un succès (`Right` avec une valeur `Double`). Cela permet de fournir des messages d'erreur détaillés, répondant à votre demande.

@@ -1,16 +1,39 @@
-HC14T1 : Initialiser un projet Cabal:
+HC14T1 : Initialiser un projet Cabal Créer un projet Haskell en utilisant cabal init.
+Ajouter un exécutable principal qui affiche « Hello, Cabal! ».
 
-```haskell
+🚀 Étape 1 : Initialiser un projet Cabal
+Dans le terminal, tape :
+
+cabal init --non-interactive --minimal --exe --overwrite
+Cela crée un projet minimal avec :
+
+un fichier *.cabal (ex. MonProjet.cabal),
+un dossier app/ qui contiendra le Main.hs,
+un Setup.hs minimal.
+👉 Pour configurer en mode interactif, Nous pouvons juste faire :
+
+cabal init
+et répondre aux questions (choisis executable quand il demande le type de projet).
+
+🚀 Étape 2 : Éditer app/Main.hs
+Ouvre app/Main.hs et mets :
+
 module Main where
 
 main :: IO ()
 main = putStrLn "Hello, Cabal!"
-```
+🚀 Étape 3 : Construire et exécuter
+Compile le projet avec :
 
-### Explications :
-- Ce code est placé dans le dossier `app` de ton projet Haskell, créé avec `cabal init`.
-- `module Main where` : Déclare le module principal, requis pour un exécutable.
-- `main :: IO ()` : La fonction `main` est le point d'entrée du programme.
-- `putStrLn "Hello, Cabal!"` : Affiche le texte « Hello, Cabal ! » dans la console.
+cabal build
+Puis exécute avec :
 
+cabal run
+Cela verras :
 
+Hello, Cabal!
+✅ Résumé :
+
+cabal init crée la structure,
+app/Main.hs contient ton programme,
+cabal run lance ton exécutable.

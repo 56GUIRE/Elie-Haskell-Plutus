@@ -1,36 +1,52 @@
-HC14T9 : Extension de signatures de type partiel
+## HC14T9 : Extension PartialTypeSignatures
+
+Utiliser l’extension PartialTypeSignatures pour permettre les types jokers dans une signature de fonction.
+
+Pour **HC14T9**, l’objectif est d’utiliser l’extension `PartialTypeSignatures` pour **mettre des “types jokers” (`_`)** dans les signatures de fonctions. Cela permet à GHC d’inférer automatiquement certaines parties du type sans que tu aies à tout préciser.
+
+---
+
+## 3️⃣ Exemple avec un type générique
 
 ```haskell
 {-# LANGUAGE PartialTypeSignatures #-}
 
-module Main where
+module PartialExample where
 
-import Data.List (sort, group)
-
--- Fonction counts avec une signature partielle utilisant un joker
-counts :: String -> [(_, Int)]
-counts str = [(head g, length g) | g <- group (sort str)]
-
--- Fonction main pour tester counts
-main :: IO _
-main = do
-    let testString = "hello"
-    print $ counts testString  -- Affiche [('e',1),('h',1),('l',2),('o',1)]
+-- Fonction qui retourne la longueur d’une liste, mais on ne précise pas le type de l’élément
+listLength :: _ -> Int
+listLength xs = length xs
 ```
 
+* `_` → GHC infère `[a]` pour une liste de n’importe quel type `a`.
+* `Int` est explicitement le type du résultat.
+
+---
+
 ### Explications :
-1. **Extension `PartialTypeSignatures`** :
-   - Activée avec `{-# LANGUAGE PartialTypeSignatures #-}` en haut du fichier.
-   - Permet d'utiliser des types jokers (`_`) dans les signatures de fonctions, laissant le compilateur inférer les parties manquantes.
-   - Dans la signature de `counts :: String -> [(_, Int)]`, le premier élément du tuple est un joker (`_`), que GHC infère comme étant `Char`.
-   - Dans `main :: IO _`, le type de retour est un joker, inféré comme `IO ()`.
 
-2. **Fonction `counts`** :
-   - Identique à l'exemple précédent : elle prend une chaîne, trie ses caractères, les regroupe, et retourne une liste de tuples `(caractère, fréquence)`.
-   - La signature partielle `[(_, Int)]` indique que le résultat est une liste de tuples où le second élément est un `Int`, et le premier est inféré comme `Char`.
+* Les `_` sont des **types jokers** que GHC va inférer.
+* Ici, GHC va comprendre que `x` et `y` doivent être `Int` pour que `x + y` fonctionne.
+* Cela permet de **réduire la verbosité** pour des types longs ou complexes.
 
-3. **Fonction `main`** :
-   - Teste `counts` avec la chaîne `"hello"`.
-   - Affiche le résultat `[('e',1),('h',1),('l',2),('o',1)]`.
+---
 
+## 4️⃣ Utilisation dans `Main.hs`
 
+```haskell
+module Main where
+
+import PartialExample
+
+main :: IO ()
+main = do
+    print $ add 3 5
+    print $ listLength ["a","b","c"]
+```
+
+✅ Résultat attendu :
+
+```
+8
+3
+```

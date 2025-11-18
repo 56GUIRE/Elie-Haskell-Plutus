@@ -1,19 +1,39 @@
-HC16T1� : Inverser une chaîne
+## HC16T1: Inverser une chaîne
+
+Définir une fonction qui inverse une chaîne de caractères.
+
+---
+
+En Haskell, une `String` est juste une liste de `Char`, donc on peut utiliser la fonction standard `reverse`.
+
+---
+
+## ✅ Code haskell
+
 ```haskell
+module Main where
+
+-- Fonction qui inverse une chaîne
+inverser :: String -> String
+inverser str = reverse str
+
 main :: IO ()
 main = do
-    let testStrings = ["Hello", "World", "123", ""]
-    mapM_ (putStrLn . reverseString) testStrings
-  where
-    reverseString :: String -> String
-    reverseString = reverse
+    putStrLn "Entrez une chaîne :"
+    input <- getLine
+    putStrLn $ "Chaîne inversée : " ++ inverser input
 ```
 
-### Explication
-1. **Fonction `main`** :
-   - `let testStrings = ["Hello", "World", "123", ""]` : Une liste de chaînes de test, y compris une chaîne vide pour vérifier la robustesse.
-   - `mapM_ (putStrLn . reverseString) testStrings` : Applique `reverseString` à chaque chaîne, affiche le résultat avec `putStrLn`, et utilise `mapM_` pour exécuter les actions IO dans l'ordre.
+---
 
-2. **Fonction `reverseString`** :
-   - `reverseString :: String -> String` : Définit une fonction qui prend une chaîne (`String`) et renvoie sa version inversée.
-   - `reverse` : Utilise la fonction intégrée `reverse` de Haskell, qui inverse une liste (et donc une chaîne, car `String` est un synonyme de `[Char]`).
+### ⚡ Explication
+
+* `reverse` est une fonction standard de Prelude qui inverse une liste.
+* Comme `String` = `[Char]`, ça marche directement sur les chaînes.
+* Exemple d’exécution :
+
+```
+Entrez une chaîne :
+haskell
+Chaîne inversée : lleksah
+```

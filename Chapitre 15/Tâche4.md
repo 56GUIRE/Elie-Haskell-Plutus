@@ -1,67 +1,83 @@
-HC15T4 : Utiliser une fonction de gestion d'exception pour les feux
+## HC15T4 : Utiliser une fonction de gestion d’exception pour les feux
+
+Utiliser une fonction gestionnaire pour intercepter et gérer les exceptions liées aux feux tricolores.
+
+---
+
+## 1️⃣ Code complet avec gestionnaire d’exception
+
 ```haskell
 module Main where
 
 import Control.Exception
 import System.IO
 
--- Type pour représenter les états des feux tricolores
-data TrafficLight = Red | Green | Orange deriving (Show, Eq)
+-- Définition des couleurs possibles du feu
+data CouleurFeu = Rouge | Orange | Vert
+    deriving (Show, Read, Eq)
 
--- Type d'exception personnalisé pour les erreurs liées aux feux tricolores
-data TrafficLightException = InvalidState String deriving Show
+-- Définition d'une exception personnalisée
+data FeuException = CouleurInvalide String
+    deriving (Show)
 
-instance Exception TrafficLightException
+instance Exception FeuException
 
--- Fonction pure pour changer l'état du feu tricolore
-changeLight :: TrafficLight -> Either TrafficLightException TrafficLight
-changeLight Red = Right Green
-changeLight Green = Right Orange
-changeLight Orange = Right Red
-changeLight state = Left (InvalidState $ "État du feu tricolore non valide : " ++ show state)
+-- Fonction qui retourne l'action de la voiture
+reagirAuFeu :: CouleurFeu -> String
+reagirAuFeu Rouge  = "Stop !"
+reagirAuFeu Orange = "Préparez-vous à arrêter"
+reagirAuFeu Vert   = "Avancez"
 
--- Fonction gestionnaire d'exceptions
-handleTrafficLightException :: TrafficLightException -> IO TrafficLight
-handleTrafficLightException (InvalidState msg) = do
-    putStrLn $ "Erreur capturée : " ++ msg
-    putStrLn "Retour à l'état par défaut : Rouge"
-    return Red
+-- Lecture et levée d’exception si couleur invalide
+parseCouleur :: String -> IO CouleurFeu
+parseCouleur s =
+    case reads s of
+        [(c,"")] -> return c
+        _        -> throwIO (CouleurInvalide s)   -- ⚡ exception IO
 
--- Fonction pour simuler le fonctionnement du feu tricolore
-simulateTrafficLight :: TrafficLight -> IO TrafficLight
-simulateTrafficLight state = do
-    putStrLn $ "État actuel du feu : " ++ show state
-    putStrLn "Changement d'état..."
-    case changeLight state of
-        Right nextState -> do
-            putStrLn $ "Nouvel état : " ++ show nextState
-            return nextState
-        Left err -> handleTrafficLightException err
+-- Gestionnaire d’exception
+gestionnaireFeu :: FeuException -> IO ()
+gestionnaireFeu (CouleurInvalide s) =
+    putStrLn $ "Erreur : '" ++ s ++ "' n'est pas une couleur valide. Réessayez avec Rouge, Orange ou Vert."
 
 -- Fonction principale
 main :: IO ()
 main = do
-    -- Test avec un état valide
-    putStrLn "Test avec un état valide (Vert) :"
-    _ <- simulateTrafficLight Green
-    
-    -- Test avec un état limite
-    putStrLn "\nTest avec un état limite :"
-    _ <- simulateTrafficLight Orange
-    
-    putStrLn "\nProgramme terminé."
+    putStrLn "Entrez la couleur du feu (Rouge, Orange, Vert) :"
+    couleurStr <- getLine
+    -- Ici, on utilise catch pour gérer les exceptions
+    (parseCouleur couleurStr >>= \c ->
+        putStrLn $ "Action de la voiture : " ++ reagirAuFeu c)
+        `catch` gestionnaireFeu
 ```
 
-### Explication détaillée
+---
 
-#### 1. **Objectif du programme**
-Le programme simule un système de feux tricolores avec trois états (`Red`, `Green`, `Orange`) et gère les exceptions potentielles liées à des transitions d'état non valides. Une fonction gestionnaire d'exceptions (`handleTrafficLightException`) est utilisée pour intercepter et traiter ces erreurs, en affichant un message et en revenant à un état par défaut (`Red`). Le programme inclut une fonction `main` pour démontrer son fonctionnement.
+## 2️⃣ Explications
 
-#### 2. **Structure du code**
-- **Type `TrafficLight`** : Définit les états possibles des feux tricolores (`Red`, `Green`, `Orange`) avec les dérivations `Show` (pour l'affichage) et `Eq` (pour la comparaison).
-- **Type d'exception `TrafficLightException`** : Un type personnalisé pour représenter les erreurs, avec un constructeur `InvalidState` contenant un message d'erreur. Il est rendu instance de la classe `Exception` pour être utilisable avec le mécanisme d'exceptions de Haskell.
-- **Fonction `changeLight`** : Une fonction pure qui calcule l'état suivant d'un feu tricolore. Elle retourne un `Either TrafficLightException TrafficLight` pour indiquer soit un succès (`Right` avec le nouvel état), soit une erreur (`Left` avec une exception).
-- **Fonction `handleTrafficLightException`** : Le gestionnaire d'exceptions qui affiche un message d'erreur et retourne l'état par défaut `Red`.
-- **Fonction `simulateTrafficLight`** : Simule une transition d'état en affichant l'état actuel, en appelant `changeLight`, et en gérant le résultat (succès ou erreur).
-- **Fonction `main`** : Exécute deux tests : un avec un état valide (`Green`) et un avec un état limite (`Orange`), pour montrer le fonctionnement normal.
+* **`throwIO`** : lance une exception dans l’espace `IO` (plus sûr que `throw` dans ce contexte).
+* **`catch gestionnaireFeu`** : intercepte uniquement les exceptions de type `FeuException`.
+* **`gestionnaireFeu`** : affiche un message personnalisé au lieu de planter.
 
+---
+
+## 3️⃣ Exemple d’exécution
+
+```
+Entrez la couleur du feu (Rouge, Orange, Vert) :
+Bleu
+Erreur : 'Bleu' n'est pas une couleur valide. Réessayez avec Rouge, Orange ou Vert.
+```
+
+```
+Entrez la couleur du feu (Rouge, Orange, Vert) :
+Rouge
+Action de la voiture : Stop !
+```
+
+---
+
+👉 Différence avec **HC15T3** :
+
+* Dans HC15T3 on utilisait `try` + `Either`.
+* Ici, avec **HC15T4**, on centralise la gestion des exceptions avec une **fonction gestionnaire** (`catch`).

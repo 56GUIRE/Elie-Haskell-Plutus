@@ -1,41 +1,88 @@
-HC15T7 : Calcul de vitesse avec gestion des valeurs optionnelles et du parsing
+## HC15T7 : Calcul de vitesse avec gestion des valeurs optionnelles et du parsing
+
+Implémenter un programme qui calcule une vitesse en utilisant des valeurs optionnelles et gère les erreurs de parsing.
+
+---
+
+* Utiliser `readMaybe` pour parser la saisie utilisateur.
+* Manipuler les résultats avec `Maybe` (`Just` / `Nothing`).
+* Effectuer le calcul de vitesse (distance / temps).
+* Gérer les erreurs (parsing invalide ou division par zéro).
+
+---
+
+## ✅ Code Haskell : Calcul de vitesse avec `Maybe`
+
 ```haskell
+module Main where
+
 import Text.Read (readMaybe)
 
+-- Division sécurisée avec Maybe
+safeDiv :: Double -> Double -> Maybe Double
+safeDiv _ 0 = Nothing
+safeDiv x y = Just (x / y)
+
+-- Fonction principale
 main :: IO ()
 main = do
-    let testCases = [("100", "10"), ("50", "abc"), ("-20", "5"), ("", "15")] -- (distance, temps)
-    mapM_ calculateSpeed testCases
-  where
-    calculateSpeed (distStr, timeStr) = do
-        let distance = readMaybe distStr :: Maybe Double
-        let time = readMaybe timeStr :: Maybe Double
-        case (distance, time) of
-            (Just d, Just t) ->
-                if t == 0
-                    then putStrLn $ "Erreur : Division par zéro pour " ++ distStr ++ "/" ++ timeStr
-                    else putStrLn $ "Vitesse = " ++ show (d / t) ++ " unités par unité de temps"
-            _ -> putStrLn $ "Erreur : " ++ distStr ++ " ou " ++ timeStr ++ " n'est pas un nombre valide"
+    putStrLn "Entrez la distance (en km) :"
+    distStr <- getLine
+    putStrLn "Entrez le temps (en heures) :"
+    timeStr <- getLine
+
+    -- Parsing des entrées
+    let maybeDist = readMaybe distStr :: Maybe Double
+        maybeTime = readMaybe timeStr :: Maybe Double
+
+    case (maybeDist, maybeTime) of
+        (Just d, Just t) ->
+            case safeDiv d t of
+                Just v  -> putStrLn $ "Vitesse = " ++ show v ++ " km/h"
+                Nothing -> putStrLn "Erreur : division par zéro (temps = 0)"
+        _ -> putStrLn "Erreur : entrée invalide (veuillez entrer des nombres valides)."
 ```
 
-### Explication
-1. **Importation** :
-   - `import Text.Read (readMaybe)` : Importe `readMaybe` pour convertir des chaînes en `Double` de manière sécurisée, renvoyant `Maybe Double`.
+---
 
-2. **Fonction `main`** :
-   - `let testCases = [("100", "10"), ("50", "abc"), ("-20", "5"), ("", "15")]` : Définit une liste de paires (distance, temps) à tester. Inclut des cas valides, invalides, et un cas avec division par zéro.
-   - `mapM_ calculateSpeed testCases` : Applique la fonction `calculateSpeed` à chaque paire et affiche les résultats.
+## ⚡ Explications
 
-3. **Fonction `calculateSpeed`** :
-   - Prend une paire `(distStr, timeStr)` représentant les chaînes d'entrée pour la distance et le temps.
-   - `readMaybe distStr :: Maybe Double` et `readMaybe timeStr :: Maybe Double` : Tente de parser les chaînes en nombres décimaux (`Double` pour permettre des valeurs non entières).
-   - **Gestion des cas avec `case`** :
-     - `(Just d, Just t)` : Si les deux conversions réussissent :
-       - Vérifie si `t == 0` pour éviter la division par zéro, affiche une erreur si c'est le cas.
-       - Sinon, calcule `d / t` et affiche la vitesse.
-     - `_` : Si une conversion échoue (par exemple, "abc" ou ""), affiche un message d'erreur.
+1. `readMaybe` sécurise le parsing :
 
-4. **Gestion sécurisée** :
-   - `readMaybe` évite les crashs en cas d'entrée invalide (par exemple, lettres ou chaînes vides).
-   - La vérification de `t == 0` empêche les erreurs de division par zéro.
+   * `"42"` → `Just 42.0`
+   * `"abc"` → `Nothing`
 
+2. `safeDiv` empêche la division par zéro :
+
+   * `safeDiv 100 2` → `Just 50.0`
+   * `safeDiv 100 0` → `Nothing`
+
+3. `case` permet de traiter les différentes combinaisons de valeurs (`Just` ou `Nothing`).
+
+---
+
+## 📌 Exemple d’exécution
+
+```
+Entrez la distance (en km) :
+100
+Entrez le temps (en heures) :
+2
+Vitesse = 50.0 km/h
+```
+
+```
+Entrez la distance (en km) :
+100
+Entrez le temps (en heures) :
+0
+Erreur : division par zéro (temps = 0)
+```
+
+```
+Entrez la distance (en km) :
+abc
+Entrez le temps (en heures) :
+2
+Erreur : entrée invalide (veuillez entrer des nombres valides).
+```

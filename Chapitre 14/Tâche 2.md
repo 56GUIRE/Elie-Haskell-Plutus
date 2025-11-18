@@ -1,5 +1,35 @@
-HC14T2 : Ajouter une dépendance et afficher un nombre aléatoire
-### 1. Code Haskell (fichier `Main.hs`)
+## HC14T2 : Ajouter une dépendance et afficher un nombre aléatoire 
+
+Modifier le fichier .cabal pour inclure une dépendance sur le paquet random et afficher un nombre aléatoire entre 1 et 100.
+
+---
+
+## 🚀 Étape 1 : Modifier le fichier `.cabal`
+
+Ouvre ton fichier `MonProjet.cabal` et cherche la section de l’exécutable (souvent `executable monprojet`).
+Ajoute **random** dans `build-depends`. Exemple minimal :
+
+```cabal
+cabal-version:       >=1.10
+name:                MonProjet
+version:             0.1.0.0
+build-type:          Simple
+
+executable MonProjet
+  main-is:             Main.hs
+  hs-source-dirs:      app
+  default-language:    Haskell2010
+  build-depends:       base >=4.7 && <5,
+                       random
+```
+
+⚠️ `random` est la bibliothèque standard de Haskell pour les nombres aléatoires.
+
+---
+
+## 🚀 Étape 2 : Modifier `app/Main.hs`
+
+Utilise `System.Random` pour générer un nombre :
 
 ```haskell
 module Main where
@@ -8,41 +38,32 @@ import System.Random (randomRIO)
 
 main :: IO ()
 main = do
-    randomNum <- randomRIO (1 :: Int, 100 :: Int) -- Génère un nombre aléatoire entre 1 et 100
-    putStrLn $ "Nombre aléatoire : " ++ show randomNum
+    num <- randomRIO (1, 100) :: IO Int
+    putStrLn $ "Nombre aléatoire entre 1 et 100 : " ++ show num
 ```
 
-**Explications :**
-- `System.Random` fournit des fonctions pour la génération de nombres aléatoires.
-- `randomRIO` est utilisé pour générer un nombre aléatoire dans une plage donnée (ici, 1 à 100).
-- Le type `Int` est explicitement spécifié pour éviter toute ambiguïté.
-- Le programme affiche le nombre aléatoire avec un message.
+---
 
-### 2. Fichier `.cabal`
+## 🚀 Étape 3 : Construire et exécuter
 
-Voici un exemple de fichier `.cabal` configuré pour inclure la dépendance sur le paquet `random`. Supposons que votre projet s'appelle `random-number`.
+Recompile avec :
 
-```cabal
-cabal-version:       3.0
-name:                random-number
-version:             0.1.0.0
-synopsis:            A simple program to generate a random number
-license:             BSD-3-Clause
-author:              Votre Nom
-maintainer:          votre.email@example.com
-build-type:          Simple
-
-executable random-number
-  main-is:             Main.hs
-  build-depends:       base ^>= 4.16,
-                       random >= 1.2
-  hs-source-dirs:      src
-  default-language:    Haskell2010
+```bash
+cabal build
 ```
 
-**Explications :**
-- La dépendance `random >= 1.2` est ajoutée dans la section `build-depends`.
-- `base ^>= 4.16` est inclus pour la compatibilité avec la bibliothèque standard de Haskell.
-- `main-is: Main.hs` indique que le fichier principal est `Main.hs`.
-- `hs-source-dirs: src` suppose que `Main.hs` est dans un dossier `src`.
+Puis lance :
 
+```bash
+cabal run
+```
+
+👉 Exemple de sortie :
+
+```
+Nombre aléatoire entre 1 et 100 : 57
+```
+
+---
+
+✅ Résultat attendu : un nombre aléatoire **différent à chaque exécution**.

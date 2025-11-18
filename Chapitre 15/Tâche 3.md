@@ -1,81 +1,82 @@
-HC15T3 : définir et lancer une exception personnalisée pour les feux
+## HC15T3 : Définir et lancer une exception personnalisée pour les feux
+
+Définir et lancer une exception personnalisée pour les erreurs de feux tricolores.
+
+---
+
+## 1️⃣ Code Haskell : exception personnalisée
+
 ```haskell
 module Main where
 
 import Control.Exception
 import System.IO
 
--- Définition de l'exception personnalisée
-data TrafficLightError = InvalidLightState String
-  deriving Show
+-- Définition des couleurs possibles du feu
+data CouleurFeu = Rouge | Orange | Vert
+    deriving (Show, Read, Eq)
 
--- Faire en sorte que TrafficLightError soit une instance de Exception
-instance Exception TrafficLightError
+-- Définition d'une exception personnalisée
+data FeuException = CouleurInvalide String
+    deriving (Show)
 
--- État possible des feux tricolores
-data LightState = Red | Yellow | Green
-  deriving (Show, Eq)
+instance Exception FeuException
 
--- Fonction pour valider l'état du feu tricolore
-validateLightState :: String -> IO LightState
-validateLightState state = case state of
-  "Red"    -> return Red
-  "Yellow" -> return Yellow
-  "Green"  -> return Green
-  _        -> throwIO $ InvalidLightState $ "État invalide du feu tricolore : " ++ state
+-- Fonction qui retourne l'action de la voiture ou lève une exception
+reagirAuFeu :: CouleurFeu -> String
+reagirAuFeu Rouge  = "Stop !"
+reagirAuFeu Orange = "Préparez-vous à arrêter"
+reagirAuFeu Vert   = "Avancez"
 
--- Fonction pour changer l'état du feu
-changeLightState :: LightState -> String -> IO LightState
-changeLightState currentState newStateStr = do
-  newState <- validateLightState newStateStr
-  case (currentState, newState) of
-    (Red, Green)    -> return Green
-    (Green, Yellow) -> return Yellow
-    (Yellow, Red)   -> return Red
-    _ -> throwIO $ InvalidLightState $ "Transition invalide de " ++ show currentState ++ " à " ++ newStateStr
+-- Lecture sécurisée et levée d'exception si invalide
+parseCouleur :: String -> CouleurFeu
+parseCouleur s =
+    case reads s of
+        [(c,"")] -> c
+        _        -> throw (CouleurInvalide s)
 
--- Main pour tester l'exception
+-- Fonction principale
 main :: IO ()
 main = do
-  putStrLn "Démarrage du système de feux tricolores..."
-  let initialState = Red
-  putStrLn $ "État initial : " ++ show initialState
-
-  -- Essayer une transition valide
-  result <- try (changeLightState initialState "Green") :: IO (Either TrafficLightError LightState)
-  case result of
-    Left err -> putStrLn $ "Erreur : " ++ show err
-    Right newState -> putStrLn $ "Nouvel état : " ++ show newState
-
-  -- Essayer une transition invalide
-  result2 <- try (changeLightState initialState "Yellow") :: IO (Either TrafficLightError LightState)
-  case result2 of
-    Left err -> putStrLn $ "Erreur : " ++ show err
-    Right newState -> putStrLn $ "Nouvel état : " ++ show newState
-
-  -- Essayer un état invalide
-  result3 <- try (validateLightState "Blue") :: IO (Either TrafficLightError LightState)
-  case result3 of
-    Left err -> putStrLn $ "Erreur : " ++ show err
-    Right newState -> putStrLn $ "Nouvel état : " ++ show newState
+    putStrLn "Entrez la couleur du feu (Rouge, Orange, Vert) :"
+    couleurStr <- getLine
+    -- On attrape l'exception pour éviter le crash
+    resultat <- try (evaluate (parseCouleur couleurStr)) :: IO (Either FeuException CouleurFeu)
+    case resultat of
+        Right couleur -> putStrLn $ "Action de la voiture : " ++ reagirAuFeu couleur
+        Left (CouleurInvalide s) -> putStrLn $ "Erreur : couleur invalide '" ++ s ++ "'"
 ```
 
-### Explication :
-1. **Exception personnalisée** :
-   - `TrafficLightError` est défini comme un type d'exception personnalisé avec un message d'erreur.
-   - Il est rendu instance de la classe `Exception` grâce à `Control.Exception`.
+---
 
-2. **État des feux tricolores** :
-   - `LightState` est un type de données énuméré représentant les états valides : `Red`, `Yellow`, `Green`.
+## 2️⃣ Explications
 
-3. **Validation de l'état** :
-   - La fonction `validateLightState` vérifie si une chaîne correspond à un état valide. Si ce n'est pas le cas, elle lance une exception `InvalidLightState`.
+1. **`FeuException`**
 
-4. **Transition d'état** :
-   - La fonction `changeLightState` gère les transitions valides entre les états des feux (par exemple, de `Red` à `Green`, de `Green` à `Yellow`, etc.). Toute transition invalide déclenche une exception.
+   * Type de données pour représenter une exception personnalisée.
+   * On dérive `Show` pour pouvoir afficher le message.
+   * On instancie `Exception` pour qu’il soit lançable via `throw`.
 
-5. **Main** :
-   - Le programme commence avec un feu à l'état `Red`.
-   - Il teste une transition valide (`Red` → `Green`), une transition invalide (`Red` → `Yellow`), et un état invalide (`Blue`).
-   - Les erreurs sont capturées avec `try` et affichées.
+2. **`parseCouleur`**
 
+   * Tente de lire la couleur depuis la saisie utilisateur.
+   * Si la lecture échoue, on lance `CouleurInvalide`.
+
+3. **Gestion avec `try` et `evaluate`**
+
+   * `try (evaluate ...)` capture l’exception sans faire planter le programme.
+   * `Either FeuException CouleurFeu` permet de distinguer succès et erreur.
+
+4. **Exemple d’exécution**
+
+```
+Entrez la couleur du feu (Rouge, Orange, Vert) :
+Bleu
+Erreur : couleur invalide 'Bleu'
+```
+
+```
+Entrez la couleur du feu (Rouge, Orange, Vert) :
+Vert
+Action de la voiture : Avancez
+```

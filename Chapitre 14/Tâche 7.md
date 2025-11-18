@@ -1,75 +1,79 @@
-HC14T7 : Composant bibliothèque dans le .cabal
-### 1. Fichier `.cabal` (`random-number.cabal`)
+## HC14T7 : Composant bibliothèque dans le .cabal 
 
-Le fichier `.cabal` est configuré pour inclure un composant bibliothèque (`library`) et un exécutable (`executable`), avec une dépendance sur le paquet `random`.
+Modifier le fichier .cabal pour supporter un composant bibliothèque en plus de l’exécutable principal. 
+
+---
+
+## 3️⃣ Modifier le fichier `.cabal`
+
+Voici un exemple de fichier `ProjetCabal.cabal` avec **bibliothèque + exécutable** :
 
 ```cabal
-cabal-version:       3.0
-name:                random-number
+cabal-version:       >=1.10
+name:                ProjetCabal
 version:             0.1.0.0
-synopsis:            A Haskell project with a library and executable
-license:             BSD-3-Clause
-author:              Votre Nom
-maintainer:          votre.email@example.com
 build-type:          Simple
+synopsis:            Exemple projet Cabal avec lib et exe
+author:              Moi
 
--- Composant bibliothèque
 library
-  exposed-modules:     MyLib
-  build-depends:       base ^>= 4.16,
-                       random >= 1.2
-  hs-source-dirs:      src
-  default-language:    Haskell2010
+  hs-source-dirs:    src
+  exposed-modules:   Result, MyMath
+  build-depends:     base >=4.7 && <5
+  default-language:  Haskell2010
 
--- Composant exécutable
-executable random-number
-  main-is:             Main.hs
-  build-depends:       base ^>= 4.16,
-                       random >= 1.2,
-                       random-number
-  hs-source-dirs:      app
-  default-language:    Haskell2010
+executable ProjetCabal
+  main-is:           Main.hs
+  hs-source-dirs:    app
+  build-depends:     base >=4.7 && <5,
+                     ProjetCabal  -- on importe notre bibliothèque
+  default-language:  Haskell2010
 ```
 
-**Explications :**
-- **Section `library` :** Définit une bibliothèque nommée `random-number` (par défaut, le même nom que le projet). Elle expose le module `MyLib` situé dans `src`. Elle dépend de `base` et `random`.
-- **Section `executable` :** Définit l'exécutable nommé `random-number`, avec `Main.hs` comme point d'entrée dans `app`. Il dépend de `base`, `random`, et de la bibliothèque interne `random-number` (pour accéder à `MyLib`).
-- `hs-source-dirs` spécifie `src` pour la bibliothèque et `app` pour l'exécutable.
+### Explications :
 
-### 2. Module de la bibliothèque (`src/MyLib.hs`)
+1. **library**
 
-Ce module définit une fonction qui génère un nombre aléatoire entre 1 et 100.
+   * `hs-source-dirs: src` → tous les modules dans `src/` sont inclus dans la bibliothèque.
+   * `exposed-modules: Result, MyMath` → ces modules sont visibles pour les exécutables.
 
-```haskell
-module MyLib where
+2. **executable**
 
-import System.Random (randomRIO)
+   * `main-is: Main.hs` → fichier principal.
+   * `hs-source-dirs: app` → Cabal sait chercher `Main.hs` dans `app/`.
+   * `build-depends: ProjetCabal` → l’exécutable utilise la bibliothèque définie ci-dessus.
 
--- Fonction pour générer un nombre aléatoire entre 1 et 100
-generateRandom :: IO Int
-generateRandom = randomRIO (1, 100)
-```
+---
 
-**Explications :**
-- Le module `MyLib` exporte la fonction `generateRandom`.
-- `randomRIO` est utilisé pour générer un nombre aléatoire dans la plage spécifiée.
-
-### 3. Module principal (`app/Main.hs`)
-
-Le module principal importe `MyLib` et utilise la fonction `generateRandom` pour afficher un nombre aléatoire.
+## 4️⃣ Exemple d’utilisation dans `Main.hs`
 
 ```haskell
 module Main where
 
-import MyLib (generateRandom)
+import Result
+import MyMath
 
 main :: IO ()
 main = do
-    randomNum <- generateRandom
-    putStrLn $ "Nombre aléatoire généré : " ++ show randomNum
+    let r = Success 42
+    putStrLn $ describeResult r
+    putStrLn $ "Multiplication 3 * 5 = " ++ show (multiply 3 5)
 ```
 
-**Explications :**
-- `Main` importe `generateRandom` depuis `MyLib`.
-- Le `main` appelle `generateRandom` et affiche le résultat.
+* `Result` et `MyMath` proviennent de la **bibliothèque** du projet.
 
+---
+
+## 5️⃣ Compilation et exécution
+
+```bash
+cabal build
+cabal run ProjetCabal
+```
+
+✅ Résultat attendu :
+
+```
+Succès avec valeur : 42
+Multiplication 3 * 5 = 15
+```

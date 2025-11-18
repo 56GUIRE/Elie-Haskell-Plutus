@@ -1,33 +1,53 @@
-HC14T4 : Type d'extensionApplications
+## HC14T4 : Extension TypeApplications
+
+Activer l’extension TypeApplications et créer une fonction qui lit une String et la convertit en Int avec read.
+
+---
+
+## 🚀 Étape 1 : Activer l’extension
+
+En haut de ton fichier `app/Main.hs`, ajoute :
+
+```haskell
+{-# LANGUAGE TypeApplications #-}
+```
+
+---
+
+## 🚀 Étape 2 : Exemple de code avec `read`
+
+On va écrire une fonction qui lit une `String` et la convertit en `Int` en utilisant `read @Int` :
 
 ```haskell
 {-# LANGUAGE TypeApplications #-}
 
 module Main where
 
--- Fonction pour convertir une String en Int
-stringToInt :: String -> Int
-stringToInt s = read @Int s
+convertStringToInt :: String -> Int
+convertStringToInt s = read @Int s
 
 main :: IO ()
 main = do
-    let input = "42"  -- Exemple de chaîne
-    let result = stringToInt input
-    putStrLn $ "Conversion de \"" ++ input ++ "\" en Int : " ++ show result
+    let input = "12345"
+    let number = convertStringToInt input
+    putStrLn $ "La chaîne \"" ++ input ++ "\" convertie en Int = " ++ show number
 ```
 
-### Explications
-- **Extension `TypeApplications` :**
-  - Activée avec la pragma `{-# LANGUAGE TypeApplications #-}`.
-  - Permet de spécifier explicitement le type attendu pour une fonction polymorphe comme `read` en utilisant la syntaxe `@Type`.
-  - Ici, `read @Int s` indique que `read` doit convertir la chaîne `s` en un `Int`.
+---
 
-- **Fonction `stringToInt` :**
-  - Prend une `String` en entrée et utilise `read @Int` pour la convertir en `Int`.
-  - La syntaxe `@Int` clarifie que le résultat de `read` doit être un `Int`, évitant l'ambiguïté de type.
+## 🚀 Étape 3 : Compiler et exécuter
 
-- **Programme principal (`main`) :**
-  - Définit une chaîne d'exemple (`"42"`).
-  - Appelle `stringToInt` pour convertir la chaîne en `Int`.
-  - Affiche le résultat avec un message descriptif.
+```bash
+cabal build
+cabal run
+```
 
+👉 Résultat attendu :
+
+```
+La chaîne "12345" convertie en Int = 12345
+```
+
+---
+
+✅ Grâce à `TypeApplications`, on peut écrire `read @Int "12345"` au lieu d’un `read "12345" :: Int`.

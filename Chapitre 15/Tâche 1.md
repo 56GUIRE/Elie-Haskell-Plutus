@@ -1,68 +1,84 @@
-HC15T1 : Gérer les exceptions lors de la lecture d'un fichier et du calcul de la vitesse
+## HC15T1 : Gérer les exceptions lors de la lecture d’un fichier et du calcul de la vitesse 
+
+Gérer les exceptions dans un programme qui lit un fichier et calcule une vitesse à partir d’une saisie utilisateur.
+
+---
+
+1. Lit un fichier.
+2. Demande une saisie utilisateur (ex: distance et temps).
+3. Calcule la vitesse (`v = distance / temps`).
+4. Gère les **exceptions** liées au fichier ou aux entrées invalides.
+
+Voici un exemple complet :
+
+---
+
+## 1️⃣ Code Haskell avec gestion d’exceptions
+
 ```haskell
+module Main where
+
 import System.IO
 import Control.Exception
-import System.IO.Error
 import Text.Read (readMaybe)
 
--- Fonction pour lire un fichier et retourner la distance
-readDistanceFromFile :: FilePath -> IO (Either String Double)
-readDistanceFromFile filePath = do
-  result <- try (readFile filePath) :: IO (Either IOError String)
-  case result of
-    Left err -> return $ Left $ "Erreur lors de la lecture du fichier : " ++ show err
-    Right content -> case readMaybe content :: Maybe Double of
-      Just distance -> return $ Right distance
-      Nothing -> return $ Left "Le contenu du fichier n'est pas un nombre valide"
-
--- Fonction pour lire le temps saisi par l'utilisateur
-readTimeFromUser :: IO (Either String Double)
-readTimeFromUser = do
-  putStrLn "Entrez le temps (en secondes) : "
-  input <- getLine
-  case readMaybe input :: Maybe Double of
-    Just time -> if time > 0
-                 then return $ Right time
-                 else return $ Left "Le temps doit être supérieur à 0"
-    Nothing -> return $ Left "La saisie n'est pas un nombre valide"
-
--- Fonction pour calculer la vitesse
-calculateSpeed :: Double -> Double -> Double
-calculateSpeed distance time = distance / time
-
--- Fonction principale
 main :: IO ()
 main = do
-  let filePath = "distance.txt" -- Nom du fichier à lire
-  distanceResult <- readDistanceFromFile filePath
-  case distanceResult of
-    Left err -> putStrLn err
-    Right distance -> do
-      timeResult <- readTimeFromUser
-      case timeResult of
-        Left err -> putStrLn err
-        Right time -> do
-          let speed = calculateSpeed distance time
-          putStrLn $ "La vitesse est : " ++ show speed ++ " m/s"
+    putStrLn "Entrez le nom du fichier à lire :"
+    fileName <- getLine
+
+    -- Lecture du fichier avec gestion d'erreurs
+    fileContentResult <- try (readFile fileName) :: IO (Either IOException String)
+    case fileContentResult of
+        Left ex -> putStrLn $ "Erreur lors de la lecture du fichier : " ++ show ex
+        Right content -> do
+            putStrLn "Contenu du fichier :"
+            putStrLn content
+
+            -- Saisie de la distance
+            putStrLn "Entrez la distance parcourue (en mètres) :"
+            distInput <- getLine
+            let maybeDist = readMaybe distInput :: Maybe Double
+
+            -- Saisie du temps
+            putStrLn "Entrez le temps écoulé (en secondes) :"
+            timeInput <- getLine
+            let maybeTime = readMaybe timeInput :: Maybe Double
+
+            case (maybeDist, maybeTime) of
+                (Just dist, Just t) -> 
+                    if t == 0 
+                        then putStrLn "Erreur : le temps ne peut pas être zéro."
+                        else do
+                            let vitesse = dist / t
+                            putStrLn $ "Vitesse = " ++ show vitesse ++ " m/s"
+                _ -> putStrLn "Erreur : saisie invalide. Veuillez entrer des nombres valides."
 ```
 
-### Explications :
-1. **Gestion des exceptions pour la lecture du fichier** :
-   - La fonction `readDistanceFromFile` utilise `try` pour capturer les erreurs d'entrée/sortie (comme un fichier manquant ou non lisible).
-   - Si la lecture réussit, elle vérifie si le contenu du fichier peut être converti en `Double` avec `readMaybe`.
-   - Les erreurs possibles (fichier non trouvé, contenu non numérique) sont renvoyées sous forme de `Left String`.
+---
 
-2. **Gestion des exceptions pour la saisie utilisateur** :
-   - La fonction `readTimeFromUser` lit l'entrée utilisateur et utilise `readMaybe` pour vérifier si l'entrée est un nombre valide.
-   - Elle vérifie également que le temps est positif (non nul).
-   - Les erreurs (saisie non numérique, temps négatif ou nul) sont renvoyées sous forme de `Left String`.
+## 2️⃣ Explications
 
-3. **Calcul de la vitesse** :
-   - La fonction `calculateSpeed` effectue le calcul simple `distance / temps`.
-   - Comme les vérifications ont été faites en amont, cette fonction est sûre.
+1. **`try (readFile fileName) :: IO (Either IOException String)`**
 
-4. **Fonction `main`** :
-   - Coordonne l'exécution en enchaînant les appels aux fonctions `readDistanceFromFile` et `readTimeFromUser`.
-   - Affiche les messages d'erreur ou le résultat du calcul selon les cas.
+   * Tente de lire le fichier et capture une éventuelle exception (`IOException`).
+   * Si lecture échoue → `Left ex`, sinon → `Right content`.
 
+2. **`readMaybe`**
 
+   * Convertit une chaîne en nombre de façon sécurisée.
+   * Retourne `Nothing` si la conversion échoue.
+
+3. **Vérification du temps = 0**
+
+   * Evite une division par zéro.
+
+4. Messages clairs pour **chaque type d’erreur** (fichier inexistant, saisie invalide, division par zéro).
+
+---
+
+## 3️⃣ Test
+
+* Fichier existant → affiche le contenu et calcule la vitesse.
+* Fichier inexistant → affiche une erreur.
+* Saisie invalide ou temps = 0 → affiche un message d’erreur.

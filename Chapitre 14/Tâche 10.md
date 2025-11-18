@@ -1,125 +1,98 @@
-HC14T10 : Suite de tests Cabal pour counts
+## HC14T10 : Test suite Cabal pour counts
 
-### Structure du projet
-1. **Module principal** : Contient la fonction `counts`.
-2. **Module de tests** : Utilise la bibliothèque de test `HUnit` pour vérifier le bon fonctionnement de `counts`.
-3. **Fichier Cabal** : Configure le projet et la suite de tests.
-4. **Main** : Un programme simple pour démontrer l'utilisation de `counts`.
+Écrire une suite de tests Cabal pour un module qui vérifie le bon fonctionnement de la fonction counts.
 
-### Étape 1 : Code du module principal (`Counts.hs`)
-Créez un fichier `src/Counts.hs` avec le code suivant :
+---
 
-```haskell
-module Counts where
+## 1️⃣ Structure du projet Cabal
 
-import Data.List (sort, group)
-
--- Fonction counts qui retourne la fréquence des caractères
-counts :: String -> [(Char, Int)]
-counts str = [(head g, length g) | g <- group (sort str)]
+```
+ProjetCabal/
+├── app/
+│   └── Main.hs
+├── src/
+│   └── CharCounts.hs
+├── test/
+│   └── TestCounts.hs
+├── ProjetCabal.cabal
 ```
 
-### Étape 2 : Code du module de tests (`Tests.hs`)
-Créez un fichier `test/Tests.hs` avec une suite de tests utilisant `HUnit` :
+* `src/` → modules de la bibliothèque (`CharCounts`, `Result`, etc.)
+* `app/` → exécutable principal
+* `test/` → fichiers de test
+
+---
+
+## 2️⃣ Modifier le `.cabal` pour ajouter une suite de tests
+
+```cabal
+test-suite ProjetCabal-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             TestCounts.hs
+  build-depends:       base >=4.7 && <5,
+                       ProjetCabal,    -- la bibliothèque contenant CharCounts
+                       HUnit >=1.6.0.0
+  default-language:    Haskell2010
+```
+
+* `build-depends: ProjetCabal` → permet au test d’importer `CharCounts`.
+* `HUnit` est une bibliothèque pour les tests unitaires.
+
+---
+
+## 3️⃣ Exemple de test avec HUnit (`test/TestCounts.hs`)
 
 ```haskell
 module Main where
 
 import Test.HUnit
-import Counts (counts)
+import CharCounts
 
--- Tests pour la fonction counts
+-- Tests pour counts
+testCounts1 :: Test
+testCounts1 = TestCase $ 
+    assertEqual "Comptage des caractères dans 'hello'"
+                [('e',1),('h',1),('l',3),('o',1)]
+                (counts "hello")
+
+testCounts2 :: Test
+testCounts2 = TestCase $ 
+    assertEqual "Comptage des caractères dans 'aaaabbb'"
+                [('a',4),('b',3)]
+                (counts "aaaabbb")
+
+testCounts3 :: Test
+testCounts3 = TestCase $ 
+    assertEqual "Comptage des caractères vide"
+                []
+                (counts "")
+
+-- Liste de tous les tests
 tests :: Test
-tests = TestList [
-    TestLabel "Empty string" $
-      TestCase $ assertEqual "counts of empty string" [] (counts ""),
-    TestLabel "Single character" $
-      TestCase $ assertEqual "counts of single character" [('a', 1)] (counts "a"),
-    TestLabel "Multiple characters with duplicates" $
-      TestCase $ assertEqual "counts of hello" [('e', 1), ('h', 1), ('l', 2), ('o', 1)] (counts "hello"),
-    TestLabel "All same characters" $
-      TestCase $ assertEqual "counts of aaaa" [('a', 4)] (counts "aaaa"),
-    TestLabel "Mixed case and special characters" $
-      TestCase $ assertEqual "counts of Aa!a" [('!', 1), ('A', 1), ('a', 2)] (counts "Aa!a")
-  ]
-
--- Main pour exécuter les tests
-main :: IO ()
-main = do
-  countsResult <- runTestTT tests
-  putStrLn $ show countsResult
-```
-
-### Étape 3 : Fichier Cabal (`counts.cabal`)
-Créez un fichier `counts.cabal` à la racine du projet pour configurer le projet et les tests :
-
-```cabal
-cabal-version: 1.12
-name:           counts
-version:        0.1.0.0
-build-type:     Simple
-license:        BSD3
-
-library
-  exposed-modules: Counts
-  hs-source-dirs: src
-  build-depends:  base >= 4.7 && < 5
-  default-language: Haskell2010
-
-executable counts-exe
-  main-is: Main.hs
-  hs-source-dirs: app
-  build-depends:  base >= 4.7 && < 5, counts
-  default-language: Haskell2010
-
-test-suite counts-test
-  type: exitcode-stdio-1.0
-  main-is: Tests.hs
-  hs-source-dirs: test
-  build-depends:  base >= 4.7 && < 5,
-                  counts,
-                  HUnit >= 1.6
-  default-language: Haskell2010
-```
-
-### Étape 4 : Programme principal (`Main.hs`)
-Créez un fichier `app/Main.hs` pour démontrer l'utilisation de `counts` :
-
-```haskell
-module Main where
-
-import Counts (counts)
+tests = TestList [testCounts1, testCounts2, testCounts3]
 
 main :: IO ()
 main = do
-  let testString = "hello"
-  putStrLn $ "Counts for \"hello\": " ++ show (counts testString)
+    countsResult <- runTestTT tests
+    if errors countsResult + failures countsResult == 0
+       then putStrLn "Tous les tests ont réussi !"
+       else putStrLn "Des tests ont échoué."
 ```
-
-### Étape 5 : Structure du répertoire
-Votre répertoire devrait ressembler à ceci :
-```
-counts/
-├── src/
-│   └── Counts.hs
-├── test/
-│   └── Tests.hs
-├── app/
-│   └── Main.hs
-└── counts.cabal
-```
-
-
 
 ### Explications
-- **Fonction `counts`** : Comme dans les réponses précédentes, elle calcule la fréquence des caractères dans une chaîne en utilisant `sort` et `group` de `Data.List`.
-- **Tests HUnit** :
-  - Les tests vérifient différents cas : chaîne vide, caractère unique, caractères avec doublons, caractères identiques, et caractères variés (majuscules, minuscules, spéciaux).
-  - Chaque test utilise `assertEqual` pour comparer le résultat de `counts` avec la sortie attendue.
-- **Fichier Cabal** :
-  - Définit une bibliothèque (`Counts`), un exécutable (`counts-exe`), et une suite de tests (`counts-test`).
-  - Inclut `HUnit` comme dépendance pour les tests.
-- **Main** :
-  - Le programme principal dans `app/Main.hs` montre un exemple d'utilisation de `counts`.
-  - Le `main` des tests dans `test/Tests.hs` exécute la suite de tests avec `runTestTT`.
 
+1. **`assertEqual`** compare la sortie attendue et la sortie réelle.
+2. Chaque test a un **message descriptif** pour savoir quel test échoue.
+3. `runTestTT tests` exécute tous les tests.
+
+---
+
+## 4️⃣ Lancer les tests
+
+```bash
+cabal test
+```
+
+* Cabal compile la bibliothèque et le test, puis exécute `TestCounts.hs`.
+* Résultat : les tests passent ou échouent avec le détail.
